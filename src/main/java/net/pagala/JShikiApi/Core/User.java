@@ -2,11 +2,13 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.TitleStatus;
 import net.pagala.JShikiApi.Items.AnimeVideoReport;
+import net.pagala.JShikiApi.Items.UserInfo;
 import net.pagala.JShikiApi.Usr.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,7 +29,7 @@ public class User {
     private UserImage image;
 
     @JsonProperty("last_online_at")
-    private Calendar lastOnlineAt;
+    private Date lastOnlineAt;
 
 
 	protected User() {
@@ -41,6 +43,14 @@ public class User {
     public List<User> getFriends() {
         return getFriends(id);
     }
+
+	public static UserInfo getUserInfo(int id) {
+		return Shikimori.getItem("/users/" + id +"/info", UserInfo.class);
+	}
+
+    public UserInfo getUserInfo() {
+		return getUserInfo(id);
+	}
 
 	public static List<Club> getClubs(int id) {
 		return Shikimori.getItemList("/users/" + id + "/clubs", Club[].class);
@@ -150,7 +160,7 @@ public class User {
 		return image;
 	}
 
-	public Calendar getLastOnlineAt() {
+	public Date getLastOnlineAt() {
 		return lastOnlineAt;
 	}
 }

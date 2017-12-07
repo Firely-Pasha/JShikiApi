@@ -106,7 +106,7 @@ public class Shikimori {
 
 
     private static JsonNode request(final HttpUriRequest request, final boolean readResponse) {
-        request.setHeader("User-Agent", (appName == null ? "JShikiApi" : appName) + " " + (accessToken == null ? "Anonymous" : nickname));
+        request.setHeader("User-Agent", "JShikiApi Firely-Pasha");
 
         if (accessToken != null) {
             request.addHeader("X-User-Nickname", nickname);
@@ -221,6 +221,7 @@ public class Shikimori {
         return getItemList("/users/?limit=" + limit + "&page=" + page, User[].class);
     }
 
+    //TODO: Make another class for whoAmI.
     public static UserFull whoAmI() {
         return getItem("/users/whoami", UserFull.class);
     }

@@ -13,11 +13,12 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
-public class UserFull extends User{
+public class UserFull extends User {
 	private String name;
 
 	private String sex;
 
+	//TODO: Не показано в документации. Не работает здесь, но работает в /users/:id/info.
 	@JsonProperty("birth_on")
 	private Date birthOn;
 
@@ -39,7 +40,7 @@ public class UserFull extends User{
 	private String aboutHtml;
 
 	@JsonProperty("common_info")
-	private List<String> commonInfo;
+	private String[] commonInfo;
 
 	@JsonProperty("show_comments")
 	private boolean showComments;
@@ -100,7 +101,7 @@ public class UserFull extends User{
 		return aboutHtml;
 	}
 
-	public List<String> getCommonInfo() {
+	public String[] getCommonInfo() {
 		return commonInfo;
 	}
 

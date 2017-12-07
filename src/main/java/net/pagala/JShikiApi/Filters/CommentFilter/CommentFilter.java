@@ -1,7 +1,5 @@
 package net.pagala.JShikiApi.Filters.CommentFilter;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 @SuppressWarnings("unused")
 public class CommentFilter {
     private int commentableId;

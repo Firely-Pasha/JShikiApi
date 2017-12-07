@@ -1,6 +1,6 @@
 # JShikiApi
 ### Описание
-Реализация API сайта Shikimori на Java.
+Реализация API сайта Shikimori.org на Java.
 
 Если есть какие-то вопросы или предложения:
 * [ВКонтакте](https://vk.com/firely_pasha)
@@ -36,5 +36,3 @@ user.getFriends();
 
 User.getFriends(userId);
 ```
-
-

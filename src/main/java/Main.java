@@ -1,9 +1,7 @@
 import net.pagala.JShikiApi.Core.*;
-import net.pagala.JShikiApi.Filters.SearchFilter.*;
 import net.pagala.JShikiApi.Items.*;
-import net.pagala.JShikiApi.Items.TitleStatus;
 import net.pagala.JShikiApi.Usr.AnimeRate;
-import net.pagala.JShikiApi.Usr.HistoryItem;
+import net.pagala.JShikiApi.Usr.UserImage;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,13 +10,10 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-    	Shikimori.logIn("Firely-Pasha", "Goinass19981");
+//        Shikimori.logIn("Firely-Pasha", "Goinass19981");
 //        ApiCheck.getAnimeCheck();
-//    	ApiCheck.getAnimeRatesCheck();
-        SearchFilter searchFilter = new SearchFilter();
-        searchFilter.setLimit(10);
-        searchFilter.setScore(7);
-        System.out.println(Shikimori.getAnimes(searchFilter).get(0).getName());
+//        ApiCheck.getAnimeRatesCheck();
+//        ApiCheck.userCheck();
     }
 
     private static class ApiCheck {
@@ -154,6 +149,76 @@ public class Main {
                 System.out.println("\t\tRewatches: " + animeRate.getRewatches());
                 System.out.println("\t\tText: " + animeRate.getText());
                 System.out.println("\t\tText HTML: " + animeRate.getTextHtml());
+            }
+        }
+
+        private static void userCheck() {
+            UserFull user = Shikimori.getUser(Shikimori.getUserId());
+            System.out.println("User check:");
+            System.out.println("\tID: " + user.getId());
+            System.out.println("\tNickname: " + user.getNickname());
+            System.out.println("\tAvatar: " + user.getAvatar());
+            System.out.println("\tImage: ");
+            UserImage userImage = user.getImage();
+            System.out.println("\t\tx160: " + userImage.getX160());
+            System.out.println("\t\tx148: " + userImage.getX148());
+            System.out.println("\t\tx80: " + userImage.getX80());
+            System.out.println("\t\tx64: " + userImage.getX64());
+            System.out.println("\t\tx48: " + userImage.getX48());
+            System.out.println("\t\tx32: " + userImage.getX32());
+            System.out.println("\t\tx16: " + userImage.getX16());
+            System.out.println("\tLast online at: " + user.getLastOnlineAt());
+            System.out.println("\tName: " + user.getName());
+            System.out.println("\tSex: " + user.getSex());
+            System.out.println("\tFull years: " + user.getFullYears());
+            System.out.println("\tBirth on: " + user.getBirthOn());
+            System.out.println("\tLast online: " + user.getLastOnlineAt());
+            System.out.println("\tWebsite: " + user.getWebsite());
+            System.out.println("\tLocation: " + user.getLocation());
+            System.out.println("\tBanned: " + user.isBanned());
+            System.out.println("\tAbout: " + user.getAbout());
+            System.out.println("\tAbout (HTML): " + user.getAboutHtml());
+            System.out.println("\tCommon info: ");
+            String[] commonInfo = user.getCommonInfo();
+            for (String info : commonInfo) {
+                System.out.println("\t\t" + info);
+            }
+            System.out.println("\tShow comments: " + user.isShowComments());
+            System.out.println("\tIn friends: " + user.getInFriends());
+            System.out.println("\tIs ignored: " + user.isIgnored());
+            UserInfo userInfo = user.getUserInfo();
+            System.out.println("\tUser info: ");
+            System.out.println("\t\tID: " + userInfo.getId());
+            System.out.println("\t\tNickname: " + userInfo.getNickname());
+            System.out.println("\t\tAvatar: " + userInfo.getAvatar());
+            System.out.println("\t\tLast online at: " + userInfo.getLastOnlineAt());
+            System.out.println("\t\tName: " + userInfo.getName());
+            System.out.println("\t\tSex: " + userInfo.getSex());
+            System.out.println("\t\tWebsite: " + userInfo.getWebsite());
+            System.out.println("\t\tBirth on: " + userInfo.getBirthOn());
+            List<User> friends = user.getFriends();
+            System.out.println("\tFriends: ");
+            for (User friend : friends) {
+                System.out.println("\t\tNickname: " + friend.getNickname());
+                System.out.println("\t\t\tID: " + friend.getId());
+                System.out.println("\t\t\tAvatar: " + friend.getAvatar());
+                System.out.println("\t\t\tLast online at: " + friend.getLastOnlineAt());
+            }
+            List<Club> clubs = user.getClubs();
+            System.out.println("\tClubs: ");
+            for (Club club : clubs) {
+                System.out.println("\t\tName: " + club.getName());
+                System.out.println("\t\t\tID: " + club.getId());
+                System.out.println("\t\t\tLogo: ");
+                ClubLogo clubLogo = club.getLogo();
+                System.out.println("\t\t\t\tOriginal: " + clubLogo.getOriginal());
+                System.out.println("\t\t\t\tMain: " + clubLogo.getMain());
+                System.out.println("\t\t\t\tx96: " + clubLogo.getX96());
+                System.out.println("\t\t\t\tx73: " + clubLogo.getX73());
+                System.out.println("\t\t\t\tx48: " + clubLogo.getX48());
+                System.out.println("\t\t\tIs censored: " + club.isCensored());
+                System.out.println("\t\t\tJoin policy: " + club.getJoinPolicy());
+                System.out.println("\t\t\tComment policy: " + club.getCommentPolicy());
             }
         }
     }
