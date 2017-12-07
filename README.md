@@ -17,14 +17,14 @@ Shikimori.logIn("UserName", "Password");
 Shikimori.getAnime(animeId);
 ```
 
-За поиск аниме по критериям отвечает SearchFilter. Манги пока нет.
+За поиск аниме по критериям отвечает ``AnimeSearchFilter``, за поиск по манге - ``MangaSearchFilter``.
 
 Пример:
 ```java
-SearchFilter searchFilter = new SearchFilter();
-searchFilter.setLimit(20);
-searchFilter.getSeasons().getYes().add(new SeasonYear(Season.SUMMER, 2007));
-Shikimori.getAnimes(searchFilter);
+AnimeSearchFilter animeSearchFilter = new AnimeSearchFilter();
+animeSearchFilter.setLimit(20);
+animeSearchFilter.getSeasons().getYes().add(new SeasonYear(Season.SUMMER, 2007));
+List<Anime> animes = Shikimori.getAnimes(animeSearchFilter);
 ```
 
 Класс User предоставляет как статические, так и не сатические методы.

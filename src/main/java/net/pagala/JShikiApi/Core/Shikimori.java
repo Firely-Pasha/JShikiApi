@@ -6,9 +6,10 @@ import java.net.URISyntaxException;
 import java.util.*;
 import java.util.concurrent.*;
 
+import net.pagala.JShikiApi.Filters.SearchFilter.MangaSearchFilter;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.Character;
-import net.pagala.JShikiApi.Filters.SearchFilter.SearchFilter;
+import net.pagala.JShikiApi.Filters.SearchFilter.AnimeSearchFilter;
 import net.pagala.JShikiApi.Usr.Ban;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
@@ -127,6 +128,8 @@ public class Shikimori {
                 jsonResponse[0] = mapper.readTree(response.getEntity().getContent());
             }
 
+            System.out.println(jsonResponse[0].toString());
+
             return response;
         });
 
@@ -234,8 +237,12 @@ public class Shikimori {
         return getItemList("/calendar/", CalendarItem[].class);
     }
 
-    public static List<Anime> getAnimes(SearchFilter searchFilter) {
-        return getItemList("/animes/" + searchFilter.buildQuery(), Anime[].class);
+    public static List<Anime> getAnimes(AnimeSearchFilter animeSearchFilter) {
+        return getItemList("/animes" + animeSearchFilter.buildQuery(), Anime[].class);
+    }
+
+    public static List<Manga> getMangas(MangaSearchFilter mangaSearchFilter) {
+        return getItemList("/mangas" + mangaSearchFilter.buildQuery(), Manga[].class);
     }
 
     public static List<Character> getCharacters(String searchString) {
