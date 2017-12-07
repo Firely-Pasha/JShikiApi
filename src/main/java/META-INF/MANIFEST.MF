@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: commons-logging-1.2.jar jackson-annotations-2.9.2.jar jack
+ son-core-2.9.2.jar httpcore-4.4.8.jar commons-codec-1.9.jar httpclien
+ t-4.5.3.jar jackson-databind-2.9.2.jar
+
