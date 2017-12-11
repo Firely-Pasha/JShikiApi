@@ -1,8 +1,5 @@
 # JShikiApi
 
-### Документация
-Классы:
-* [`Shikimori`](docs/Shikimori.md)
 ### Краткое описание
 Реализация API сайта Shikimori.org на Java.
 
@@ -35,6 +32,11 @@ user.getFriends();
 
 User.getFriends(userId);
 ```
+
+### Документация
+Классы:
+* [`Shikimori`](docs/Core/Shikimori.md) - содержит основные методы.
+* [`Comments`](docs/Core/Comments.md) - содержит методы для работы с комментариями.
 
 ### Контакты
 Если есть какие-то вопросы или предложения:
