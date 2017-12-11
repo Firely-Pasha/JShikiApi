@@ -1,11 +1,10 @@
 # JShikiApi
-### Описание
-Реализация API сайта Shikimori.org на Java.
 
-Если есть какие-то вопросы или предложения:
-* [ВКонтакте](https://vk.com/firely_pasha)
-* [Shikimori](https://shikimori.org/Firely-Pasha)
-* Firely-Pasha@ya.ru
+### Документация
+Классы:
+* [`Shikimori`](docs/Shikimori.md)
+### Краткое описание
+Реализация API сайта Shikimori.org на Java.
 
 Авторизация:
 ```java
@@ -36,3 +35,9 @@ user.getFriends();
 
 User.getFriends(userId);
 ```
+
+### Контакты
+Если есть какие-то вопросы или предложения:
+* [ВКонтакте](https://vk.com/firely_pasha)
+* [Shikimori](https://shikimori.org/Firely-Pasha)
+* Firely-Pasha@ya.ru
