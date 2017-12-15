@@ -35,8 +35,13 @@ User.getFriends(userId);
 
 ### Документация
 Классы:
-* [`Shikimori`](docs/Core/Shikimori.md) - содержит основные методы.
-* [`Comments`](docs/Core/Comments.md) - содержит методы для работы с комментариями.
+* Core:
+    * [`Anime`](docs/Core/Anime.md) - основная информация об аниме;
+    * [`AnimeFull`](docs/Core/Anime.md) - полная информация об аниме;
+    * [`Comments`](docs/Core/Comments.md) - содержит методы для работы с комментариями;
+    * [`Manga`](docs/Core/Manga.md) - основная информация о манге;
+    * [`MangaFull`](docs/Core/MangaFull.md) - полная информация о манге;
+    * [`Shikimori`](docs/Core/Shikimori.md) - содержит основные методы.
 
 ### Контакты
 Если есть какие-то вопросы или предложения:
