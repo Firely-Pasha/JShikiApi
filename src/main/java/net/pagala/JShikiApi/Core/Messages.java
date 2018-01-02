@@ -3,12 +3,13 @@ package net.pagala.JShikiApi.Core;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.pagala.JShikiApi.RequestItems.MessageToSend;
-import net.pagala.JShikiApi.Usr.Message;
-import net.pagala.JShikiApi.Usr.MessageType;
+import net.pagala.JShikiApi.Items.Message;
+import net.pagala.JShikiApi.Items.MessageType;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
-public class Messages {
+public final class Messages {
+
     private Messages() {
 
     }

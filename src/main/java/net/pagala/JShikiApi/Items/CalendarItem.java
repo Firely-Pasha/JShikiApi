@@ -1,6 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Anime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;

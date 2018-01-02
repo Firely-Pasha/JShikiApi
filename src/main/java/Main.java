@@ -1,7 +1,7 @@
 import net.pagala.JShikiApi.Core.*;
 import net.pagala.JShikiApi.Items.*;
-import net.pagala.JShikiApi.Usr.AnimeRate;
-import net.pagala.JShikiApi.Usr.UserImage;
+import net.pagala.JShikiApi.Items.AnimeRate;
+import net.pagala.JShikiApi.Items.UserImage;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,12 +14,17 @@ public class Main {
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
 //        ApiCheck.userCheck();
+//
+////        int userId = Shikimori.getUserId();
+////        userId = Users.getFriends(userId).get(0).getId();
+////        System.out.println(Users.getFriends(userId).get(0).getNickname());
+
     }
 
     private static class ApiCheck {
 
         private static void getAnimeCheck() {
-            AnimeFull anime = Shikimori.getAnime(1);
+            AnimeFull anime = Animes.get(1);
             System.out.println("Anime check: ");
             System.out.println("\tID: " + anime.getId());
             System.out.println("\tName: " + anime.getName());
@@ -137,7 +142,7 @@ public class Main {
 
         private static void getAnimeRatesCheck() {
             System.out.println("Anime rates check: ");
-            List<AnimeRate> animeRates = Shikimori.whoAmI().getAnimeRates(TitleStatus.COMPLETED, 10, 1);
+            List<AnimeRate> animeRates = Users.getAnimeRates(Users.whoAmI().getId(), TitleStatus.COMPLETED, 10, 1);
             for (AnimeRate animeRate : animeRates) {
                 System.out.println("\tName: " + animeRate.getAnime().getName());
                 System.out.println("\t\tID: " + animeRate.getId());
@@ -153,7 +158,7 @@ public class Main {
         }
 
         private static void userCheck() {
-            UserFull user = Shikimori.getUser(Shikimori.getUserId());
+            UserFull user = Users.get(Shikimori.getUserId());
             System.out.println("User check:");
             System.out.println("\tID: " + user.getId());
             System.out.println("\tNickname: " + user.getNickname());
@@ -186,7 +191,7 @@ public class Main {
             System.out.println("\tShow comments: " + user.isShowComments());
             System.out.println("\tIn friends: " + user.getInFriends());
             System.out.println("\tIs ignored: " + user.isIgnored());
-            UserInfo userInfo = user.getUserInfo();
+            UserInfo userInfo = Users.getUserInfo(user.getId());
             System.out.println("\tUser info: ");
             System.out.println("\t\tID: " + userInfo.getId());
             System.out.println("\t\tNickname: " + userInfo.getNickname());
@@ -196,7 +201,7 @@ public class Main {
             System.out.println("\t\tSex: " + userInfo.getSex());
             System.out.println("\t\tWebsite: " + userInfo.getWebsite());
             System.out.println("\t\tBirth on: " + userInfo.getBirthOn());
-            List<User> friends = user.getFriends();
+            List<User> friends = Users.getFriends(user.getId());
             System.out.println("\tFriends: ");
             for (User friend : friends) {
                 System.out.println("\t\tNickname: " + friend.getNickname());
@@ -204,7 +209,7 @@ public class Main {
                 System.out.println("\t\t\tAvatar: " + friend.getAvatar());
                 System.out.println("\t\t\tLast online at: " + friend.getLastOnlineAt());
             }
-            List<Club> clubs = user.getClubs();
+            List<Club> clubs = Users.getClubs(user.getId());
             System.out.println("\tClubs: ");
             for (Club club : clubs) {
                 System.out.println("\t\tName: " + club.getName());

@@ -1,7 +1,6 @@
 package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import net.pagala.JShikiApi.Usr.UserImage;
 
 import java.util.Date;
 
@@ -26,6 +25,12 @@ public class UserInfo {
 
     @JsonProperty("birth_on")
     private Date birthOn;
+
+    public String getLocale() {
+        return locale;
+    }
+
+    private String locale;
 
     public int getId() {
         return id;

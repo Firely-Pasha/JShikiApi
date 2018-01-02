@@ -1,7 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Anime;
-import net.pagala.JShikiApi.Core.Manga;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

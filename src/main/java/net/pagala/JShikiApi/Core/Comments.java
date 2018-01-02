@@ -11,18 +11,19 @@ import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
-public class Comments {
+public final class Comments {
 
     private Comments() {
 
     }
 
-    public static List<Comment> getList(CommentFilter filter) {
-        return Shikimori.getItemList("/comments?" + filter.build(), Comment[].class);
-    }
-
     public static Comment get(int commentId) {
         return Shikimori.getItem("/comments/" + commentId, Comment.class);
+    }
+
+
+    public static List<Comment> getList(CommentFilter filter) {
+        return Shikimori.getItemList("/comments?" + filter.build(), Comment[].class);
     }
 
     //TODO: What's frontend?

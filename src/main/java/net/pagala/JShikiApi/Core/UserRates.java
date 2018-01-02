@@ -11,7 +11,7 @@ import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
-public class UserRates {
+public final class UserRates {
 
     private UserRates() {
 

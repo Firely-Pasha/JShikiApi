@@ -48,15 +48,15 @@ public class UserRate extends TitleUserRate {
         return updatedAt;
     }
 
-    @JsonIgnore
-    @Override
-    public String toString() {
-        try {
-            return Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
+//    @JsonIgnore
+//    @Override
+//    public String toString() {
+//        try {
+//            return Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
+//        } catch (JsonProcessingException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return null;
+//    }
 }

@@ -1,6 +1,8 @@
-# Shikimori
+# Comments
 
-***Все поля и методы в классе `Comments` - статические.***
+[`net.pagala.JShikiApi`](../../README.md)`.`[`Сore`](../Core.md)`.`[`Comments`](../../src/main/java/net/pagala/JShikiApi/Core/Comments.java)
+
+***Все методы в классе `Comments` - статические.***
 
 Методы:
 * `List<`[`Comment`](../Items/Comment.md)`> getList(`[`CommentFilter`](../Filters/CommentFilter/CommentFilter.md)` filter)`

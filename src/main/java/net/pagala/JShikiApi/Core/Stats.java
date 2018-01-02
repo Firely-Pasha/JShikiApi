@@ -4,7 +4,8 @@ import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
 
-public class Stats {
+public final class Stats {
+
     private Stats() {
 
     }

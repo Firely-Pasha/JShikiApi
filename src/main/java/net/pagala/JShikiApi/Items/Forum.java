@@ -8,7 +8,7 @@ public class Forum {
 
     private String name;
 
-    private Forums permalink;
+    private ForumTypes permalink;
 
     private String url;
 
@@ -28,7 +28,7 @@ public class Forum {
         return name;
     }
 
-    public Forums getPermalink() {
+    public ForumTypes getPermalink() {
         return permalink;
     }
 

@@ -5,7 +5,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import static net.pagala.JShikiApi.Core.Shikimori.deleteRequest;
 import static net.pagala.JShikiApi.Core.Shikimori.postRequest;
 
-public class Friends {
+public final class Friends {
+
     private Friends() {
 
     }

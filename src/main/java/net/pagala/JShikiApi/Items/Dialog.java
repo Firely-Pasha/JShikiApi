@@ -1,7 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.User;
-import net.pagala.JShikiApi.Usr.ShortMessage;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Dialog {
