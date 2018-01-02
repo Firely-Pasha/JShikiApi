@@ -10,14 +10,17 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-//        Shikimori.logIn("Firely-Pasha", "Goinass19981");
+        Shikimori.logIn("Firely-Pasha", "Goinass19981");
+        Achievement achievement = Achievements.getList(69263).get(0);
+        System.out.println(achievement.getNekoId());
+
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
 //        ApiCheck.userCheck();
 //
-////        int userId = Shikimori.getUserId();
-////        userId = Users.getFriends(userId).get(0).getId();
-////        System.out.println(Users.getFriends(userId).get(0).getNickname());
+//        int userId = Shikimori.getUserId();
+////        userId = Users.getFriends(userId).getList(0).getId();
+////        System.out.println(Users.getFriends(userId).getList(0).getNickname());
 
     }
 

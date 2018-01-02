@@ -2,7 +2,7 @@
 
 # NEWCLASSNAME
 
-[`net.pagala.JShikiApi`](../../README.md)`.`[`Сore`](../Core.md)`.`[`Calendar`](#)
+[`net.pagala.JShikiApi`](../../README.md)`.`[`Сore`](../Core.md)`.`[`NEWCLASSNAME`](#)
 
 ***Все методы в классе `NEWCLASSNAME` - статические.***
 
