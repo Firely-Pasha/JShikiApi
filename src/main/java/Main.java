@@ -2,6 +2,8 @@ import net.pagala.JShikiApi.Core.*;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
+import net.pagala.JShikiApi.RequestItems.DeviceToCreate;
+import net.pagala.JShikiApi.RequestItems.DeviceToUpdate;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,19 +13,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Shikimori.logIn("Firely-Pasha", "Goinass19981");
-        Achievement achievement = Achievements.getList(69263).get(0);
-        System.out.println(achievement.getNekoId());
-
-//        ApiCheck.getAnimeCheck();
-//        ApiCheck.getAnimeRatesCheck();
-//        ApiCheck.userCheck();
-//
-//        int userId = Shikimori.getUserId();
-////        userId = Users.getFriends(userId).getList(0).getId();
-////        System.out.println(Users.getFriends(userId).getList(0).getNickname());
-
+        Devices.delete(3626);
     }
-
+//69263
     private static class ApiCheck {
 
         private static void getAnimeCheck() {
