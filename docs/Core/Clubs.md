@@ -4,7 +4,7 @@
 
 [`net.pagala.JShikiApi`](../../README.md)`.`[`Сore`](../Core.md)`.`[`Clubs`](../../src/main/java/net/pagala/JShikiApi/Core/Clubs.java)
 
-### Документация не полная!
+### Документация неполная!
 
 ***Все методы в классе `Clubs` - статические.***
 

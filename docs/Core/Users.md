@@ -4,7 +4,7 @@
 
 [`net.pagala.JShikiApi`](../../README.md)`.`[`Сore`](../Core.md)`.`[`Users`](../../src/main/java/net/pagala/JShikiApi/Core/Users.java)
 
-### Документация не полная!
+### Документация неполная!
 
 ***Все методы в классе `Users` - статические.***
 

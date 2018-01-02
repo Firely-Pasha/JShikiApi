@@ -8,108 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d4ecde5-a782-483e-93af-dfd8e8e28a1e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_android_4_3_5_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Animes.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Bans.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Calendar.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Characters.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Clubs.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Forums.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Genres.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Mangas.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/NEWCLASSTEMPLATE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/People.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Publishers.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Studios.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Topics.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Core/Users.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/docs/Items.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Animes.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Bans.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Calendar.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Characters.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Clubs.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Forums.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Genres.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Mangas.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/People.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Publishers.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Ranobes.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Studios.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Topics.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Users.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Club.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/ClubConstants.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Smile.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/TitleConstants.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/User.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserRateConstants.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/JShikiAPI.iml" afterPath="$PROJECT_DIR$/JShikiAPI.iml" />
       <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/Anime.md" afterPath="$PROJECT_DIR$/docs/Items/Anime.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/AnimeFull.md" afterPath="$PROJECT_DIR$/docs/Items/AnimeFull.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/Comments.md" afterPath="$PROJECT_DIR$/docs/Core/Comments.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/Manga.md" afterPath="$PROJECT_DIR$/docs/Items/Manga.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/MangaFull.md" afterPath="$PROJECT_DIR$/docs/Items/MangaFull.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/Shikimori.md" afterPath="$PROJECT_DIR$/docs/Core/Shikimori.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/Title.md" afterPath="$PROJECT_DIR$/docs/Items/Title.md" />
-      <change beforePath="$PROJECT_DIR$/docs/Core/TitleFull.md" afterPath="$PROJECT_DIR$/docs/Items/TitleFull.md" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Anime.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Anime.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/AnimeFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/AnimeFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Club.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/ClubFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/ClubFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Comments.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Comments.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Constants.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Dialogs.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Dialogs.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Friends.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Friends.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Ignore.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Ignores.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Manga.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Manga.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/MangaFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/MangaFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Messages.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Messages.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Shikimori.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Shikimori.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Stats.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Stats.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Timer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Title.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Title.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/TitleFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/TitleFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/UserFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/UserRates.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/UserRates.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Filters/SearchFilter/MangaSearchFilter.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Filters/SearchFilter/MangaSearchFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/AnimeVideoReport.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/AnimeVideoReport.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/CalendarItem.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/CalendarItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/CharacterFull.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/CharacterFull.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Comment.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Dialog.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Dialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Forum.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Forum.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Forums.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/ForumTypes.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Relation.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Relation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Topic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserInfo.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserInfo.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserRate.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserRate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/AnimeRate.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/AnimeRate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/Ban.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Ban.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/CommentShort.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/CommentShort.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/FavouriteItem.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/FavouriteItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/Favourites.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Favourites.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/HistoryItem.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/HistoryItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/HistoryItemType.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/HistoryItemType.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/LinkedTitle.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/LinkedTitle.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/MangaRate.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/MangaRate.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/Message.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Message.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/MessageType.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/MessageType.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/ShortMessage.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/ShortMessage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UnreadMessages.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UnreadMessages.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserActivity.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserActivity.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserImage.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserImage.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserRatings.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserRatings.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserScores.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserScores.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserStats.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserStats.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserTitleStatus.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserTitleStatus.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Usr/UserTypes.java" afterPath="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/UserTypes.java" />
+      <change beforePath="$PROJECT_DIR$/docs/Core/Clubs.md" afterPath="$PROJECT_DIR$/docs/Core/Clubs.md" />
+      <change beforePath="$PROJECT_DIR$/docs/Core/Users.md" afterPath="$PROJECT_DIR$/docs/Core/Users.md" />
+      <change beforePath="$PROJECT_DIR$/docs/Items.md" afterPath="$PROJECT_DIR$/docs/Items.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -137,12 +40,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Shikimori.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Core/Shikimori.md">
+      <file leaf-file-name="Animes.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Core/Animes.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="306">
-                <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <first_editor relative-caret-position="34">
+                <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -150,24 +53,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="19" selection-end-column="78" />
-              <folding>
-                <marker date="1514896591329" expanded="true" signature="508:694" ph="//..." />
-              </folding>
+            <state relative-caret-position="238">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Genres.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Core/Genres.md">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="187">
-                <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+              <first_editor relative-caret-position="340">
+                <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -175,28 +76,93 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="People.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Core/People.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="68">
-                <caret line="4" column="130" lean-forward="false" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Publishers.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/Core/Publishers.md">
+      <file leaf-file-name="Items.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/Items.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="204">
-                <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Anime.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Items/Anime.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="68">
+                <caret line="4" column="79" lean-forward="false" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="136" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AnimeFull.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Items/AnimeFull.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="68">
+                <caret line="4" column="145" lean-forward="true" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="145" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Core.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Core.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="289">
+                <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bans.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Core/Bans.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="136">
+                <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comments.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/Core/Comments.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="289">
+                <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comments.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Comments.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding>
+                <element signature="method#create#0;class#Comments#0" expanded="false" />
+                <element signature="method#update#0;class#Comments#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,7 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>objectmapp</find>
       <find>getIte</find>
       <find>get</find>
       <find>getitem</find>
@@ -244,6 +209,7 @@
       <find>Core</find>
       <find>`](</find>
       <find>docs/</find>
+      <find>не полная</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -261,6 +227,7 @@
       <replace>./Core</replace>
       <replace>`](./</replace>
       <replace>./</replace>
+      <replace>неполная</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -294,7 +261,6 @@
         <option value="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Genres.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Publishers.java" />
         <option value="$PROJECT_DIR$/docs/Core/Calendar" />
-        <option value="$PROJECT_DIR$/docs/Core/NEWCLASSTEMPLATE.md" />
         <option value="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Shikimori.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Forums.java" />
@@ -302,29 +268,30 @@
         <option value="$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Topics.java" />
         <option value="$PROJECT_DIR$/docs/Core/Bans.md" />
         <option value="$PROJECT_DIR$/docs/Core/Calendar.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Characters.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Clubs.md" />
         <option value="$PROJECT_DIR$/docs/Core/Comments.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Forums.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Genres.md" />
-        <option value="$PROJECT_DIR$/docs/Core/People.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Publishers.md" />
         <option value="$PROJECT_DIR$/docs/Core/Shikimori.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Studios.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Topics.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Users.md" />
         <option value="$PROJECT_DIR$/docs/Items/Anime.md" />
         <option value="$PROJECT_DIR$/docs/Items/AnimeFull.md" />
         <option value="$PROJECT_DIR$/docs/Items/Manga.md" />
         <option value="$PROJECT_DIR$/docs/Items/MangaFull.md" />
         <option value="$PROJECT_DIR$/docs/Items/Title.md" />
         <option value="$PROJECT_DIR$/docs/Items/TitleFull.md" />
-        <option value="$PROJECT_DIR$/docs/Core.md" />
-        <option value="$PROJECT_DIR$/docs/Items.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/docs/Core/Animes.md" />
         <option value="$PROJECT_DIR$/docs/Core/Mangas.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Characters.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Genres.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Forums.md" />
+        <option value="$PROJECT_DIR$/docs/Core/NEWCLASSTEMPLATE.md" />
+        <option value="$PROJECT_DIR$/docs/Core/People.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Publishers.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Studios.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Topics.md" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/docs/Core/Clubs.md" />
+        <option value="$PROJECT_DIR$/docs/Core.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Users.md" />
+        <option value="$PROJECT_DIR$/docs/Core/Animes.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/docs/Items.md" />
       </list>
     </option>
   </component>
@@ -688,7 +655,7 @@
       <workItem from="1514125371219" duration="485000" />
       <workItem from="1514207223256" duration="61000" />
       <workItem from="1514832841282" duration="18400000" />
-      <workItem from="1514895766999" duration="825000" />
+      <workItem from="1514895766999" duration="3407000" />
     </task>
     <servers />
   </component>
@@ -701,7 +668,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101117000" />
+    <option name="totallyTimeSpent" value="103699000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,7 +693,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28291622" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2437432" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25244832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18943436" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -793,38 +760,11 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Dialogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="21" column="57" lean-forward="false" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding>
-            <element signature="method#create#0;class#Comments#0" expanded="false" />
-            <element signature="method#update#0;class#Comments#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -946,14 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JShikiAPI.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -981,99 +913,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Characters.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="138" lean-forward="false" selection-start-line="4" selection-start-column="138" selection-end-line="4" selection-end-column="138" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Comments.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="34">
-            <caret line="2" column="134" lean-forward="false" selection-start-line="2" selection-start-column="134" selection-end-line="2" selection-end-column="134" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/NEWCLASSTEMPLATE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="50" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Studios.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="132" lean-forward="false" selection-start-line="4" selection-start-column="132" selection-end-line="4" selection-end-column="132" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Topics.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="130" lean-forward="false" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Users.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="77" lean-forward="false" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="133" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Items/Anime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Items/Anime.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="79" lean-forward="false" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="136" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Items/AnimeFull.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="17">
-            <caret line="4" column="139" lean-forward="false" selection-start-line="4" selection-start-column="139" selection-end-line="4" selection-end-column="139" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1093,6 +937,25 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Genres.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#266#267#0" expanded="false" />
+            <element signature="e#326#327#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Filters/SearchFilter/MangaSearchFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,118 +992,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Items.md">
+    <entry file="file://$PROJECT_DIR$/docs/Core/Calendar.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <first_editor relative-caret-position="119">
+            <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="60" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/docs/Core/Characters.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             <folding />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="90" lean-forward="false" selection-start-line="4" selection-start-column="90" selection-end-line="4" selection-end-column="90" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Genres.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Filters/SearchFilter/MangaSearchFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/Core/Forums.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="130" lean-forward="false" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Animes.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="493">
-            <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Bans.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="126" lean-forward="false" selection-start-line="4" selection-start-column="122" selection-end-line="4" selection-end-column="126" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Calendar.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="139" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="139" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Clubs.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="128" lean-forward="false" selection-start-line="4" selection-start-column="128" selection-end-line="4" selection-end-column="128" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Core/Mangas.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="407">
-            <caret line="29" column="22" lean-forward="false" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1250,8 +1028,19 @@
     <entry file="file://$PROJECT_DIR$/docs/Core/Genres.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="187">
-            <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Mangas.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="119">
+            <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1261,8 +1050,8 @@
     <entry file="file://$PROJECT_DIR$/docs/Core/People.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="68">
-            <caret line="4" column="130" lean-forward="false" selection-start-line="4" selection-start-column="130" selection-end-line="4" selection-end-column="130" />
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             <folding />
           </first_editor>
           <second_editor />
@@ -1272,11 +1061,57 @@
     <entry file="file://$PROJECT_DIR$/docs/Core/Publishers.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="204">
-            <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Topics.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Studios.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/RequestItems/MessageToSend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/RequestItems/UserRateToCreate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1291,13 +1126,143 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/NEWCLASSTEMPLATE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Clubs.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Users.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="102">
+            <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Animes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="34">
+            <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="19" selection-end-column="78" />
+        <state relative-caret-position="238">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Comments.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="289">
+            <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/pagala/JShikiApi/Core/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="12" lean-forward="false" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
           <folding>
-            <marker date="1514896591329" expanded="true" signature="508:694" ph="//..." />
+            <element signature="method#create#0;class#Comments#0" expanded="false" />
+            <element signature="method#update#0;class#Comments#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="289">
+            <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Core/Bans.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="340">
+            <caret line="32" column="21" lean-forward="false" selection-start-line="32" selection-start-column="21" selection-end-line="32" selection-end-column="21" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Items/Anime.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="79" lean-forward="false" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="136" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Items/AnimeFull.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="68">
+            <caret line="4" column="145" lean-forward="true" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="145" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/Items.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="204">
+            <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

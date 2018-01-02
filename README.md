@@ -1,39 +1,39 @@
 # JShikiApi
 
 ### Краткое описание
-Реализация API сайта Shikimori.org на Java.
+Реализация API сайта [Shikimori.org](https://shikimori.org/) на Java.
+
+#### Ипользование API:
 
 Авторизация:
 ```java
 Shikimori.logIn("UserName", "Password");
 ```
 
-Ипользование API:
+Для получения и отправки данных используются классы в пакете [`net.pagala.JShikiApi.Core`](./docs/Core.md).
+
+Пример:
+
 ```java
-Shikimori.getAnime(animeId);
+AnimeFull anime = Animes.get(animeId);
+
+List<Manga> mangaList = Mangas.getList(mangaSearchFilter);
+
+CommentToCreate commentToCreate = new CommentToCreate("Some comment", 1, CommentableType.ANIME);
+int newCommentId = Comments.create(commentToCreate);
 ```
 
-За поиск аниме по критериям отвечает ``AnimeSearchFilter``, за поиск по манге - ``MangaSearchFilter``.
+За поиск аниме по критериям отвечает `AnimeSearchFilter`, за поиск манги по критериям - `MangaSearchFilter`.
 
 Пример:
 ```java
 AnimeSearchFilter animeSearchFilter = new AnimeSearchFilter();
 animeSearchFilter.setLimit(20);
 animeSearchFilter.getSeasons().getYes().add(new SeasonYear(Season.SUMMER, 2007));
-List<Anime> animes = Shikimori.getAnimes(animeSearchFilter);
+List<Anime> animeList = Animes.getList(animeSearchFilter);
 ```
 
-Класс User предоставляет как статические, так и не сатические методы.
-В первом случае нужно передать дополнительный параметр ``id``, во втором же будет использоваться id экземпляра класса.
-
-```java
-User user = Shikimori.getUser(userId);
-user.getFriends();
-
-User.getFriends(userId);
-```
-
-### Документация (Не полная)
+### Документация (Неполная)
 * [`Core`](./docs/Core.md) - содержит все методы взаимодействия с сайтом [Shikimori.org](https://shikimori.org/). 
 * [`Items`](./docs/Items.md) - содержит все возвращаемые объекты.
 
