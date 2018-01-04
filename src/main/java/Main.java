@@ -18,11 +18,12 @@ public class Main {
 //        Devices.delete(3626);
 
         List<Role> roleList = Animes.getRoles(1);
-        List<net.pagala.JShikiApi.Items.Character> mainCharacters = People.getPersons(roleList, "Director");
-
-        for (net.pagala.JShikiApi.Items.Character mainCharacter : mainCharacters) {
-            System.out.println(mainCharacter.getName());
-        }
+        System.out.println(People.getPersons(roleList, "Director").get(0).getPerson().getName());
+//        List<net.pagala.JShikiApi.Items.Character> mainCharacters = People.getPersons(roleList, "Director");
+//
+//        for (net.pagala.JShikiApi.Items.Character mainCharacter : mainCharacters) {
+//            System.out.println(mainCharacter.getName());
+//        }
     }
 //69263
     private static class ApiCheck {

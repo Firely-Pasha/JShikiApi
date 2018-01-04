@@ -23,7 +23,7 @@
         * `List<`[`Role`](../Items/Role.md)`> roleList` - список ролей.
     * **Возвращает:** список персон c ролями.
 
-* ` List<`[`Character`](../Items/Character.md)`> getPersons(List<`[`Role`](../Items/Role.md)`> roleList, String... roleTypes)`
+* ` List<`[`Role`](../Items/Character.md)`> getPersons(List<`[`Role`](../Items/Role.md)`> roleList, String... roleTypes)`
     * **Параметры**:
         * `List<`[`Role`](../Items/Role.md)`> roleList` - список ролей.
         * `String... roleTypes` - список нужных ролей.

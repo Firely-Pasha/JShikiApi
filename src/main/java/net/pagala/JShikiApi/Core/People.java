@@ -25,10 +25,6 @@ public final class People {
 
         roleList.forEach((role -> {
             if (role.getPerson() != null) {
-                System.out.println(role.getPerson().getName());
-                for (String roless : role.getRoles()) {
-                    System.out.println("\t" + roless);
-                }
                 characterList.add(role);
             }
         }));
@@ -36,15 +32,15 @@ public final class People {
         return characterList;
     }
 
-    public static List<net.pagala.JShikiApi.Items.Character> getPersons(List<Role> roleList, String... roleTypes) {
-        List<net.pagala.JShikiApi.Items.Character> personList = new ArrayList<>();
-
+    public static List<Role> getPersons(List<Role> roleList, String... roleTypes) {
+        List<Role> personList = new ArrayList<>();
         roleList.forEach((role -> {
             if (role.getPerson() != null) {
-                for (String neededRoleType : roleTypes) {
+                exit: for (String neededRoleType : roleTypes) {
                     for (String currentRoleType : role.getRoles()) {
                         if (neededRoleType.equals(currentRoleType)) {
-                            personList.add(role.getPerson());
+                            personList.add(role);
+                            break exit;
                         }
                     }
                 }
