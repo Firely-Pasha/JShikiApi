@@ -5,15 +5,24 @@ import net.pagala.JShikiApi.Items.UserImage;
 import net.pagala.JShikiApi.RequestItems.DeviceToCreate;
 import net.pagala.JShikiApi.RequestItems.DeviceToUpdate;
 
+import javax.management.relation.RoleStatus;
 import java.io.IOException;
+import java.lang.Character;
 import java.util.List;
 
 //TODO: Catch URL-Level errors!!!
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Shikimori.logIn("Firely-Pasha", "Goinass19981");
-        Devices.delete(3626);
+//        Devices.delete(3626);
+
+        List<Role> roleList = Animes.getRoles(1);
+        List<net.pagala.JShikiApi.Items.Character> mainCharacters = People.getPersons(roleList, "Director");
+
+        for (net.pagala.JShikiApi.Items.Character mainCharacter : mainCharacters) {
+            System.out.println(mainCharacter.getName());
+        }
     }
 //69263
     private static class ApiCheck {

@@ -17,3 +17,18 @@
     * **Параметры**:
         * [`Character`](../Items/Character.md)` searchString` - строка поиска.
     * **Возвращает:** список персонажей, имя которых содержит фрагмент из строки поиска.
+
+* ` List<`[`Character`](../Items/Character.md)`> getCharacters(List<`[`Role`](../Items/Role.md)`> roleList)`
+    * **Параметры**:
+        * `List<`[`Role`](../Items/Role.md)`> roleList` - список ролей аниме.
+    * **Возвращает:** список персонажей.
+
+* ` List<`[`Character`](../Items/Character.md)`> getMainCharacters(List<`[`Role`](../Items/Role.md)`> roleList)`
+    * **Параметры**:
+        * `List<`[`Role`](../Items/Role.md)`> roleList` - список ролей.
+    * **Возвращает:** список главных персонажей.
+
+* ` List<`[`Character`](../Items/Character.md)`> getSupportingCharacters(List<`[`Role`](../Items/Role.md)`> roleList)`
+    * **Параметры**:
+        * `List<`[`Role`](../Items/Role.md)`> roleList` - список ролей.
+    * **Возвращает:** список второстепенных персонажей.
