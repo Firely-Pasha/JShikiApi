@@ -16,14 +16,7 @@ public class Main {
     public static void main(String[] args) {
         Shikimori.logIn("Firely-Pasha", "Goinass19981");
 //        Devices.delete(3626);
-
-        List<Role> roleList = Animes.getRoles(1);
-        System.out.println(People.getPersons(roleList, "Director").get(0).getPerson().getName());
-//        List<net.pagala.JShikiApi.Items.Character> mainCharacters = People.getPersons(roleList, "Director");
-//
-//        for (net.pagala.JShikiApi.Items.Character mainCharacter : mainCharacters) {
-//            System.out.println(mainCharacter.getName());
-//        }
+        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
     }
 //69263
     private static class ApiCheck {

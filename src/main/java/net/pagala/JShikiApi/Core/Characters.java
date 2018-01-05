@@ -39,13 +39,13 @@ public final class Characters {
     public static List<net.pagala.JShikiApi.Items.Character> getMainCharacters(List<Role> roleList) {
         List<net.pagala.JShikiApi.Items.Character> mainCharacters = new ArrayList<>();
 
-        roleList.forEach((role -> {
+        for (Role role : roleList) {
             if (role.getCharacter() != null) {
                 if (role.getRoles()[0].equals("Main")) {
                     mainCharacters.add(role.getCharacter());
                 }
             }
-        }));
+        }
 
         return mainCharacters;
     }
@@ -53,13 +53,13 @@ public final class Characters {
     public static List<net.pagala.JShikiApi.Items.Character> getSupportingCharacters(List<Role> roleList) {
         List<net.pagala.JShikiApi.Items.Character> mainCharacters = new ArrayList<>();
 
-        roleList.forEach((role -> {
+        for (Role role : roleList) {
             if (role.getCharacter() != null) {
                 if (role.getRoles()[0].equals("Supporting")) {
                     mainCharacters.add(role.getCharacter());
                 }
             }
-        }));
+        }
 
         return mainCharacters;
     }

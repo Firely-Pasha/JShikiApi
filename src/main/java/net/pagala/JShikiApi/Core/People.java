@@ -23,18 +23,18 @@ public final class People {
     public static List<Role> getPersons(List<Role> roleList) {
         List<Role> characterList = new ArrayList<>();
 
-        roleList.forEach((role -> {
+        for (Role role : roleList) {
             if (role.getPerson() != null) {
                 characterList.add(role);
             }
-        }));
+        }
 
         return characterList;
     }
 
     public static List<Role> getPersons(List<Role> roleList, String... roleTypes) {
         List<Role> personList = new ArrayList<>();
-        roleList.forEach((role -> {
+        for (Role role : roleList) {
             if (role.getPerson() != null) {
                 exit: for (String neededRoleType : roleTypes) {
                     for (String currentRoleType : role.getRoles()) {
@@ -45,8 +45,7 @@ public final class People {
                     }
                 }
             }
-        }));
-
+        }
         return personList;
     }
     /*
