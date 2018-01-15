@@ -1,5 +1,7 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
+import net.pagala.JShikiApi.Items.TitleStatus;
+
 public abstract class TitleSearchFilter {
     protected Integer page;
     protected Integer limit;

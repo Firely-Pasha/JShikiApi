@@ -1,6 +1,6 @@
 package net.pagala.JShikiApi.Filters.UserRateFilter;
 
-import net.pagala.JShikiApi.Items.TitleStatus;
+import net.pagala.JShikiApi.Items.TitleListStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserRateFilter {
@@ -13,7 +13,7 @@ public class UserRateFilter {
     @JsonProperty("target_type")
     private TargetType targetType;
 
-    private TitleStatus status;
+    private TitleListStatus status;
 
     private Integer page;
 
@@ -65,11 +65,11 @@ public class UserRateFilter {
         this.targetType = targetType;
     }
 
-    public TitleStatus getStatus() {
+    public TitleListStatus getStatus() {
         return status;
     }
 
-    public void setStatus(TitleStatus status) {
+    public void setStatus(TitleListStatus status) {
         this.status = status;
     }
 

@@ -2,7 +2,7 @@ package net.pagala.JShikiApi.RequestItems;
 
 import net.pagala.JShikiApi.Core.Shikimori;
 import net.pagala.JShikiApi.Filters.UserRateFilter.TargetType;
-import net.pagala.JShikiApi.Items.TitleStatus;
+import net.pagala.JShikiApi.Items.TitleListStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 public class UserRateToCreate {
     protected Integer score;
 
-    protected TitleStatus status;
+    protected TitleListStatus status;
 
     protected String text;
 
@@ -48,11 +48,11 @@ public class UserRateToCreate {
         this.score = score;
     }
 
-    public TitleStatus getStatus() {
+    public TitleListStatus getStatus() {
         return status;
     }
 
-    public void setStatus(TitleStatus status) {
+    public void setStatus(TitleListStatus status) {
         this.status = status;
     }
 

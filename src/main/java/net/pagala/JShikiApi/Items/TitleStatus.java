@@ -2,19 +2,19 @@ package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public enum TitleStatus {
-    @JsonProperty("planned")
-    PLANNED,
-    @JsonProperty("watching")
-    WATCHING,
-    @JsonProperty("rewatching")
-    REWATCHING,
-    @JsonProperty("completed")
-    COMPLETED,
-    @JsonProperty("on_hold")
-    ON_HOLD,
-    @JsonProperty("dropped")
-    DROPPED,
+/**
+ *
+ * Created by firely-pasha on 7/12/17.
+ */
+public enum  TitleStatus {
+    @JsonProperty("anons")
+    ANONS,
+
+    @JsonProperty("ongoing")
+    ONGOING,
+
+    @JsonProperty("released")
+    RELEASED,
     ;
 
     @Override

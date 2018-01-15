@@ -1,7 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Items.*;
-
 import java.util.*;
 
 /**
@@ -20,9 +18,7 @@ public interface Title {
 
      String getUrl();
 
-     String getKind();
-
-     String getStatus();
+     TitleStatus getStatus();
 
      Date getAiredOn();
 

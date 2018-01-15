@@ -1,11 +1,9 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Shikimori;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -26,9 +24,9 @@ public class Manga implements Title {
 
     private String url;
 
-    private String kind;
+    private MangaKind kind;
 
-    private String status;
+    private TitleStatus status;
 
     @JsonProperty("aired_on")
     private Date airedOn;
@@ -71,12 +69,7 @@ public class Manga implements Title {
     }
 
     @Override
-    public String getKind() {
-        return kind;
-    }
-
-    @Override
-    public String getStatus() {
+    public TitleStatus getStatus() {
         return status;
     }
 
@@ -88,6 +81,10 @@ public class Manga implements Title {
     @Override
     public Date getReleasedOn() {
         return releasedOn;
+    }
+
+    public MangaKind getKind() {
+        return kind;
     }
 
     public int getVolumes() {

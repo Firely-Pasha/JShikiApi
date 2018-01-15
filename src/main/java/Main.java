@@ -2,11 +2,7 @@ import net.pagala.JShikiApi.Core.*;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
-import net.pagala.JShikiApi.RequestItems.DeviceToCreate;
-import net.pagala.JShikiApi.RequestItems.DeviceToUpdate;
 
-import javax.management.relation.RoleStatus;
-import java.io.IOException;
 import java.lang.Character;
 import java.util.List;
 
@@ -16,7 +12,9 @@ public class Main {
     public static void main(String[] args) {
         Shikimori.logIn("Firely-Pasha", "Goinass19981");
 //        Devices.delete(3626);
-        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
+//        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
+
+        System.out.println(Characters.get(136805));
     }
 //69263
     private static class ApiCheck {
@@ -140,7 +138,7 @@ public class Main {
 
         private static void getAnimeRatesCheck() {
             System.out.println("Anime rates check: ");
-            List<AnimeRate> animeRates = Users.getAnimeRates(Users.whoAmI().getId(), TitleStatus.COMPLETED, 10, 1);
+            List<AnimeRate> animeRates = Users.getAnimeRates(Users.whoAmI().getId(), TitleListStatus.COMPLETED, 10, 1);
             for (AnimeRate animeRate : animeRates) {
                 System.out.println("\tName: " + animeRate.getAnime().getName());
                 System.out.println("\t\tID: " + animeRate.getId());

@@ -35,7 +35,7 @@ public final class Users {
     }
 
     //TODO: Implement some hidden parameters!
-    public static List<AnimeRate> getAnimeRates(int userId, TitleStatus status, int limit, int page) {
+    public static List<AnimeRate> getAnimeRates(int userId, TitleListStatus status, int limit, int page) {
         String url;
         if (status == null) {
             url = "/users/" + userId + "/anime_rates?limit=" + limit + "&page=" + page;
@@ -46,7 +46,7 @@ public final class Users {
     }
 
     //TODO: Implement some hidden parameters!
-    public static List<MangaRate> getMangaRates(int userId, TitleStatus status, int limit, int page) {
+    public static List<MangaRate> getMangaRates(int userId, TitleListStatus status, int limit, int page) {
         StringBuilder url = new StringBuilder();
         url.append("users/").append(userId);
         url.append("/manga_rates?");

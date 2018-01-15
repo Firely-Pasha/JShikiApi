@@ -22,9 +22,9 @@ public class Anime implements Title {
 
     private String url;
 
-    private String kind;
+    private AnimeKind kind;
 
-    private String status;
+    private TitleStatus status;
 
     @JsonProperty("aired_on")
     private Date airedOn;
@@ -67,12 +67,7 @@ public class Anime implements Title {
     }
 
     @Override
-    public String getKind() {
-        return kind;
-    }
-
-    @Override
-    public String getStatus() {
+    public TitleStatus getStatus() {
         return status;
     }
 
@@ -85,6 +80,11 @@ public class Anime implements Title {
     public Date getReleasedOn() {
         return releasedOn;
     }
+
+    public AnimeKind getKind() {
+        return kind;
+    }
+
 
     public int getEpisodes() {
         return episodes;

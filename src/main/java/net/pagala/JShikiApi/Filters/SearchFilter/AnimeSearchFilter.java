@@ -1,5 +1,7 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
+import net.pagala.JShikiApi.Items.TitleRating;
+
 /**
  *
  * Created by firely-pasha on 7/12/17.

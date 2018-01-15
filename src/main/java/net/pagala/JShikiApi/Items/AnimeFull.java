@@ -56,7 +56,7 @@ public class AnimeFull extends Anime implements TitleFull {
     @JsonProperty("user_rate")
     private TitleUserRate titleUserRate;
 
-    private String rating;
+    private TitleRating rating;
 
     private int duration;
 
@@ -76,7 +76,7 @@ public class AnimeFull extends Anime implements TitleFull {
     private AnimeFull() {
     }
 
-    public String getRating() {
+    public TitleRating getRating() {
         return rating;
     }
 
