@@ -1,8 +1,10 @@
 package net.pagala.JShikiApi.Items;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -11,7 +13,6 @@ import java.util.List;
  * Created by firely-pasha on 7/19/17.
  */
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class CharacterFull extends Character{
     private String altname;
 
@@ -38,12 +39,20 @@ public class CharacterFull extends Character{
 
     private List<Character> seyu;
 
-    private List<Anime> animes;
+    private List<AnimeWithRole> animes;
 
-    private List<Manga> mangas;
+    @JsonProperty("mangas")
+    private List<MangaWithRole> mangasAndRanobes;
+
+    @JsonIgnore
+    private List<MangaWithRole> mangas;
+
+    @JsonIgnore
+    private List<MangaWithRole> ranobes;
 
     private CharacterFull() {
-
+        this.mangas = null;
+        this.ranobes = null;
     }
 
     public String getAltname() {
@@ -86,11 +95,31 @@ public class CharacterFull extends Character{
         return seyu;
     }
 
-    public List<Anime> getAnimes() {
+    public List<AnimeWithRole> getAnimes() {
         return animes;
     }
 
-    public List<Manga> getMangas() {
+    public List<MangaWithRole> getMangas() {
+        if (mangas == null) {
+            mangas = new ArrayList<>();
+            for (MangaWithRole manga : mangasAndRanobes) {
+                if (!manga.getKind().equals(MangaKind.NOVEL)) {
+                    mangas.add(manga);
+                }
+            }
+        }
         return mangas;
+    }
+
+    public List<MangaWithRole> getRanobes() {
+        if (ranobes == null) {
+            ranobes = new ArrayList<>();
+            for (MangaWithRole ranobe : mangasAndRanobes) {
+                if (ranobe.getKind().equals(MangaKind.NOVEL)) {
+                    ranobes.add(ranobe);
+                }
+            }
+        }
+        return ranobes;
     }
 }

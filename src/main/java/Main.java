@@ -14,7 +14,7 @@ public class Main {
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 
-        System.out.println(Characters.get(136805));
+        System.out.println(Characters.get(2780).getRanobes().size());
     }
 //69263
     private static class ApiCheck {

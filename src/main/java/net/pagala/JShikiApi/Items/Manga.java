@@ -12,17 +12,7 @@ import java.util.Date;
 
 //TODO: Implement for character finding with role field.
 @SuppressWarnings({"unused", "Duplicates"})
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Manga implements Title {
-    private int id;
-
-    private String name;
-
-    private String russian;
-
-    private Image image;
-
-    private String url;
+public class Manga extends Unit implements Title {
 
     private MangaKind kind;
 
@@ -41,31 +31,6 @@ public class Manga implements Title {
 
     protected Manga() {
 
-    }
-
-    @Override
-    public int getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getRussian() {
-        return russian;
-    }
-
-    @Override
-    public Image getImage() {
-        return image;
-    }
-
-    @Override
-    public String getUrl() {
-        return url;
     }
 
     @Override
