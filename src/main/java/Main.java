@@ -1,4 +1,5 @@
 import net.pagala.JShikiApi.Core.*;
+import net.pagala.JShikiApi.Filters.SearchFilter.MangaSearchFilter;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
@@ -13,8 +14,14 @@ public class Main {
         Shikimori.logIn("Firely-Pasha", "Goinass19981");
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
+//        System.out.println(Characters.get(2780).getRanobes().size());
 
-        System.out.println(Characters.get(2780).getRanobes().size());
+        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
+        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
+        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
+
+//        ApiCheck.getAnimeCheck();
+//        ApiCheck.getAnimeRatesCheck();
     }
 //69263
     private static class ApiCheck {

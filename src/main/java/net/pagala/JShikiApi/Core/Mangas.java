@@ -22,23 +22,23 @@ public final class Mangas {
         return getItemList("/mangas" + mangaSearchFilter.buildQuery(), Manga[].class);
     }
 
-    public List<Role> getRoles(int id) {
+    public static List<Role> getRoles(int id) {
         return Shikimori.getItemList("/mangas/" + id + "/roles", Role[].class);
     }
 
-    public List<Relation> getRelations(int id) {
+    public static List<Relation> getRelations(int id) {
         return Shikimori.getItemList("/mangas/" + id + "/related", Relation[].class);
     }
 
-    public List<Manga> getSimilar(int id) {
+    public static List<Manga> getSimilar(int id) {
         return Shikimori.getItemList("/mangas/" + id + "/similar", Manga[].class);
     }
 
-    public Franchise getFranchise(int id) {
+    public static Franchise getFranchise(int id) {
         return Shikimori.getItem("/mangas/" + id + "/franchise", Franchise.class);
     }
 
-    public List<ExternalLink> getExternalLinks(int id) {
+    public static List<ExternalLink> getExternalLinks(int id) {
         return Shikimori.getItemList("/mangas/" + id + "/external_links", ExternalLink[].class);
     }
 }

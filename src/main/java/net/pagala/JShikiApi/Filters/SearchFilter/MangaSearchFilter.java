@@ -1,5 +1,7 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
+import net.pagala.JShikiApi.Items.MangaKind;
+
 public class MangaSearchFilter extends TitleSearchFilter {
     private MangaOrder order;
     private SearchParameterList<MangaKind> kind;
@@ -63,6 +65,10 @@ public class MangaSearchFilter extends TitleSearchFilter {
 
     public void setOrder(MangaOrder order) {
         this.order = order;
+    }
+
+    public SearchParameterList<MangaKind> getKind() {
+        return kind;
     }
 
     public SearchParameterList<Integer> getPublishers() {
