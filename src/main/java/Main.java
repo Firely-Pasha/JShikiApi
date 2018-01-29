@@ -16,9 +16,11 @@ public class Main {
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 //        System.out.println(Characters.get(2780).getRanobes().size());
 
-        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
-        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
-        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
+        System.out.println(People.get(1117).getGrouppedRoles()[1][0]);
+//
+//        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
+//        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
+//        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
 
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
