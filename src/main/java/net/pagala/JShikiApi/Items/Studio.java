@@ -8,7 +8,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by firely-pasha on 7/12/17.
  */
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Studio {
     private int id;
 
@@ -19,7 +18,7 @@ public class Studio {
 
     private boolean real;
 
-    private String imageUrl;
+    private String image;
 
 
     private Studio() {
@@ -42,7 +41,7 @@ public class Studio {
         return real;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
 }

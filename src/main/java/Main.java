@@ -16,7 +16,7 @@ public class Main {
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 //        System.out.println(Characters.get(2780).getRanobes().size());
 
-        System.out.println(People.get(1117).getGrouppedRoles()[1][0]);
+        System.out.println(Animes.get(1).getStudios().get(0).getImage());
 //
 //        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
 //        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
@@ -108,7 +108,7 @@ public class Main {
                 System.out.println("\t\tStudio: " + studio.getName());
                 System.out.println("\t\t\tID: " + studio.getId());
                 System.out.println("\t\t\tFiltered name: " + studio.getFilteredName());
-                System.out.println("\t\t\tImage URL: " + studio.getImageUrl());
+                System.out.println("\t\t\tImage URL: " + studio.getImage());
             }
 
             System.out.println("\tVideos: ");
