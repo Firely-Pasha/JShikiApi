@@ -1,5 +1,6 @@
 package net.pagala.JShikiApi.Core;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import net.pagala.JShikiApi.Filters.UserRateFilter.UserRateFilter;
 import net.pagala.JShikiApi.Items.TitleType;
@@ -31,23 +32,25 @@ public final class UserRates {
         return fullUserRates;
     }
 
-    public static void create(UserRateToCreate userRate) {
+    public static UserRate create(UserRateToCreate userRate) {
         switchApiVersion(Shikimori.ApiVersion.V2);
-        postRequest("/user_rates", userRate.build(), true);
+	    JsonNode response = postRequest("/user_rates", userRate.build(), true);
         switchApiVersion(Shikimori.ApiVersion.V1);
+        return makeUserRateFromJson(response);
     }
 
-    public static void update(int userRateId, UserRateToUpdate userRate) {
+    public static UserRate update(int userRateId, UserRateToUpdate userRate) {
         switchApiVersion(Shikimori.ApiVersion.V2);
-        putRequest("/user_rates/" + userRateId, userRate.build(), true);
+	    JsonNode response = putRequest("/user_rates/" + userRateId, userRate.build(), true);
         switchApiVersion(Shikimori.ApiVersion.V1);
+        return makeUserRateFromJson(response);
     }
 
-    public static JsonNode increment(int userRateId) {
+    public static UserRate increment(int userRateId) {
         switchApiVersion(Shikimori.ApiVersion.V2);
         JsonNode response = postRequest("/user_rates/" + userRateId + "/increment", null, true);
         switchApiVersion(Shikimori.ApiVersion.V1);
-        return response;
+	    return makeUserRateFromJson(response);
     }
 
     public static void destroy(int userRateId) {
@@ -63,5 +66,15 @@ public final class UserRates {
 
     public static JsonNode reset(TitleType titleType) {
         return deleteRequest("/user_rates/" + titleType + "/reset", true);
+    }
+
+    private static UserRate makeUserRateFromJson(JsonNode jsonUserRate) {
+	    UserRate userRate = null;
+	    try {
+		    userRate = mapper.treeToValue(jsonUserRate, UserRate.class);
+	    } catch (JsonProcessingException e) {
+		    e.printStackTrace();
+	    }
+	    return userRate;
     }
 }

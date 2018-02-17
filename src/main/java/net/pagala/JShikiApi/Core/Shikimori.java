@@ -72,7 +72,9 @@ public final class Shikimori {
         HttpPost httpPost = null;
         try {
             httpPost = new HttpPost(buildUri(stringUrl));
-            httpPost.setEntity(new StringEntity(arg));
+            if (arg != null) {
+                httpPost.setEntity(new StringEntity(arg));
+            }
             httpPost.addHeader("Content-Type", "application/json");
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             e.printStackTrace();

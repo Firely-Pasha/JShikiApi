@@ -11,12 +11,12 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Shikimori.logIn("Firely-Pasha", "Goinass19981");
+        Shikimori.logIn("Jimmy_Cool", "Goinass19981");
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 //        System.out.println(Characters.get(2780).getRanobes().size());
 
-        System.out.println(Animes.get(1).getStudios().get(0).getImage());
+        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
 //        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
 //        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);

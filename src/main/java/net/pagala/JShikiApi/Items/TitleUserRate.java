@@ -8,13 +8,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by firely-pasha on 7/12/17.
  */
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class TitleUserRate {
     private Integer id;
 
     private Integer score;
 
-    private String status;
+    private TitleListStatus status;
 
     private String text;
 
@@ -41,7 +40,7 @@ public class TitleUserRate {
         return score;
     }
 
-    public String getStatus() {
+    public TitleListStatus getStatus() {
         return status;
     }
 

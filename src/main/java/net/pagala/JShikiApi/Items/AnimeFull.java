@@ -11,7 +11,6 @@ import java.util.List;
  */
 
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class AnimeFull extends Anime implements TitleFull {
 
     private List<String> english;
