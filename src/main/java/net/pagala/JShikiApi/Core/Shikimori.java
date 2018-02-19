@@ -180,6 +180,7 @@ public final class Shikimori {
 
     public static boolean logIn(String nickname, String password) {
         Shikimori.nickname = nickname;
+        accessToken = null;
         String stringUrl = "/access_token?nickname=" + nickname + "&password=" + password;
 
         JsonNode rootNode = getRequest(stringUrl);
