@@ -48,7 +48,7 @@ public final class Users {
     //TODO: Implement some hidden parameters!
     public static List<MangaRate> getMangaRates(int userId, TitleListStatus status, int limit, int page) {
         StringBuilder url = new StringBuilder();
-        url.append("users/").append(userId);
+        url.append("/users/").append(userId);
         url.append("/manga_rates?");
         url.append("limit=").append(limit);
         url.append("&page=").append(page);
