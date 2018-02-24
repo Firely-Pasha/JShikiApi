@@ -19,7 +19,7 @@ public final class Ranobes {
     }
 
     public static List<Manga> getList(MangaSearchFilter mangaSearchFilter) {
-        return getItemList("/mangas" + mangaSearchFilter.buildQuery(), Manga[].class);
+        return getItemList("/ranobe" + mangaSearchFilter.buildQuery(), Manga[].class);
     }
 
     public static List<Role> getRoles(int id) {
