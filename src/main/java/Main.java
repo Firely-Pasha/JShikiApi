@@ -11,16 +11,16 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        Shikimori.logIn("Jimmy_Cool", "Goinass19981");
+        Shikimori.logIn(args[0], args[1]);
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 //        System.out.println(Characters.get(2780).getRanobes().size());
 
-        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
+//        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
-//        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
-//        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
-//        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
+        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
+        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
+        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
 
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();

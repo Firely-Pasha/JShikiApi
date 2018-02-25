@@ -35,7 +35,7 @@ public class HistoryItem {
 		if (target.get("url") != null) {
 			StringBuilder sb = new StringBuilder(target.get("url").asText());
 			sb.delete(0, 1);
-			String type = sb.substring(0, sb.indexOf("/") - 1);
+			String type = sb.substring(0, sb.indexOf("/"));
 			return HistoryItemType.valueOf(type.toUpperCase());
 		} else {
 			return HistoryItemType.REGISTRATION;
@@ -61,7 +61,7 @@ public class HistoryItem {
 	public Anime getAnime() {
 		try {
 			HistoryItemType type = getType();
-			if (type == HistoryItemType.ANIME) {
+			if (type == HistoryItemType.ANIMES) {
 				return objectMapper.treeToValue(target, Anime.class);
 			}
 		} catch (JsonProcessingException e) {
@@ -74,7 +74,7 @@ public class HistoryItem {
 	public Manga getManga() {
 		try {
 			HistoryItemType type = getType();
-			if (type == HistoryItemType.MANGA) {
+			if (type == HistoryItemType.MANGAS) {
 				return objectMapper.treeToValue(target, Manga.class);
 			}
 		} catch (JsonProcessingException e) {

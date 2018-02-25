@@ -1,5 +1,6 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
+import net.pagala.JShikiApi.Items.AnimeKind;
 import net.pagala.JShikiApi.Items.TitleRating;
 
 /**
@@ -49,49 +50,23 @@ public class AnimeSearchFilter extends TitleSearchFilter {
     }
 
     public String buildQuery() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("?");
-        sb.append(page == null ? "" : "page=" + page + '&');
-        sb.append(limit == null ? "" : "limit=" + limit + '&');
-        sb.append(order == null ? "" : "order=" + order + '&');
+        buildRootQuery();
+        if (order != null) {
+            query.append("&order=").append(order);
+        }
         if (!kind.isEmpty()) {
-            sb.append(kind).append('&');
+            query.append(kind);
         }
-        if (!statuses.isEmpty()) {
-            sb.append(statuses).append('&');
-        }
-        if (!seasons.isEmpty()) {
-            sb.append(seasons).append('&');
-        }
-        sb.append(score == null ? "" : "score=" + score + '&');
         if (!durations.isEmpty()) {
-            sb.append(durations).append('&');
+            query.append(durations);
         }
         if (!ratings.isEmpty()) {
-            sb.append(ratings).append('&');
-        }
-        if (!genreIds.isEmpty()) {
-            sb.append(genreIds).append('&');
+            query.append(ratings);
         }
         if (!studioIds.isEmpty()) {
-            sb.append(studioIds).append('&');
+            query.append(studioIds);
         }
-        sb.append(censored == null ? "" : "censored=" + censored + '&');
-        if (!myLists.isEmpty()) {
-            sb.append(myLists).append('&');
-        }
-        if (!ids.isEmpty()) {
-            sb.append(ids).append('&');
-        }
-        if (!excludeIds.isEmpty()) {
-            sb.append(excludeIds).append('&');
-        }
-
-        if (searchString != null) {
-            searchString = searchString.replace(' ', '_');
-        }
-        sb.append(searchString == null ? "" : "search=" + searchString + '&');
-        return sb.toString();
+        return query.toString();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
+import net.pagala.JShikiApi.Items.TitleListStatus;
 import net.pagala.JShikiApi.Items.TitleStatus;
 
 public abstract class TitleSearchFilter {
@@ -11,9 +12,10 @@ public abstract class TitleSearchFilter {
     protected Boolean censored;
     protected SearchParameterList<Integer> ids;
     protected SearchParameterList<Integer> excludeIds;
-    protected SearchParameterList<MyListTitleStatus> myLists;
+    protected SearchParameterList<TitleListStatus> myLists;
     protected SearchParameterList<Integer> genreIds;
     protected String searchString;
+    protected StringBuilder query;
 
     protected TitleSearchFilter() {
         page        = 1;
@@ -24,6 +26,46 @@ public abstract class TitleSearchFilter {
         excludeIds  = new SearchParameterList<>("exclude_ids");
         myLists     = new SearchParameterList<>("mylist");
         genreIds    = new SearchParameterList<>("genre");
+    }
+
+    protected void buildRootQuery() {
+    	query = new StringBuilder("?");
+        if (page != null) {
+            query.append("page=").append(page);
+        } else {
+            query.append("page=1");
+        }
+        if (limit != null) {
+            query.append("&limit=").append(limit);
+        }
+        if (!statuses.isEmpty()) {
+            query.append(statuses);
+        }
+        if (!seasons.isEmpty()) {
+            query.append(seasons);
+        }
+        if (score != null) {
+            query.append("&score=").append(score);
+        }
+        if (censored != null) {
+            query.append("&censored=").append(censored);
+        }
+        if (!ids.isEmpty()) {
+            query.append(ids);
+        }
+        if (!excludeIds.isEmpty()) {
+            query.append(excludeIds);
+        }
+        if (!myLists.isEmpty()) {
+            query.append(myLists);
+        }
+        if (!genreIds.isEmpty()) {
+            query.append(genreIds);
+        }
+        if (searchString != null && !searchString.equals("")) {
+            searchString = searchString.replace(' ', '_');
+            query.append("&search=").append(searchString);
+        }
     }
 
     public Integer getPage() {
@@ -70,7 +112,6 @@ public abstract class TitleSearchFilter {
         return score;
     }
 
-
     public Boolean getCensored() {
         return censored;
     }
@@ -87,7 +128,7 @@ public abstract class TitleSearchFilter {
         return excludeIds;
     }
 
-    public SearchParameterList<MyListTitleStatus> getMyLists() {
+    public SearchParameterList<TitleListStatus> getMyLists() {
         return myLists;
     }
 
@@ -102,5 +143,4 @@ public abstract class TitleSearchFilter {
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
-
 }

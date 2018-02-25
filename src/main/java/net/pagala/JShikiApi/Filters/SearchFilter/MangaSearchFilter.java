@@ -14,49 +14,17 @@ public class MangaSearchFilter extends TitleSearchFilter {
     }
 
     public String buildQuery() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("?");
-        sb.append(page == null ? "" : "page=" + page + '&');
-        sb.append(limit == null ? "" : "limit=" + limit + '&');
-        sb.append(order == null ? "" : "order=" + order + '&');
+        buildRootQuery();
+        if (order != null) {
+            query.append("&order=").append(order);
+        }
         if (!kind.isEmpty()) {
-            sb.append(kind).append('&');
-        }
-        if (!statuses.isEmpty()) {
-            sb.append(statuses).append('&');
-        }
-        if (!seasons.isEmpty()) {
-            sb.append(seasons).append('&');
-        }
-        sb.append(score == null ? "" : "score=" + score + '&');
-        if (!genreIds.isEmpty()) {
-            sb.append(genreIds).append('&');
+            query.append(kind);
         }
         if (!publisherIds.isEmpty()) {
-            sb.append(publisherIds).append('&');
+            query.append(publisherIds);
         }
-        sb.append(censored == null ? "" : "censored=" + censored + '&');
-        if (!myLists.isEmpty()) {
-            sb.append(myLists).append('&');
-        }
-        if (!ids.isEmpty()) {
-            sb.append(ids).append('&');
-        }
-        if (!excludeIds.isEmpty()) {
-            sb.append(excludeIds).append('&');
-        }
-
-        if (searchString != null) {
-            searchString = searchString.replace(' ', '_');
-        }
-        sb.append(searchString == null ? "" : "search=" + searchString + '&');
-        if (sb.charAt(sb.length() - 1) == '&') {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        if (sb.charAt(sb.length() - 1) == ',') {
-            sb.deleteCharAt(sb.length() - 1);
-        }
-        return sb.toString();
+        return query.toString();
     }
 
     public MangaOrder getOrder() {
@@ -73,5 +41,10 @@ public class MangaSearchFilter extends TitleSearchFilter {
 
     public SearchParameterList<Integer> getPublishers() {
         return publisherIds;
+    }
+
+    @Override
+    public String toString() {
+        return buildQuery();
     }
 }

@@ -35,19 +35,23 @@ public class SearchParameterList<E> {
     public String toString() {
         if (yes.size() != 0 || no.size() != 0) {
             StringBuilder sb = new StringBuilder();
-            sb.append(name).append("=");
-
-            for (E element : yes) {
-                sb.append(element.toString()).append(",");
-            }
-
-            for (E element : no) {
-                sb.append('!').append(element.toString()).append(",");
-            }
-
+            sb.append("&").append(name).append("=");
+            sb.append(getElements(yes));
+            sb.append(getElements(no));
             return sb.toString();
         } else {
             return "";
         }
+    }
+
+    private String getElements(List<E> list) {
+	    StringBuilder sb = new StringBuilder();
+	    if (list.size() != 0) {
+		    sb.append(list.get(0));
+		    for (int i = 1; i < list.size(); i++) {
+			    sb.append(",").append(list.get(i).toString());
+		    }
+	    }
+	    return sb.toString();
     }
 }
