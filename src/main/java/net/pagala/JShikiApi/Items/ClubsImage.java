@@ -20,6 +20,9 @@ public class ClubsImage {
 
     private String preview;
 
+    @JsonProperty("can_destroy")
+    private boolean canDestroy;
+
     private ClubsImage() {
 
     }

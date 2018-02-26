@@ -18,9 +18,7 @@ public class Main {
 
 //        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
-        MangaSearchFilter mangaSearchFilter = new MangaSearchFilter();
-        mangaSearchFilter.getKind().getYes().add(MangaKind.MANHWA);
-        System.out.println(Mangas.getList(mangaSearchFilter).get(0).getName());
+        System.out.println(Clubs.get(391).getName());
 
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
