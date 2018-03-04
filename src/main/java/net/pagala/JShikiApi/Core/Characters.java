@@ -27,11 +27,11 @@ public final class Characters {
     public static List<net.pagala.JShikiApi.Items.Character> getCharacters(List<Role> roles) {
         List<net.pagala.JShikiApi.Items.Character> characterList = new ArrayList<>();
 
-        roles.forEach((role -> {
+        for (Role role : roles) {
             if (role.getCharacter() != null) {
                 characterList.add(role.getCharacter());
             }
-        }));
+        }
 
         return characterList;
     }

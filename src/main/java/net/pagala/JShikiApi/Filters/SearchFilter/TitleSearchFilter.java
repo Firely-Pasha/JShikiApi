@@ -3,6 +3,9 @@ package net.pagala.JShikiApi.Filters.SearchFilter;
 import net.pagala.JShikiApi.Items.TitleListStatus;
 import net.pagala.JShikiApi.Items.TitleStatus;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 public abstract class TitleSearchFilter {
     protected Integer page;
     protected Integer limit;
@@ -63,8 +66,11 @@ public abstract class TitleSearchFilter {
             query.append(genreIds);
         }
         if (searchString != null && !searchString.equals("")) {
-            searchString = searchString.replace(' ', '_');
-            query.append("&search=").append(searchString);
+        try {
+            query.append("&search=").append(URLEncoder.encode(searchString, "UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
         }
     }
 

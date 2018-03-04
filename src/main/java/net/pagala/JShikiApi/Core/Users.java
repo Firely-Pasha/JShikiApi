@@ -64,22 +64,20 @@ public final class Users {
         return getItem("/users/" + id + "/favourites", Favourites.class);
     }
 
-    //TODO: Check for authorisation?!
-    public static List<Message> getMessages(MessageType messageType, int limit, int page) {
-        if (Shikimori.getUserId() != -1) {
-            String url = "/users/" + Shikimori.getUserId() + "/messages?type=" + messageType + "&limit=" + limit + "&page=" + page;
+    public static List<Message> getMessages(MessageType messageType, int currentUserId, int limit, int page) {
+        if (Shikimori.getAccessToken() != null) {
+            String url = "/users/" + currentUserId + "/messages?type=" + messageType + "&limit=" + limit + "&page=" + page;
             return getItemList(url, Message[].class);
         } else {
             return new ArrayList<>();
         }
     }
 
-    public UnreadMessages getUnreadMessages() {
-        if (Shikimori.getUserId() == -1) {
+    public UnreadMessages getUnreadMessages(int currentUserId) {
+        if (Shikimori.getAccessToken() == null) {
             return null;
         }
-
-        return getItem("/users/" + Shikimori.getUserId() + "/unread_messages", UnreadMessages.class);
+        return getItem("/users/" + currentUserId + "/unread_messages", UnreadMessages.class);
     }
 
     public static List<HistoryItem> getHistory(int id, int limit, int page) {

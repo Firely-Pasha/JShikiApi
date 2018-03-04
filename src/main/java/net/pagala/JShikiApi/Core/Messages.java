@@ -19,10 +19,7 @@ public final class Messages {
     }
 
     public static JsonNode send(MessageToSend message) {
-        System.out.println(message.build());
-        switchApiVersion(Shikimori.ApiVersion.V1);
         JsonNode node = postRequest("/messages", message.build(), true);
-        switchApiVersion(Shikimori.ApiVersion.V2);
         return node;
     }
 

@@ -19,44 +19,38 @@ public final class UserRates {
     }
 
     public static UserRate get(int id) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         UserRate userRate = getItem("/user_rates/" + id, UserRate.class);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         return userRate;
     }
 
     public static List<UserRate> list(UserRateFilter userRateFilter) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         List<UserRate> fullUserRates = getItemList("/user_rates" + userRateFilter.build(), UserRate[].class);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         return fullUserRates;
     }
 
     public static UserRate create(UserRateToCreate userRate) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
 	    JsonNode response = postRequest("/user_rates", userRate.build(), true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         return makeUserRateFromJson(response);
     }
 
     public static UserRate update(int userRateId, UserRateToUpdate userRate) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
 	    JsonNode response = putRequest("/user_rates/" + userRateId, userRate.build(), true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         return makeUserRateFromJson(response);
     }
 
     public static UserRate increment(int userRateId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         JsonNode response = postRequest("/user_rates/" + userRateId + "/increment", null, true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
 	    return makeUserRateFromJson(response);
     }
 
     public static void destroy(int userRateId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         deleteRequest("/user_rates/" + userRateId, false);
-        switchApiVersion(Shikimori.ApiVersion.V1);
     }
 
     public static JsonNode cleanup(TitleType titleType) {

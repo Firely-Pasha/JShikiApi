@@ -15,9 +15,8 @@ public final class Ignores {
     }
 
     public static UserIgnore ignoreUser(int userId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         JsonNode response = postRequest("/users/" + userId + "/ignore", null, true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         try {
             return mapper.readValue(response.toString(), UserIgnore.class);
         } catch (IOException e) {
@@ -27,9 +26,8 @@ public final class Ignores {
     }
 
     public static UserIgnore unignoreUser(int userId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         JsonNode response = deleteRequest("/users/" + userId + "/ignore", true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         try {
             return mapper.readValue(response.toString(), UserIgnore.class);
         } catch (IOException e) {
@@ -39,9 +37,8 @@ public final class Ignores {
     }
 
     public static TopicIgnore ignoreTopic(int userId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         JsonNode response = postRequest("/topics/" + userId + "/ignore", null, true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         try {
             return mapper.readValue(response.toString(), TopicIgnore.class);
         } catch (IOException e) {
@@ -51,9 +48,8 @@ public final class Ignores {
     }
 
     public static TopicIgnore unignoreTopic(int userId) {
-        switchApiVersion(Shikimori.ApiVersion.V2);
+        switchApiVersion(RequestVersion.API_V2);
         JsonNode response = deleteRequest("/topics/" + userId + "/ignore", true);
-        switchApiVersion(Shikimori.ApiVersion.V1);
         try {
             return mapper.readValue(response.toString(), TopicIgnore.class);
         } catch (IOException e) {

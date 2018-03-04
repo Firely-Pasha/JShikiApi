@@ -2,3 +2,4 @@ target
 src/test
 .idea
 artifacts
+docs

@@ -1,27 +1,37 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
 import net.pagala.JShikiApi.Core.*;
-import net.pagala.JShikiApi.Filters.SearchFilter.MangaSearchFilter;
+import net.pagala.JShikiApi.Filters.SearchFilter.AnimeSearchFilter;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
 
-import java.lang.Character;
 import java.util.List;
 
 //TODO: Catch URL-Level errors!!!
 public class Main {
 
     public static void main(String[] args) {
-        Shikimori.logIn(args[0], args[1]);
+//        Shikimori.logIn(args[0], args[1]);
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
 //        System.out.println(Characters.get(2780).getRanobes().size());
 
 //        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
-        System.out.println(Clubs.get(391).getName());
+//        System.out.println(Clubs.get(391).getName());
 
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
+	    Shikimori.showResponse(true);
+
+	    Shikimori.setClientId(args[0]);
+	    Shikimori.setClientSecret(args[1]);
+//	    Shikimori.setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
+//	    Shikimori.setAuthorizationCode("//");
+//	    Shikimori.setRefreshToken("//");
+	    Shikimori.setAccessToken("//");
+//	    Shikimori.requestAccessToken();
+//	    Shikimori.refreshToken();
     }
 //69263
     private static class ApiCheck {
@@ -161,7 +171,7 @@ public class Main {
         }
 
         private static void userCheck() {
-            UserFull user = Users.get(Shikimori.getUserId());
+            UserFull user = Users.get(69263);
             System.out.println("User check:");
             System.out.println("\tID: " + user.getId());
             System.out.println("\tNickname: " + user.getNickname());
