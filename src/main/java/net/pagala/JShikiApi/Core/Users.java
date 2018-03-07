@@ -17,6 +17,10 @@ public final class Users {
         return getItemList("/users/?limit=" + limit + "&page=" + page, User[].class);
     }
 
+    public static List<User> search(String searchString, int limit, int page) {
+        return getItemList("/users/?search=" + searchString + "&limit=" + limit + "&page=" + page, User[].class);
+    }
+
     //TODO: Data consistency broken again. Wait for fix.
     public static UserInfo whoAmI() {
         return getItem("/users/whoami", UserInfo.class);

@@ -5,6 +5,7 @@ import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
 
+import javax.sound.midi.Soundbank;
 import java.util.List;
 
 //TODO: Catch URL-Level errors!!!
@@ -22,16 +23,20 @@ public class Main {
 
 //        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
-	    Shikimori.showResponse(true);
+//	    Shikimori.showResponse(true);
 
-	    Shikimori.setClientId(args[0]);
-	    Shikimori.setClientSecret(args[1]);
+//	    Shikimori.setClientId(args[0]);
+//	    Shikimori.setClientSecret(args[1]);
 //	    Shikimori.setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
 //	    Shikimori.setAuthorizationCode("//");
 //	    Shikimori.setRefreshToken("//");
-	    Shikimori.setAccessToken("//");
+//	    Shikimori.setAccessToken("//");
 //	    Shikimori.requestAccessToken();
 //	    Shikimori.refreshToken();
+//        System.out.println(Users.search("lol", 10, 1).get(0).getNickname());
+        AnimeSearchFilter searchFilter = new AnimeSearchFilter();
+	    searchFilter.getGenres().getNo().add(8);
+	    System.out.println(Animes.getList(searchFilter).get(0).getName());
     }
 //69263
     private static class ApiCheck {

@@ -36,20 +36,20 @@ public class SearchParameterList<E> {
         if (yes.size() != 0 || no.size() != 0) {
             StringBuilder sb = new StringBuilder();
             sb.append("&").append(name).append("=");
-            sb.append(getElements(yes));
-            sb.append(getElements(no));
+            sb.append(getElements(yes, true));
+            sb.append(getElements(no, false));
             return sb.toString();
         } else {
             return "";
         }
     }
 
-    private String getElements(List<E> list) {
+    private String getElements(List<E> list, boolean include) {
 	    StringBuilder sb = new StringBuilder();
 	    if (list.size() != 0) {
-		    sb.append(list.get(0));
+		    sb.append(include ? "" : "!").append(list.get(0));
 		    for (int i = 1; i < list.size(); i++) {
-			    sb.append(",").append(list.get(i).toString());
+				    sb.append(include ? "," : ",!").append(list.get(i).toString());
 		    }
 	    }
 	    return sb.toString();
