@@ -1,6 +1,7 @@
 package net.pagala.JShikiApi.Core;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -67,6 +68,7 @@ public final class Shikimori {
         SITE_DOMAIN = "https://shikimori.org";
         API_DOMAIN  = SITE_DOMAIN + "/api";
         mapper = new ObjectMapper();
+	    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         client = HttpClients.createDefault();
         appName = null;
         accessToken = null;

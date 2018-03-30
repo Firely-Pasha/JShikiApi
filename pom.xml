@@ -6,7 +6,7 @@
 
     <groupId>net.pagala.JShikiAPI</groupId>
     <artifactId>JShikiAPI</artifactId>
-    <version>0.1</version>
+    <version>v0.7</version>
 
     <properties>
         <jackson-version>2.9.2</jackson-version>

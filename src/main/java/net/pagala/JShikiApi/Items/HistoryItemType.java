@@ -11,6 +11,6 @@ public enum HistoryItemType {
     @JsonProperty("ranobe")
     RANOBE,
     @JsonProperty("registration")
-    REGISTRATION,
+    OTHER,
     ;
 }

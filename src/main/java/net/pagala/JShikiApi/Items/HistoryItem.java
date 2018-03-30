@@ -32,13 +32,13 @@ public class HistoryItem {
 	}
 
 	public HistoryItemType getType() {
-		if (target.get("url") != null) {
+		if (target != null && target.get("url") != null) {
 			StringBuilder sb = new StringBuilder(target.get("url").asText());
 			sb.delete(0, 1);
 			String type = sb.substring(0, sb.indexOf("/"));
 			return HistoryItemType.valueOf(type.toUpperCase());
 		} else {
-			return HistoryItemType.REGISTRATION;
+			return HistoryItemType.OTHER;
 		}
 	}
 

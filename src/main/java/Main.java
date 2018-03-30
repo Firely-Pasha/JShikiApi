@@ -21,9 +21,9 @@ public class Main {
 //
 //        System.out.println(Clubs.get(391).getName());
 
-//        ApiCheck.getAnimeCheck();
+        ApiCheck.getAnimeCheck();
 //        ApiCheck.getAnimeRatesCheck();
-//	    Shikimori.showResponse(true);
+//	    Shikimori.showRespons   e(true);
 
 //	    Shikimori.setClientId(args[0]);
 //	    Shikimori.setClientSecret(args[1]);
@@ -34,9 +34,9 @@ public class Main {
 //	    Shikimori.requestAccessToken();
 //	    Shikimori.refreshToken();
 //        System.out.println(Users.search("lol", 10, 1).get(0).getNickname());
-        AnimeSearchFilter searchFilter = new AnimeSearchFilter();
-	    searchFilter.getGenres().getNo().add(8);
-	    System.out.println(Animes.getList(searchFilter).get(0).getName());
+//        AnimeSearchFilter searchFilter = new AnimeSearchFilter();
+//	    searchFilter.getGenres().getNo().add(8);
+//	    System.out.println(Animes.getList(searchFilter).get(0).getName());
     }
 //69263
     private static class ApiCheck {
