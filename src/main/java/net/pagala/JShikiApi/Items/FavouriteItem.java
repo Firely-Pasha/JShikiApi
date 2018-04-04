@@ -2,37 +2,37 @@ package net.pagala.JShikiApi.Items;
 
 @SuppressWarnings("unused")
 public class FavouriteItem {
-	private int id;
+    private int id;
 
-	private String name;
+    private String name;
 
-	private String russian;
+    private String russian;
 
-	private String image;
+    private String image;
 
-	private String url;
+    private String url;
 
-	private FavouriteItem() {
+    private FavouriteItem() {
 
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getRussian() {
-		return russian;
-	}
+    public String getRussian() {
+        return russian;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 }

@@ -5,48 +5,48 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 public final class AccessToken {
-	@JsonProperty("access_token")
-	private String accessToken;
+    @JsonProperty("access_token")
+    private String accessToken;
 
-	@JsonProperty("token_type")
-	private String tokenType;
+    @JsonProperty("token_type")
+    private String tokenType;
 
-	@JsonProperty("expires_in")
-	private int expiresIn;
+    @JsonProperty("expires_in")
+    private int expiresIn;
 
-	@JsonProperty("refresh_token")
-	private String refreshToken;
+    @JsonProperty("refresh_token")
+    private String refreshToken;
 
-	@JsonProperty("created_at")
-	private Date createdAt;
+    @JsonProperty("created_at")
+    private Date createdAt;
 
-	private AccessToken() {
+    private AccessToken() {
 
-	}
+    }
 
-	/**
-	 * @return Access token.
-	 */
-	public String getAccessToken() {
-		return accessToken;
-	}
+    /**
+     * @return Access token.
+     */
+    public String getAccessToken() {
+        return accessToken;
+    }
 
-	public String getTokenType() {
-		return tokenType;
-	}
+    public String getTokenType() {
+        return tokenType;
+    }
 
-	/**
-	 * @return Time when access token expires
-	 */
-	public int getExpiresIn() {
-		return expiresIn;
-	}
+    /**
+     * @return Time when access token expires
+     */
+    public int getExpiresIn() {
+        return expiresIn;
+    }
 
-	public String getRefreshToken() {
-		return refreshToken;
-	}
+    public String getRefreshToken() {
+        return refreshToken;
+    }
 
-	public Date getCreatedAt() {
-		return new Date(createdAt.getTime() * 1000);
-	}
+    public Date getCreatedAt() {
+        return new Date(createdAt.getTime() * 1000);
+    }
 }

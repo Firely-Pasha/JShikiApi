@@ -13,60 +13,60 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserTitleStatus {
-	@JsonProperty("anime")
-	private List<UserTitleTileStatus> animes;
+    @JsonProperty("anime")
+    private List<UserTitleTileStatus> animes;
 
-	@JsonProperty("manga")
-	private List<UserTitleTileStatus> mangas;
-
-
-	private UserTitleStatus() {
-
-	}
-
-	public List<UserTitleTileStatus> getAnimes() {
-		return animes;
-	}
-
-	public List<UserTitleTileStatus> getMangas() {
-		return mangas;
-	}
-
-	public static class UserTitleTileStatus {
-		private int id;
-
-		private String name;
-
-		private int size;
-
-		@JsonProperty("grouped_id")
-		private String groupedId;
-
-		private String type;
+    @JsonProperty("manga")
+    private List<UserTitleTileStatus> mangas;
 
 
-		private UserTitleTileStatus() {
+    private UserTitleStatus() {
 
-		}
+    }
 
-		public int getId() {
-			return id;
-		}
+    public List<UserTitleTileStatus> getAnimes() {
+        return animes;
+    }
 
-		public String getName() {
-			return name;
-		}
+    public List<UserTitleTileStatus> getMangas() {
+        return mangas;
+    }
 
-		public int getSize() {
-			return size;
-		}
+    public static class UserTitleTileStatus {
+        private int id;
 
-		public String getGroupedId() {
-			return groupedId;
-		}
+        private String name;
 
-		public String getType() {
-			return type;
-		}
-	}
+        private int size;
+
+        @JsonProperty("grouped_id")
+        private String groupedId;
+
+        private String type;
+
+
+        private UserTitleTileStatus() {
+
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getSize() {
+            return size;
+        }
+
+        public String getGroupedId() {
+            return groupedId;
+        }
+
+        public String getType() {
+            return type;
+        }
+    }
 }

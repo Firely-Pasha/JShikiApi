@@ -13,38 +13,38 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserScores {
-	@JsonProperty("anime")
-	private List<UserTitleScores> animes;
+    @JsonProperty("anime")
+    private List<UserTitleScores> animes;
 
-	@JsonProperty("manga")
-	private List<UserTitleScores> mangas;
+    @JsonProperty("manga")
+    private List<UserTitleScores> mangas;
 
-	private UserScores() {
+    private UserScores() {
 
-	}
+    }
 
-	public List<UserTitleScores> getAnimes() {
-		return animes;
-	}
+    public List<UserTitleScores> getAnimes() {
+        return animes;
+    }
 
-	public List<UserTitleScores> getMangas() {
-		return mangas;
-	}
+    public List<UserTitleScores> getMangas() {
+        return mangas;
+    }
 
-	public static class UserTitleScores {
-		private int name;
-		private int value;
+    public static class UserTitleScores {
+        private int name;
+        private int value;
 
-		private UserTitleScores() {
+        private UserTitleScores() {
 
-		}
+        }
 
-		public int getName() {
-			return name;
-		}
+        public int getName() {
+            return name;
+        }
 
-		public int getValue() {
-			return value;
-		}
-	}
+        public int getValue() {
+            return value;
+        }
+    }
 }

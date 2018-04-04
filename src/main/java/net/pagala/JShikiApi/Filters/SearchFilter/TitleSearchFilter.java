@@ -32,7 +32,7 @@ public abstract class TitleSearchFilter {
     }
 
     protected void buildRootQuery() {
-    	query = new StringBuilder("?");
+        query = new StringBuilder("?");
         if (page != null) {
             query.append("page=").append(page);
         } else {

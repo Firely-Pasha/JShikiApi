@@ -16,89 +16,89 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserStats {
-	private UserTitleStatus statuses;
+    private UserTitleStatus statuses;
 
-	@JsonProperty("full_statuses")
-	private UserTitleStatus fullStatuses;
+    @JsonProperty("full_statuses")
+    private UserTitleStatus fullStatuses;
 
-	private UserScores scores;
+    private UserScores scores;
 
-	private UserTypes types;
+    private UserTypes types;
 
-	private UserRatings ratings;
+    private UserRatings ratings;
 
-	@JsonProperty("has_anime?")
-	private boolean hasAnime;
+    @JsonProperty("has_anime?")
+    private boolean hasAnime;
 
-	@JsonProperty("has_manga?")
-	private boolean hasManga;
+    @JsonProperty("has_manga?")
+    private boolean hasManga;
 
-	private Object[] genres;
+    private Object[] genres;
 
-	private Object[] studios;
+    private Object[] studios;
 
-	private Object[] publishers;
+    private Object[] publishers;
 
-	@JsonProperty("activity")
-	private JsonNode activities;
-
-
-	private UserStats() {
-	}
-	//private List<UserActivity> userActivity;
+    @JsonProperty("activity")
+    private JsonNode activities;
 
 
-	public UserTitleStatus getStatuses() {
-		return statuses;
-	}
+    private UserStats() {
+    }
+    //private List<UserActivity> userActivity;
 
-	public UserTitleStatus getFullStatuses() {
-		return fullStatuses;
-	}
 
-	public UserScores getScores() {
-		return scores;
-	}
+    public UserTitleStatus getStatuses() {
+        return statuses;
+    }
 
-	public UserTypes getTypes() {
-		return types;
-	}
+    public UserTitleStatus getFullStatuses() {
+        return fullStatuses;
+    }
 
-	public UserRatings getRatings() {
-		return ratings;
-	}
+    public UserScores getScores() {
+        return scores;
+    }
 
-	public boolean isHasAnime() {
-		return hasAnime;
-	}
+    public UserTypes getTypes() {
+        return types;
+    }
 
-	public boolean isHasManga() {
-		return hasManga;
-	}
+    public UserRatings getRatings() {
+        return ratings;
+    }
 
-	public Object[] getGenres() {
-		return genres;
-	}
+    public boolean isHasAnime() {
+        return hasAnime;
+    }
 
-	public Object[] getStudios() {
-		return studios;
-	}
+    public boolean isHasManga() {
+        return hasManga;
+    }
 
-	public Object[] getPublishers() {
-		return publishers;
-	}
+    public Object[] getGenres() {
+        return genres;
+    }
 
-	public List<UserActivity> getActivities() {
-		if (activities.asText().equals("")) {
-			try {
-				UserActivity[] activity = Shikimori.getObjectMapper().treeToValue(activities, UserActivity[].class);
-				return Arrays.asList(activity);
-			} catch (JsonProcessingException e) {
-				e.printStackTrace();
-				return null;
-			}
-		}
+    public Object[] getStudios() {
+        return studios;
+    }
 
-		return new ArrayList<>();
-	}
+    public Object[] getPublishers() {
+        return publishers;
+    }
+
+    public List<UserActivity> getActivities() {
+        if (activities.asText().equals("")) {
+            try {
+                UserActivity[] activity = Shikimori.getObjectMapper().treeToValue(activities, UserActivity[].class);
+                return Arrays.asList(activity);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+
+        return new ArrayList<>();
+    }
 }

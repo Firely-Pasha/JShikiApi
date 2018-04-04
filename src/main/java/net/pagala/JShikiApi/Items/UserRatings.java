@@ -13,31 +13,31 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserRatings {
-	@JsonProperty("anime")
-	private List<UserTitleRating> animes;
+    @JsonProperty("anime")
+    private List<UserTitleRating> animes;
 
-	private UserRatings() {
+    private UserRatings() {
 
-	}
+    }
 
-	public List<UserTitleRating> getAnimes() {
-		return animes;
-	}
+    public List<UserTitleRating> getAnimes() {
+        return animes;
+    }
 
-	public static class UserTitleRating {
-		private String name;
-		private int value;
+    public static class UserTitleRating {
+        private String name;
+        private int value;
 
-		private UserTitleRating() {
+        private UserTitleRating() {
 
-		}
+        }
 
-		public String getName() {
-			return name;
-		}
+        public String getName() {
+            return name;
+        }
 
-		public int getValue() {
-			return value;
-		}
-	}
+        public int getValue() {
+            return value;
+        }
+    }
 }

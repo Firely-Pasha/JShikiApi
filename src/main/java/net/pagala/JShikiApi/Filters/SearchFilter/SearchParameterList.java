@@ -45,13 +45,13 @@ public class SearchParameterList<E> {
     }
 
     private String getElements(List<E> list, boolean include) {
-	    StringBuilder sb = new StringBuilder();
-	    if (list.size() != 0) {
-		    sb.append(include ? "" : "!").append(list.get(0));
-		    for (int i = 1; i < list.size(); i++) {
-				    sb.append(include ? "," : ",!").append(list.get(i).toString());
-		    }
-	    }
-	    return sb.toString();
+        StringBuilder sb = new StringBuilder();
+        if (list.size() != 0) {
+            sb.append(include ? "" : "!").append(list.get(0));
+            for (int i = 1; i < list.size(); i++) {
+                    sb.append(include ? "," : ",!").append(list.get(i).toString());
+            }
+        }
+        return sb.toString();
     }
 }

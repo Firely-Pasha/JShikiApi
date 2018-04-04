@@ -12,39 +12,39 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserTypes {
-	@JsonProperty("anime")
-	private List<UserTitleTypes> animes;
+    @JsonProperty("anime")
+    private List<UserTitleTypes> animes;
 
-	@JsonProperty("manga")
-	private List<UserTitleTypes> mangas;
+    @JsonProperty("manga")
+    private List<UserTitleTypes> mangas;
 
 
-	private UserTypes() {
+    private UserTypes() {
 
-	}
+    }
 
-	public List<UserTitleTypes> getAnimes() {
-		return animes;
-	}
+    public List<UserTitleTypes> getAnimes() {
+        return animes;
+    }
 
-	public List<UserTitleTypes> getMangas() {
-		return mangas;
-	}
+    public List<UserTitleTypes> getMangas() {
+        return mangas;
+    }
 
-	public static class UserTitleTypes {
-		private String name;
-		private String value;
+    public static class UserTitleTypes {
+        private String name;
+        private String value;
 
-		private UserTitleTypes() {
+        private UserTitleTypes() {
 
-		}
+        }
 
-		public String getName() {
-			return name;
-		}
+        public String getName() {
+            return name;
+        }
 
-		public String getValue() {
-			return value;
-		}
-	}
+        public String getValue() {
+            return value;
+        }
+    }
 }

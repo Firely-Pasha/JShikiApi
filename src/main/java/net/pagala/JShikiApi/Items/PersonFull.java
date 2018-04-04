@@ -9,118 +9,118 @@ import java.util.List;
 
 public class PersonFull extends Person {
 
-	private String japanese;
+    private String japanese;
 
-	@JsonProperty("job_title")
-	private String jobTitle;
+    @JsonProperty("job_title")
+    private String jobTitle;
 
-	private Date birthday;
+    private Date birthday;
 
-	private URL website;
+    private URL website;
 
-	@JsonProperty("groupped_roles")
-	private String[][] grouppedRoles;
+    @JsonProperty("groupped_roles")
+    private String[][] grouppedRoles;
 
-	private List<PersonRole> roles;
+    private List<PersonRole> roles;
 
-	private List<PersonWork> works;
+    private List<PersonWork> works;
 
-	@JsonProperty("thread_id")
-	private int threadId;
+    @JsonProperty("thread_id")
+    private int threadId;
 
-	@JsonProperty("topic_id")
-	private int topicId;
+    @JsonProperty("topic_id")
+    private int topicId;
 
-	@JsonProperty("person_favoured")
-	private boolean personFavoured;
+    @JsonProperty("person_favoured")
+    private boolean personFavoured;
 
-	private boolean producer;
+    private boolean producer;
 
-	@JsonProperty("producer_favoured")
-	private boolean producerFavoured;
+    @JsonProperty("producer_favoured")
+    private boolean producerFavoured;
 
-	private boolean mangaka;
+    private boolean mangaka;
 
-	@JsonProperty("mangaka_favoured")
-	private boolean mangakaFavoured;
+    @JsonProperty("mangaka_favoured")
+    private boolean mangakaFavoured;
 
-	private boolean seyu;
+    private boolean seyu;
 
-	@JsonProperty("seyu_favoured")
-	private boolean seyuFavored;
+    @JsonProperty("seyu_favoured")
+    private boolean seyuFavored;
 
-	@JsonProperty("updated_at")
-	private Date updatedAt;
+    @JsonProperty("updated_at")
+    private Date updatedAt;
 
-	private PersonFull() {
-		super();
-	}
+    private PersonFull() {
+        super();
+    }
 
-	public String getJapanese() {
-		return japanese;
-	}
+    public String getJapanese() {
+        return japanese;
+    }
 
-	public String getJobTitle() {
-		return jobTitle;
-	}
+    public String getJobTitle() {
+        return jobTitle;
+    }
 
-	public Date getBirthday() {
-		return birthday;
-	}
+    public Date getBirthday() {
+        return birthday;
+    }
 
-	public URL getWebsite() {
-		return website;
-	}
+    public URL getWebsite() {
+        return website;
+    }
 
-	public String[][] getGrouppedRoles() {
-		return grouppedRoles;
-	}
+    public String[][] getGrouppedRoles() {
+        return grouppedRoles;
+    }
 
-	public List<PersonRole> getRoles() {
-		return roles;
-	}
+    public List<PersonRole> getRoles() {
+        return roles;
+    }
 
-	public List<PersonWork> getWorks() {
-		return works;
-	}
+    public List<PersonWork> getWorks() {
+        return works;
+    }
 
-	public int getThreadId() {
-		return threadId;
-	}
+    public int getThreadId() {
+        return threadId;
+    }
 
-	public int getTopicId() {
-		return topicId;
-	}
+    public int getTopicId() {
+        return topicId;
+    }
 
-	public boolean isPersonFavoured() {
-		return personFavoured;
-	}
+    public boolean isPersonFavoured() {
+        return personFavoured;
+    }
 
-	public boolean isProducer() {
-		return producer;
-	}
+    public boolean isProducer() {
+        return producer;
+    }
 
-	public boolean isProducerFavoured() {
-		return producerFavoured;
-	}
+    public boolean isProducerFavoured() {
+        return producerFavoured;
+    }
 
-	public boolean isMangaka() {
-		return mangaka;
-	}
+    public boolean isMangaka() {
+        return mangaka;
+    }
 
-	public boolean isMangakaFavoured() {
-		return mangakaFavoured;
-	}
+    public boolean isMangakaFavoured() {
+        return mangakaFavoured;
+    }
 
-	public boolean isSeyu() {
-		return seyu;
-	}
+    public boolean isSeyu() {
+        return seyu;
+    }
 
-	public boolean isSeyuFavored() {
-		return seyuFavored;
-	}
+    public boolean isSeyuFavored() {
+        return seyuFavored;
+    }
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
 }

@@ -12,114 +12,114 @@ import java.util.Date;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserFull extends User {
-	private String name;
+    private String name;
 
-	private String sex;
+    private String sex;
 
-	//TODO: Не показано в документации. Не работает здесь, но работает в /users/:id/info.
-	@JsonProperty("birth_on")
-	private Date birthOn;
+    //TODO: Не показано в документации. Не работает здесь, но работает в /users/:id/info.
+    @JsonProperty("birth_on")
+    private Date birthOn;
 
-	@JsonProperty("full_years")
-	private int fullYears;
+    @JsonProperty("full_years")
+    private int fullYears;
 
-	@JsonProperty("last_online")
-	private String lastOnline;
+    @JsonProperty("last_online")
+    private String lastOnline;
 
-	private String website;
+    private String website;
 
-	private String location;
+    private String location;
 
-	private boolean banned;
+    private boolean banned;
 
-	private String about;
+    private String about;
 
-	@JsonProperty("about_html")
-	private String aboutHtml;
+    @JsonProperty("about_html")
+    private String aboutHtml;
 
-	@JsonProperty("common_info")
-	private String[] commonInfo;
+    @JsonProperty("common_info")
+    private String[] commonInfo;
 
-	@JsonProperty("show_comments")
-	private boolean showComments;
+    @JsonProperty("show_comments")
+    private boolean showComments;
 
-	@JsonProperty("in_friends")
-	private Boolean inFriends;
+    @JsonProperty("in_friends")
+    private Boolean inFriends;
 
-	@JsonProperty("is_ignored")
-	private boolean isIgnored;
+    @JsonProperty("is_ignored")
+    private boolean isIgnored;
 
-	private UserStats stats;
+    private UserStats stats;
 
-	@JsonProperty("style_id")
-	private int styleId;
+    @JsonProperty("style_id")
+    private int styleId;
 
 
-	private UserFull() {
+    private UserFull() {
 
-	}
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getSex() {
-		return sex;
-	}
+    public String getSex() {
+        return sex;
+    }
 
-	public Date getBirthOn() {
-		return birthOn;
-	}
+    public Date getBirthOn() {
+        return birthOn;
+    }
 
-	public int getFullYears() {
-		return fullYears;
-	}
+    public int getFullYears() {
+        return fullYears;
+    }
 
-	public String getLastOnline() {
-		return lastOnline;
-	}
+    public String getLastOnline() {
+        return lastOnline;
+    }
 
-	public String getWebsite() {
-		return website;
-	}
+    public String getWebsite() {
+        return website;
+    }
 
-	public String getLocation() {
-		return location;
-	}
+    public String getLocation() {
+        return location;
+    }
 
-	public boolean isBanned() {
-		return banned;
-	}
+    public boolean isBanned() {
+        return banned;
+    }
 
-	public String getAbout() {
-		return about;
-	}
+    public String getAbout() {
+        return about;
+    }
 
-	public String getAboutHtml() {
-		return aboutHtml;
-	}
+    public String getAboutHtml() {
+        return aboutHtml;
+    }
 
-	public String[] getCommonInfo() {
-		return commonInfo;
-	}
+    public String[] getCommonInfo() {
+        return commonInfo;
+    }
 
-	public boolean isShowComments() {
-		return showComments;
-	}
+    public boolean isShowComments() {
+        return showComments;
+    }
 
-	public Boolean getInFriends() {
-		return inFriends;
-	}
+    public Boolean getInFriends() {
+        return inFriends;
+    }
 
-	public boolean isIgnored() {
-		return isIgnored;
-	}
+    public boolean isIgnored() {
+        return isIgnored;
+    }
 
-	public UserStats getStats() {
-		return stats;
-	}
+    public UserStats getStats() {
+        return stats;
+    }
 
-	public int getStyleId() {
-		return styleId;
-	}
+    public int getStyleId() {
+        return styleId;
+    }
 }

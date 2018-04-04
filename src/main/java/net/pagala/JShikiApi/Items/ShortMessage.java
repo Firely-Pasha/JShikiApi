@@ -1,6 +1,10 @@
 package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import net.pagala.JShikiApi.Core.Shikimori;
 
 import java.util.Date;
 
@@ -21,7 +25,7 @@ public class ShortMessage {
 
     //TODO: Maybe replace with JsonNode and make individual method for each type of title?
     @JsonProperty("linked")
-    private LinkedTitle linked;
+    private JsonNode linked;
 
     protected ShortMessage() {
 
@@ -56,7 +60,21 @@ public class ShortMessage {
         return createdAt;
     }
 
-    public LinkedTitle getLinkedTitle() {
-        return linked;
+    public LinkedAnime getLinkedAnime() {
+        try {
+            return Shikimori.getObjectMapper().treeToValue(linked, LinkedAnime.class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LinkedItem getLinkedItem() {
+        try {
+            return Shikimori.getObjectMapper().treeToValue(linked, LinkedItem.class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

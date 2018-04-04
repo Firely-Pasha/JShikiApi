@@ -32,14 +32,14 @@ import java.util.concurrent.Future;
 @SuppressWarnings({"unused", "Duplicates", "MismatchedQueryAndUpdateOfCollection"})
 public final class Shikimori {
 
-	/**
-	 * Site domain
-	 */
+    /**
+     * Site domain
+     */
     public static final String SITE_DOMAIN;
 
-	/**
-	 * API domain
-	 */
+    /**
+     * API domain
+     */
     public static final String API_DOMAIN;
 
     private static RequestVersion requestVersion;
@@ -68,13 +68,13 @@ public final class Shikimori {
         SITE_DOMAIN = "https://shikimori.org";
         API_DOMAIN  = SITE_DOMAIN + "/api";
         mapper = new ObjectMapper();
-	    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         client = HttpClients.createDefault();
         appName = null;
         accessToken = null;
         requestVersion = RequestVersion.API_V1;
         showResponse = false;
-	    developerName = "Firely-Pasha";
+        developerName = "Firely-Pasha";
     }
 
     private Shikimori() {
@@ -85,7 +85,7 @@ public final class Shikimori {
         HttpGet httpGet;
         try {
             httpGet = new HttpGet(buildUri(stringUrl));
-	        return request(httpGet, true);
+            return request(httpGet, true);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -100,7 +100,7 @@ public final class Shikimori {
                 httpPost.setEntity(new StringEntity(arg));
             }
             httpPost.addHeader("Content-Type", "application/json");
-	        return request(httpPost, readResponse);
+            return request(httpPost, readResponse);
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -112,7 +112,7 @@ public final class Shikimori {
         HttpDelete httpDelete;
         try {
             httpDelete = new HttpDelete(buildUri(stringUrl));
-	        return request(httpDelete, readResponse);
+            return request(httpDelete, readResponse);
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -125,7 +125,7 @@ public final class Shikimori {
             httpPut = new HttpPut(buildUri(stringUrl));
             httpPut.setEntity(new StringEntity(arg));
             httpPut.addHeader("Content-Type", "application/json");
-	        return request(httpPut, readResponse);
+            return request(httpPut, readResponse);
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -136,12 +136,12 @@ public final class Shikimori {
     private static JsonNode request(final HttpUriRequest request, final boolean readResponse) {
         request.setHeader("User-Agent", (appName == null ? "JShikiApi" : appName) + " " + developerName);
         if (accessToken != null) {
-	        request.setHeader("Authorization", "Bearer " + accessToken);
+            request.setHeader("Authorization", "Bearer " + accessToken);
         }
-	    ExecutorService executor = Executors.newSingleThreadExecutor();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
 
-	    final JsonNode[] jsonResponse = {null};
-	    Future<HttpResponse> result = executor.submit(() -> {
+        final JsonNode[] jsonResponse = {null};
+        Future<HttpResponse> result = executor.submit(() -> {
             HttpResponse response = client.execute(request);
             System.out.println("Request: " + request.getURI().toString() + "\n" +
                     "Response: " +
@@ -153,12 +153,12 @@ public final class Shikimori {
                 System.out.println(getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse[0]));
             }
             return response;
-	    });
+        });
 
-	    while (!result.isDone());
-	    executor.shutdown();
+        while (!result.isDone());
+        executor.shutdown();
 
-	    return jsonResponse[0];
+        return jsonResponse[0];
     }
 
     private static URI buildUri(String stringUri) throws URISyntaxException {
@@ -170,8 +170,8 @@ public final class Shikimori {
             case API_V2:
                 uri = new URI(API_DOMAIN + "/v2" + stringUri);
                 break;
-	        case SITE:
-	        	uri = new URI(SITE_DOMAIN + stringUri);
+            case SITE:
+                uri = new URI(SITE_DOMAIN + stringUri);
         }
         requestVersion = RequestVersion.API_V1;
         return uri;
@@ -192,27 +192,27 @@ public final class Shikimori {
         return t;
     }
 
-	static <T> T postItem(String url, String arg, Class<T> tClass, boolean readResponse) {
-		JsonNode jsonItem = postRequest(url, arg, readResponse);
-		T t = null;
-		try {
-			t = mapper.treeToValue(jsonItem, tClass);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-		return t;
-	}
+    static <T> T postItem(String url, String arg, Class<T> tClass, boolean readResponse) {
+        JsonNode jsonItem = postRequest(url, arg, readResponse);
+        T t = null;
+        try {
+            t = mapper.treeToValue(jsonItem, tClass);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return t;
+    }
 
-	static <T> T putItem(String url, String arg, Class<T> tClass, boolean readResponse) {
-		JsonNode jsonItem = putRequest(url, arg, readResponse);
-		T t = null;
-		try {
-			t = mapper.treeToValue(jsonItem, tClass);
-		} catch (JsonProcessingException e) {
-			e.printStackTrace();
-		}
-		return t;
-	}
+    static <T> T putItem(String url, String arg, Class<T> tClass, boolean readResponse) {
+        JsonNode jsonItem = putRequest(url, arg, readResponse);
+        T t = null;
+        try {
+            t = mapper.treeToValue(jsonItem, tClass);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return t;
+    }
 
     static <T> List<T> getItemList(String url, Class<T[]> tClass) {
         T[] items = getItem(url, tClass);
@@ -226,43 +226,43 @@ public final class Shikimori {
         Shikimori.clientId = clientId;
     }
 
-	public static void setClientSecret(String clientSecret) {
-    	Shikimori.clientSecret = clientSecret;
+    public static void setClientSecret(String clientSecret) {
+        Shikimori.clientSecret = clientSecret;
     }
 
-	public static void setRedirectUri(String redirectUri) {
-    	Shikimori.redirectUri = redirectUri;
+    public static void setRedirectUri(String redirectUri) {
+        Shikimori.redirectUri = redirectUri;
     }
 
-	public static AccessToken requestAccessToken(String authorizationCode) {
-    	if (clientId != null && clientSecret != null &&
-		    authorizationCode != null && redirectUri != null) {
-		    ObjectNode objectNode = getObjectMapper().createObjectNode();
-		    objectNode.put("grant_type", "authorization_code");
-		    objectNode.put("client_id", clientId);
-		    objectNode.put("client_secret", clientSecret);
-		    objectNode.put("code", authorizationCode);
-		    objectNode.put("redirect_uri", redirectUri);
-		    switchApiVersion(RequestVersion.SITE);
-		    JsonNode response = postRequest("/oauth/token", objectNode.toString(), true);
-		    currentToken = getObjectMapper().convertValue(response, AccessToken.class);
-		    accessToken = currentToken.getAccessToken();
-		    return currentToken;
-	    } else {
-    		return null;
-	    }
+    public static AccessToken requestAccessToken(String authorizationCode) {
+        if (clientId != null && clientSecret != null &&
+            authorizationCode != null && redirectUri != null) {
+            ObjectNode objectNode = getObjectMapper().createObjectNode();
+            objectNode.put("grant_type", "authorization_code");
+            objectNode.put("client_id", clientId);
+            objectNode.put("client_secret", clientSecret);
+            objectNode.put("code", authorizationCode);
+            objectNode.put("redirect_uri", redirectUri);
+            switchApiVersion(RequestVersion.SITE);
+            JsonNode response = postRequest("/oauth/token", objectNode.toString(), true);
+            currentToken = getObjectMapper().convertValue(response, AccessToken.class);
+            accessToken = currentToken.getAccessToken();
+            return currentToken;
+        } else {
+            return null;
+        }
     }
 
-	public static String getAccessToken() {
-		return accessToken;
-	}
+    public static String getAccessToken() {
+        return accessToken;
+    }
 
-	public static void setAccessToken(String accessToken) {
-    	Shikimori.accessToken = accessToken;
+    public static void setAccessToken(String accessToken) {
+        Shikimori.accessToken = accessToken;
     }
 
     public static AccessToken refreshToken(String refreshToken) {
-	    if (clientId != null && clientSecret != null &&
+        if (clientId != null && clientSecret != null &&
             refreshToken != null && redirectUri != null) {
             ObjectNode objectNode = getObjectMapper().createObjectNode();
             objectNode.put("grant_type", "refresh_token");
@@ -276,7 +276,7 @@ public final class Shikimori {
             accessToken = currentToken.getAccessToken();
             return currentToken;
         }
-	    return null;
+        return null;
     }
 
     public static ObjectMapper getObjectMapper() {
@@ -284,25 +284,25 @@ public final class Shikimori {
     }
 
     public static void showResponse(boolean showResponse) {
-    	Shikimori.showResponse = showResponse;
+        Shikimori.showResponse = showResponse;
     }
 
-	public static AccessToken getCurrentToken() {
-		return currentToken;
-	}
+    public static AccessToken getCurrentToken() {
+        return currentToken;
+    }
 
-	public static boolean isAuthorized() {
+    public static boolean isAuthorized() {
         return accessToken == null;
     }
 
     public static boolean isTokenExpired() {
-    	if (currentToken == null) {
-		    return true;
-	    } else {
-    		long absoluteExpiration = currentToken.getCreatedAt().getTime() + currentToken.getExpiresIn() * 1000;
-		    System.out.println(currentToken.getCreatedAt());
-    		return absoluteExpiration < new Date().getTime() + 23 * 60 * 60 * 1000;
-	    }
+        if (currentToken == null) {
+            return true;
+        } else {
+            long absoluteExpiration = currentToken.getCreatedAt().getTime() + currentToken.getExpiresIn() * 1000;
+            System.out.println(currentToken.getCreatedAt());
+            return absoluteExpiration < new Date().getTime() + 23 * 60 * 60 * 1000;
+        }
     }
 
     private enum RequestMethod {
@@ -318,8 +318,8 @@ public final class Shikimori {
     }
 
     enum RequestVersion {
-	    API_V1,
-	    API_V2,
-	    SITE
+        API_V1,
+        API_V2,
+        SITE
     }
 }

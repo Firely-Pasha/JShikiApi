@@ -8,47 +8,47 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class Club {
 
-	private int id;
+    private int id;
 
-	private String name;
+    private String name;
 
-	private ClubLogo logo;
+    private ClubLogo logo;
 
-	@JsonProperty("is_censored")
-	private boolean isCensored;
+    @JsonProperty("is_censored")
+    private boolean isCensored;
 
-	@JsonProperty("join_policy")
-	private String joinPolicy;
+    @JsonProperty("join_policy")
+    private String joinPolicy;
 
-	@JsonProperty("comment_policy")
-	private String commentPolicy;
+    @JsonProperty("comment_policy")
+    private String commentPolicy;
 
 
-	protected Club() {
+    protected Club() {
 
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public ClubLogo getLogo() {
-		return logo;
-	}
+    public ClubLogo getLogo() {
+        return logo;
+    }
 
-	public boolean isCensored() {
-		return isCensored;
-	}
+    public boolean isCensored() {
+        return isCensored;
+    }
 
-	public String getJoinPolicy() {
-		return joinPolicy;
-	}
+    public String getJoinPolicy() {
+        return joinPolicy;
+    }
 
-	public String getCommentPolicy() {
-		return commentPolicy;
-	}
+    public String getCommentPolicy() {
+        return commentPolicy;
+    }
 }

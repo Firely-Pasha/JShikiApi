@@ -2,26 +2,26 @@ package net.pagala.JShikiApi.Items;
 
 @SuppressWarnings("unused")
 public class UnreadMessages {
-	private int messages;
+    private int messages;
 
-	private int news;
+    private int news;
 
-	private int notifications;
+    private int notifications;
 
 
-	private UnreadMessages() {
+    private UnreadMessages() {
 
-	}
+    }
 
-	public int getMessages() {
-		return messages;
-	}
+    public int getMessages() {
+        return messages;
+    }
 
-	public int getNews() {
-		return news;
-	}
+    public int getNews() {
+        return news;
+    }
 
-	public int getNotifications() {
-		return notifications;
-	}
+    public int getNotifications() {
+        return notifications;
+    }
 }

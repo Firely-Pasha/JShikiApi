@@ -32,20 +32,20 @@ public final class UserRates {
 
     public static UserRate create(UserRateToCreate userRate) {
         switchApiVersion(RequestVersion.API_V2);
-	    JsonNode response = postRequest("/user_rates", userRate.build(), true);
+        JsonNode response = postRequest("/user_rates", userRate.build(), true);
         return makeUserRateFromJson(response);
     }
 
     public static UserRate update(int userRateId, UserRateToUpdate userRate) {
         switchApiVersion(RequestVersion.API_V2);
-	    JsonNode response = putRequest("/user_rates/" + userRateId, userRate.build(), true);
+        JsonNode response = putRequest("/user_rates/" + userRateId, userRate.build(), true);
         return makeUserRateFromJson(response);
     }
 
     public static UserRate increment(int userRateId) {
         switchApiVersion(RequestVersion.API_V2);
         JsonNode response = postRequest("/user_rates/" + userRateId + "/increment", null, true);
-	    return makeUserRateFromJson(response);
+        return makeUserRateFromJson(response);
     }
 
     public static void destroy(int userRateId) {
@@ -63,12 +63,12 @@ public final class UserRates {
     }
 
     private static UserRate makeUserRateFromJson(JsonNode jsonUserRate) {
-	    UserRate userRate = null;
-	    try {
-		    userRate = mapper.treeToValue(jsonUserRate, UserRate.class);
-	    } catch (JsonProcessingException e) {
-		    e.printStackTrace();
-	    }
-	    return userRate;
+        UserRate userRate = null;
+        try {
+            userRate = mapper.treeToValue(jsonUserRate, UserRate.class);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return userRate;
     }
 }

@@ -1,18 +1,18 @@
 package net.pagala.JShikiApi.Items;
 
 public class Message extends ShortMessage {
-	private User from;
-	private User to;
+    private User from;
+    private User to;
 
-	private Message() {
+    private Message() {
 
-	}
+    }
 
-	public User getFrom() {
-		return from;
-	}
+    public User getFrom() {
+        return from;
+    }
 
-	public User getTo() {
-		return to;
-	}
+    public User getTo() {
+        return to;
+    }
 }

@@ -26,27 +26,27 @@ public class User {
     private Date lastOnlineAt;
 
 
-	protected User() {
+    protected User() {
 
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getNickname() {
-		return nickname;
-	}
+    public String getNickname() {
+        return nickname;
+    }
 
-	public String getAvatar() {
-		return avatar;
-	}
+    public String getAvatar() {
+        return avatar;
+    }
 
-	public UserImage getImage() {
-		return image;
-	}
+    public UserImage getImage() {
+        return image;
+    }
 
-	public Date getLastOnlineAt() {
-		return lastOnlineAt;
-	}
+    public Date getLastOnlineAt() {
+        return lastOnlineAt;
+    }
 }

@@ -13,18 +13,18 @@ import java.util.List;
 @SuppressWarnings("unused")
 //@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserActivity {
-	private List<Integer> name;
-	private int value;
+    private List<Integer> name;
+    private int value;
 
-	private UserActivity() {
+    private UserActivity() {
 
-	}
+    }
 
-	public List<Integer> getName() {
-		return name;
-	}
+    public List<Integer> getName() {
+        return name;
+    }
 
-	public int getValue() {
-		return value;
-	}
+    public int getValue() {
+        return value;
+    }
 }
