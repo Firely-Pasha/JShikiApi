@@ -21,7 +21,9 @@ public class Main {
 //
 //        System.out.println(Clubs.get(391).getName());
 
-        ApiCheck.getAnimeCheck();
+//        ApiCheck.getAnimeCheck();
+
+        System.out.println(Topics.getList(ForumTypes.NEWS, 10, 1).get(0).getHtmlFooter());
 //        ApiCheck.getAnimeRatesCheck();
 //        Shikimori.showRespons   e(true);
 
@@ -145,17 +147,19 @@ public class Main {
                 System.out.println("\t\t\tPreview: " + screenshot.getOriginal());
             }
 
-            System.out.println("\tUser rate: ");
-            TitleUserRate userRate = anime.getTitleUserRate();
-            System.out.println("\t\tID: " + userRate.getId());
-            System.out.println("\t\tStatus: " + userRate.getStatus());
-            System.out.println("\t\tScore: " + userRate.getScore());
-            System.out.println("\t\tEpisodes: " + userRate.getEpisodes());
-            System.out.println("\t\tVolumes: " + userRate.getVolumes());
-            System.out.println("\t\tChapters: " + userRate.getChapters());
-            System.out.println("\t\tRewatches: " + userRate.getRewatches());
-            System.out.println("\t\tText: " + userRate.getText());
-            System.out.println("\t\tText HTML: " + userRate.getTextHtml());
+            if (anime.getTitleUserRate() != null) {
+                System.out.println("\tUser rate: ");
+                TitleUserRate userRate = anime.getTitleUserRate();
+                System.out.println("\t\tID: " + userRate.getId());
+                System.out.println("\t\tStatus: " + userRate.getStatus());
+                System.out.println("\t\tScore: " + userRate.getScore());
+                System.out.println("\t\tEpisodes: " + userRate.getEpisodes());
+                System.out.println("\t\tVolumes: " + userRate.getVolumes());
+                System.out.println("\t\tChapters: " + userRate.getChapters());
+                System.out.println("\t\tRewatches: " + userRate.getRewatches());
+                System.out.println("\t\tText: " + userRate.getText());
+                System.out.println("\t\tText HTML: " + userRate.getTextHtml());
+            }
         }
 
         private static void getAnimeRatesCheck() {

@@ -18,6 +18,9 @@ public class Topic {
     @JsonProperty("html_body")
     private String htmlBody;
 
+    @JsonProperty("html_footer")
+    private String htmlFooter;
+
     @JsonProperty("created_at")
     private Date createdAt;
 
@@ -64,6 +67,10 @@ public class Topic {
 
     public String getHtmlBody() {
         return htmlBody;
+    }
+
+    public String getHtmlFooter() {
+        return htmlFooter;
     }
 
     public Date getCreatedAt() {
