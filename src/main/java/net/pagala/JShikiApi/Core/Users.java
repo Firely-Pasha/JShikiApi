@@ -106,17 +106,11 @@ public final class Users {
     }
 
     public static List<Message> getMessages(MessageType messageType, int currentUserId, int limit, int page) {
-        if (Shikimori.isAuthorized()) {
-            return null;
-        }
         String url = "/users/" + currentUserId + "/messages?type=" + messageType + "&limit=" + limit + "&page=" + page;
         return getItemList(url, Message[].class);
     }
 
     public UnreadMessages getUnreadMessages(int currentUserId) {
-        if (Shikimori.isAuthorized()) {
-            return null;
-        }
         return getItem("/users/" + currentUserId + "/unread_messages", UnreadMessages.class);
     }
 

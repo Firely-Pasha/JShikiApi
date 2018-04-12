@@ -23,7 +23,7 @@ public class Main {
 //        System.out.println(Clubs.get(391).getName());
 //        ApiCheck.getAnimeCheck();
 
-//        Shikimori.setAccessToken(args[0]);
+//        Shikimori.setAccessToken("343ab124f00a6523452f7b2a0f610eddd594a1bfbd4eb71f9a67af20a97fedfc");
 //        System.out.println(Topics.getList(ForumTypes.NEWS, 10, 1).get(0).getHtmlFooter());
 //        Users.whoAmI().getId();
 //        System.out.println(Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(Ignores.unignoreTopic(229069)));
@@ -33,6 +33,7 @@ public class Main {
 //        filter.getTypes().getYes().add(null);
 //        Animes.getList(filter);
 
+//        System.out.println(Users.whoAmI().getNickname());
         Users.getMessages(null, 3, 3, 3);
 //        Users.getAnimeRates(38073, TitleListStatus.COMPLETED, 10, 1);
 
