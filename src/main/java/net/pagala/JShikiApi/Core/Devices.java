@@ -27,8 +27,8 @@ public final class Devices {
             return postItem("/devices", getObjectMapper().writeValueAsString(deviceToCreate), Device.class, true);
         } catch (JsonProcessingException jpe) {
             jpe.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     public static Device update(int id, DeviceToUpdate deviceToUpdate) {
@@ -36,8 +36,8 @@ public final class Devices {
             return postItem("/devices/" + id, getObjectMapper().writeValueAsString(deviceToUpdate), Device.class, true);
         } catch (JsonProcessingException jpe) {
             jpe.printStackTrace();
-            return null;
         }
+        return null;
     }
 
     public static void delete(int id) {

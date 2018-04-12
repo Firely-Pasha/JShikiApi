@@ -1,10 +1,7 @@
 package net.pagala.JShikiApi.Core;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import net.pagala.JShikiApi.Items.TopicIgnore;
 import net.pagala.JShikiApi.Items.UserIgnore;
-
-import java.io.IOException;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
@@ -16,45 +13,21 @@ public final class Ignores {
 
     public static UserIgnore ignoreUser(int userId) {
         switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = postRequest("/users/" + userId + "/ignore", null, true);
-        try {
-            return mapper.readValue(response.toString(), UserIgnore.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return postItem("/users/" + userId + "/ignore", null, UserIgnore.class, true);
     }
 
     public static UserIgnore unignoreUser(int userId) {
         switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = deleteRequest("/users/" + userId + "/ignore", true);
-        try {
-            return mapper.readValue(response.toString(), UserIgnore.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return deleteItem("/users/" + userId + "/ignore", UserIgnore.class, true);
     }
 
-    public static TopicIgnore ignoreTopic(int userId) {
+    public static TopicIgnore ignoreTopic(int topicId) {
         switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = postRequest("/topics/" + userId + "/ignore", null, true);
-        try {
-            return mapper.readValue(response.toString(), TopicIgnore.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return postItem("/topics/" + topicId + "/ignore", null, TopicIgnore.class, true);
     }
 
-    public static TopicIgnore unignoreTopic(int userId) {
+    public static TopicIgnore unignoreTopic(int topicId) {
         switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = deleteRequest("/topics/" + userId + "/ignore", true);
-        try {
-            return mapper.readValue(response.toString(), TopicIgnore.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return deleteItem("/topics/" + topicId + "/ignore", TopicIgnore.class, true);
     }
 }

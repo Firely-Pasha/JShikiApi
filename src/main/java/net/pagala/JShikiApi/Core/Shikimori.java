@@ -20,9 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 /**
  *
@@ -41,124 +38,72 @@ public final class Shikimori {
      * API domain
      */
     public static final String API_DOMAIN;
-
     private static RequestVersion requestVersion;
-
     private static String clientId;
-
     private static String clientSecret;
-
     private static String redirectUri;
-
     private static String accessToken;
-
     private static String appName;
-
     private static String developerName;
-
     static ObjectMapper mapper;
-
     private static boolean showResponse;
-
     private static HttpClient client;
-
     private static AccessToken currentToken;
+    private static int responseCode;
+    private static JsonNode siteError;
+    private static Exception exception;
 
     static {
         SITE_DOMAIN = "https://shikimori.org";
         API_DOMAIN  = SITE_DOMAIN + "/api";
-        mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        client = HttpClients.createDefault();
-        appName = null;
-        accessToken = null;
         requestVersion = RequestVersion.API_V1;
+        clientId = null;
+        clientSecret = null;
+        redirectUri = null;
+        accessToken = null;
+        appName = null;
+        developerName = null;
+        mapper = new ObjectMapper();
         showResponse = false;
-        developerName = "Firely-Pasha";
+        client = HttpClients.createDefault();
+        currentToken = null;
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     private Shikimori() {
 
     }
 
-    private static JsonNode getRequest(String stringUrl) {
-        HttpGet httpGet;
-        try {
-            httpGet = new HttpGet(buildUri(stringUrl));
-            return request(httpGet, true);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    static JsonNode postRequest(String stringUrl, String arg, boolean readResponse) {
-        HttpPost httpPost;
-        try {
-            httpPost = new HttpPost(buildUri(stringUrl));
-            if (arg != null) {
-                httpPost.setEntity(new StringEntity(arg));
+    private static JsonNode runRequest(HttpUriRequest request, boolean readResponse) throws IOException {
+        HttpResponse response = client.execute(request);
+        responseCode = response.getStatusLine().getStatusCode();
+        System.out.println("Request: " + request.getURI().toString() + "\n" +
+                "Response: " + responseCode + " (" + response.getStatusLine().getReasonPhrase() + ")");
+        if (readResponse) {
+            JsonNode jsonResponse = mapper.readTree(response.getEntity().getContent());
+            if (showResponse) {
+                System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse));
             }
-            httpPost.addHeader("Content-Type", "application/json");
-            return request(httpPost, readResponse);
-        } catch (URISyntaxException | UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    //TODO: Make return notice for some methods.
-    static JsonNode deleteRequest(String stringUrl, boolean readResponse) {
-        HttpDelete httpDelete;
-        try {
-            httpDelete = new HttpDelete(buildUri(stringUrl));
-            return request(httpDelete, readResponse);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    static JsonNode putRequest(String stringUrl, String arg, boolean readResponse) {
-        HttpPut httpPut;
-        try {
-            httpPut = new HttpPut(buildUri(stringUrl));
-            httpPut.setEntity(new StringEntity(arg));
-            httpPut.addHeader("Content-Type", "application/json");
-            return request(httpPut, readResponse);
-        } catch (URISyntaxException | UnsupportedEncodingException e) {
-            e.printStackTrace();
+            return jsonResponse;
         }
         return null;
     }
 
     //TODO: Token expired error!!!!
     private static JsonNode request(final HttpUriRequest request, final boolean readResponse) {
+        siteError = null;
+        exception = null;
+        responseCode = -1;
         request.setHeader("User-Agent", (appName == null ? "JShikiApi" : appName) + " " + developerName);
         if (accessToken != null) {
             request.setHeader("Authorization", "Bearer " + accessToken);
         }
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-
-        final JsonNode[] jsonResponse = {null};
-        Future<HttpResponse> result = executor.submit(() -> {
-            HttpResponse response = client.execute(request);
-            System.out.println("Request: " + request.getURI().toString() + "\n" +
-                    "Response: " +
-                    response.getStatusLine().getStatusCode() + " (" + response.getStatusLine().getReasonPhrase() + ")");
-            if (readResponse) {
-                jsonResponse[0] = mapper.readTree(response.getEntity().getContent());
-            }
-            if (showResponse) {
-                System.out.println(getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(jsonResponse[0]));
-            }
-            return response;
-        });
-
-        while (!result.isDone());
-        executor.shutdown();
-
-        return jsonResponse[0];
+        try {
+            return runRequest(request, readResponse);
+        } catch (IOException e) {
+            exception = e;
+        }
+        return null;
     }
 
     private static URI buildUri(String stringUri) throws URISyntaxException {
@@ -181,62 +126,105 @@ public final class Shikimori {
         Shikimori.requestVersion = requestVersion;
     }
 
-    static <T> T getItem(String url, Class<T> tClass) {
-        JsonNode jsonItem = getRequest(url);
+    private static JsonNode getRequest(String stringUrl) {
+        HttpGet httpGet;
+        try {
+            httpGet = new HttpGet(buildUri(stringUrl));
+            return request(httpGet, true);
+        } catch (URISyntaxException e) {
+            exception = e;
+        }
+        return null;
+    }
+
+    static JsonNode postRequest(String stringUrl, String arg, boolean readResponse) {
+        HttpPost httpPost;
+        try {
+            httpPost = new HttpPost(buildUri(stringUrl));
+            if (arg != null) {
+                httpPost.setEntity(new StringEntity(arg));
+            }
+            httpPost.addHeader("Content-Type", "application/json");
+            return request(httpPost, readResponse);
+        } catch (URISyntaxException | UnsupportedEncodingException e) {
+            exception = e;
+        }
+        return null;
+    }
+
+    //TODO: Make return notice for some methods.
+    static JsonNode deleteRequest(String stringUrl, boolean readResponse) {
+        HttpDelete httpDelete;
+        try {
+            httpDelete = new HttpDelete(buildUri(stringUrl));
+            return request(httpDelete, readResponse);
+        } catch (URISyntaxException e) {
+            exception = e;
+        }
+        return null;
+    }
+
+    static JsonNode putRequest(String stringUrl, String arg, boolean readResponse) {
+        HttpPut httpPut;
+        try {
+            httpPut = new HttpPut(buildUri(stringUrl));
+            httpPut.setEntity(new StringEntity(arg));
+            httpPut.addHeader("Content-Type", "application/json");
+            return request(httpPut, readResponse);
+        } catch (URISyntaxException | UnsupportedEncodingException e) {
+            exception = e;
+        }
+        return null;
+    }
+
+    private static <T> T handleItem(JsonNode jsonItem, Class<T> tClass) {
+        if (jsonItem == null) {
+            return null;
+        }
+        if (getResponseCode() >= 400) {
+            siteError = jsonItem;
+            return null;
+        }
         T t = null;
         try {
             t = mapper.treeToValue(jsonItem, tClass);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            siteError = jsonItem;
         }
         return t;
+    }
+
+    static <T> T getItem(String url, Class<T> tClass) {
+        JsonNode jsonItem = getRequest(url);
+        return handleItem(jsonItem, tClass);
     }
 
     static <T> T postItem(String url, String arg, Class<T> tClass, boolean readResponse) {
         JsonNode jsonItem = postRequest(url, arg, readResponse);
-        T t = null;
-        try {
-            t = mapper.treeToValue(jsonItem, tClass);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return t;
+        return handleItem(jsonItem, tClass);
     }
 
     static <T> T putItem(String url, String arg, Class<T> tClass, boolean readResponse) {
         JsonNode jsonItem = putRequest(url, arg, readResponse);
-        T t = null;
-        try {
-            t = mapper.treeToValue(jsonItem, tClass);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return t;
+        return handleItem(jsonItem, tClass);
+    }
+
+    static <T> T deleteItem(String url, Class<T> tClass, boolean readResponse) {
+        JsonNode jsonItem = deleteRequest(url, readResponse);
+        return handleItem(jsonItem, tClass);
     }
 
     static <T> List<T> getItemList(String url, Class<T[]> tClass) {
         T[] items = getItem(url, tClass);
         if (items == null) {
-            return  new ArrayList<>();
+            return null;
         }
         return new ArrayList<>(Arrays.asList(items));
     }
 
-    public static void setClientId(String clientId) {
-        Shikimori.clientId = clientId;
-    }
-
-    public static void setClientSecret(String clientSecret) {
-        Shikimori.clientSecret = clientSecret;
-    }
-
-    public static void setRedirectUri(String redirectUri) {
-        Shikimori.redirectUri = redirectUri;
-    }
-
     public static AccessToken requestAccessToken(String authorizationCode) {
         if (clientId != null && clientSecret != null &&
-            authorizationCode != null && redirectUri != null) {
+                authorizationCode != null && redirectUri != null) {
             ObjectNode objectNode = getObjectMapper().createObjectNode();
             objectNode.put("grant_type", "authorization_code");
             objectNode.put("client_id", clientId);
@@ -253,17 +241,9 @@ public final class Shikimori {
         }
     }
 
-    public static String getAccessToken() {
-        return accessToken;
-    }
-
-    public static void setAccessToken(String accessToken) {
-        Shikimori.accessToken = accessToken;
-    }
-
     public static AccessToken refreshToken(String refreshToken) {
         if (clientId != null && clientSecret != null &&
-            refreshToken != null && redirectUri != null) {
+                refreshToken != null && redirectUri != null) {
             ObjectNode objectNode = getObjectMapper().createObjectNode();
             objectNode.put("grant_type", "refresh_token");
             objectNode.put("client_id", clientId);
@@ -279,6 +259,26 @@ public final class Shikimori {
         return null;
     }
 
+    public static void setClientId(String clientId) {
+        Shikimori.clientId = clientId;
+    }
+
+    public static void setClientSecret(String clientSecret) {
+        Shikimori.clientSecret = clientSecret;
+    }
+
+    public static void setRedirectUri(String redirectUri) {
+        Shikimori.redirectUri = redirectUri;
+    }
+
+    public static String getAccessToken() {
+        return accessToken;
+    }
+
+    public static void setAccessToken(String accessToken) {
+        Shikimori.accessToken = accessToken;
+    }
+
     public static ObjectMapper getObjectMapper() {
         return mapper;
     }
@@ -292,7 +292,7 @@ public final class Shikimori {
     }
 
     public static boolean isAuthorized() {
-        return accessToken == null;
+        return accessToken != null;
     }
 
     public static boolean isTokenExpired() {
@@ -301,8 +301,33 @@ public final class Shikimori {
         } else {
             long absoluteExpiration = currentToken.getCreatedAt().getTime() + currentToken.getExpiresIn() * 1000;
             System.out.println(currentToken.getCreatedAt());
-            return absoluteExpiration < new Date().getTime() + 23 * 60 * 60 * 1000;
+            return absoluteExpiration < new Date().getTime();
         }
+    }
+
+    public static int getResponseCode() {
+        return responseCode;
+    }
+
+    public static JsonNode getSiteError() {
+        return siteError;
+    }
+
+    public static Exception getException() {
+        return exception;
+    }
+
+    public static boolean isRequestSuccessful() {
+        boolean queryStatus = responseCode < 300;
+        return queryStatus && siteError == null && exception == null;
+    }
+
+    public static void setDeveloperName(String developerName) {
+        Shikimori.developerName = developerName;
+    }
+
+    public static void setAppName(String appName) {
+        Shikimori.appName = appName;
     }
 
     private enum RequestMethod {

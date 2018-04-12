@@ -21,13 +21,11 @@ public final class People {
 
     public static List<Role> getPersons(List<Role> roleList) {
         List<Role> characterList = new ArrayList<>();
-
         for (Role role : roleList) {
             if (role.getPerson() != null) {
                 characterList.add(role);
             }
         }
-
         return characterList;
     }
 

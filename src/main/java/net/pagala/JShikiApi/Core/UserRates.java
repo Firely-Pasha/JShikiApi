@@ -20,14 +20,12 @@ public final class UserRates {
 
     public static UserRate get(int id) {
         switchApiVersion(RequestVersion.API_V2);
-        UserRate userRate = getItem("/user_rates/" + id, UserRate.class);
-        return userRate;
+        return getItem("/user_rates/" + id, UserRate.class);
     }
 
     public static List<UserRate> list(UserRateFilter userRateFilter) {
         switchApiVersion(RequestVersion.API_V2);
-        List<UserRate> fullUserRates = getItemList("/user_rates" + userRateFilter.build(), UserRate[].class);
-        return fullUserRates;
+        return getItemList("/user_rates" + userRateFilter.build(), UserRate[].class);
     }
 
     public static UserRate create(UserRateToCreate userRate) {

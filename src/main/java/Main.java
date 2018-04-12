@@ -1,17 +1,18 @@
 import com.fasterxml.jackson.core.JsonProcessingException;
 import net.pagala.JShikiApi.Core.*;
-import net.pagala.JShikiApi.Filters.SearchFilter.AnimeSearchFilter;
 import net.pagala.JShikiApi.Items.*;
 import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
 
-import javax.sound.midi.Soundbank;
+import java.net.UnknownHostException;
 import java.util.List;
 
 //TODO: Catch URL-Level errors!!!
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
+        Shikimori.setDeveloperName("Firely-Pasha");
+        Shikimori.setAppName("JShikiApi");
 //        Shikimori.logIn(args[0], args[1]);
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
@@ -20,10 +21,23 @@ public class Main {
 //        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
 //        System.out.println(Clubs.get(391).getName());
-
 //        ApiCheck.getAnimeCheck();
 
-        System.out.println(Topics.getList(ForumTypes.NEWS, 10, 1).get(0).getHtmlFooter());
+//        Shikimori.setAccessToken(args[0]);
+//        System.out.println(Topics.getList(ForumTypes.NEWS, 10, 1).get(0).getHtmlFooter());
+//        Users.whoAmI().getId();
+//        System.out.println(Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(Ignores.unignoreTopic(229069)));
+//        Animes.get(123123);
+
+//        AnimeSearchFilter filter = new AnimeSearchFilter();
+//        filter.getTypes().getYes().add(null);
+//        Animes.getList(filter);
+
+        Users.getMessages(null, 3, 3, 3);
+//        Users.getAnimeRates(38073, TitleListStatus.COMPLETED, 10, 1);
+
+        checkForError();
+
 //        ApiCheck.getAnimeRatesCheck();
 //        Shikimori.showRespons   e(true);
 
@@ -40,7 +54,25 @@ public class Main {
 //        searchFilter.getGenres().getNo().add(8);
 //        System.out.println(Animes.getList(searchFilter).get(0).getName());
     }
-//69263
+// Firely-Pasha: 69263
+// Jimmy_Cool: 229069
+// 343ab124f00a6523452f7b2a0f610eddd594a1bfbd4eb71f9a67af20a97fedfc
+    private static void checkForError() {
+        if (Shikimori.isRequestSuccessful()) {
+            System.out.println("Successful!");
+        } else {
+            if (Shikimori.getSiteError() != null) {
+                System.out.println(Shikimori.getSiteError());
+            } else if (Shikimori.getException() != null) {
+                if (Shikimori.getException() instanceof UnknownHostException) {
+                    System.out.println("Нет подключения к интернету!");
+                } else {
+                    System.out.println(Shikimori.getException().getMessage());
+                }
+            }
+        }
+    }
+
     private static class ApiCheck {
 
         private static void getAnimeCheck() {

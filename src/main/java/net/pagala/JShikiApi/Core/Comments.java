@@ -28,22 +28,19 @@ public final class Comments {
 
     //TODO: What's frontend?
     //FIXME: Returns something wrong.
-    public static int create(CommentToCreate comment) {
+    public static int create(CommentToCreate comment, boolean broadcast) {
         ObjectNode rootNode = mapper.createObjectNode();
-
-        rootNode.put("broadcast", false);
-
+        rootNode.put("broadcast", broadcast);
         try {
             String jsonComment = mapper.writeValueAsString(comment);
             JsonNode node = mapper.readTree(jsonComment);
             rootNode.set("comment", node);
-
             rootNode.put("frontend", true);
-            System.out.println(rootNode.toString());
-
             String data = mapper.writeValueAsString(rootNode);
             JsonNode node1 = postRequest("/comments", data, true);
-            return node1.get("id").asInt();
+            if (node1 != null) {
+                return node1.get("id").asInt();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -53,22 +50,18 @@ public final class Comments {
 
     public static Comment update(int commentId, String commentBody) {
         ObjectNode rootNode = mapper.createObjectNode();
-
         ObjectNode comment = mapper.createObjectNode();
         comment.put("body", commentBody);
-
         rootNode.set("comment", comment);
         rootNode.put("frontend", false);
-
-        System.out.println(rootNode.toString());
-
         JsonNode node = putRequest("/comments/" + commentId, rootNode.toString(), true);
-        try {
-            return mapper.readValue(node.toString(), Comment.class);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (node != null) {
+            try {
+                return mapper.readValue(node.toString(), Comment.class);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
         return null;
     }
 
