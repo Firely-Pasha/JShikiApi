@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import net.pagala.JShikiApi.Items.AccessToken;
+import net.pagala.JShikiApi.Items.OAuthToken;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
@@ -48,7 +48,7 @@ public final class Shikimori {
     static ObjectMapper mapper;
     private static boolean showResponse;
     private static HttpClient client;
-    private static AccessToken currentToken;
+    private static OAuthToken oAuthToken;
     private static int responseCode;
     private static JsonNode siteError;
     private static Exception exception;
@@ -66,7 +66,7 @@ public final class Shikimori {
         mapper = new ObjectMapper();
         showResponse = false;
         client = HttpClients.createDefault();
-        currentToken = null;
+        oAuthToken = null;
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
@@ -89,11 +89,11 @@ public final class Shikimori {
         return null;
     }
 
-    //TODO: Token expired error!!!!
     private static JsonNode request(final HttpUriRequest request, final boolean readResponse) {
         siteError = null;
         exception = null;
         responseCode = -1;
+        request.setHeader("Content-Type", "application/json");
         request.setHeader("User-Agent", (appName == null ? "JShikiApi" : appName) + " " + developerName);
         if (accessToken != null) {
             request.setHeader("Authorization", "Bearer " + accessToken);
@@ -144,7 +144,6 @@ public final class Shikimori {
             if (arg != null) {
                 httpPost.setEntity(new StringEntity(arg));
             }
-            httpPost.addHeader("Content-Type", "application/json");
             return request(httpPost, readResponse);
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             exception = e;
@@ -152,7 +151,6 @@ public final class Shikimori {
         return null;
     }
 
-    //TODO: Make return notice for some methods.
     static JsonNode deleteRequest(String stringUrl, boolean readResponse) {
         HttpDelete httpDelete;
         try {
@@ -169,7 +167,6 @@ public final class Shikimori {
         try {
             httpPut = new HttpPut(buildUri(stringUrl));
             httpPut.setEntity(new StringEntity(arg));
-            httpPut.addHeader("Content-Type", "application/json");
             return request(httpPut, readResponse);
         } catch (URISyntaxException | UnsupportedEncodingException e) {
             exception = e;
@@ -181,7 +178,7 @@ public final class Shikimori {
         if (jsonItem == null) {
             return null;
         }
-        if (getResponseCode() >= 400) {
+        if (getResponseCode() >= 300) {
             siteError = jsonItem;
             return null;
         }
@@ -222,9 +219,14 @@ public final class Shikimori {
         return new ArrayList<>(Arrays.asList(items));
     }
 
-    public static AccessToken requestAccessToken(String authorizationCode) {
+    /**
+     * Запрашивает новый токен.
+     * @param authorizationCode код авторизации.
+     * @return новый токен.
+     */
+    public static OAuthToken requestAccessToken(String authorizationCode) {
         if (clientId != null && clientSecret != null &&
-                authorizationCode != null && redirectUri != null) {
+            authorizationCode != null && redirectUri != null) {
             ObjectNode objectNode = getObjectMapper().createObjectNode();
             objectNode.put("grant_type", "authorization_code");
             objectNode.put("client_id", clientId);
@@ -233,99 +235,164 @@ public final class Shikimori {
             objectNode.put("redirect_uri", redirectUri);
             switchApiVersion(RequestVersion.SITE);
             JsonNode response = postRequest("/oauth/token", objectNode.toString(), true);
-            currentToken = getObjectMapper().convertValue(response, AccessToken.class);
-            accessToken = currentToken.getAccessToken();
-            return currentToken;
+            oAuthToken = getObjectMapper().convertValue(response, OAuthToken.class);
+            accessToken = oAuthToken.getAccessToken();
+            return oAuthToken;
         } else {
             return null;
         }
     }
 
-    public static AccessToken refreshToken(String refreshToken) {
-        if (clientId != null && clientSecret != null &&
-                refreshToken != null && redirectUri != null) {
+    /**
+     * Обновляет токен.
+     * @param refreshToken токен обновления токена.
+     * @return обновленный токен.
+     */
+    public static OAuthToken refreshToken(String refreshToken) {
+        if (clientId != null && clientSecret != null && refreshToken != null) {
             ObjectNode objectNode = getObjectMapper().createObjectNode();
             objectNode.put("grant_type", "refresh_token");
             objectNode.put("client_id", clientId);
             objectNode.put("client_secret", clientSecret);
             objectNode.put("refresh_token", refreshToken);
-            objectNode.put("redirect_uri", redirectUri);
             switchApiVersion(RequestVersion.SITE);
             JsonNode response = postRequest("/oauth/token", objectNode.toString(), true);
-            currentToken = getObjectMapper().convertValue(response, AccessToken.class);
-            accessToken = currentToken.getAccessToken();
-            return currentToken;
+            oAuthToken = getObjectMapper().convertValue(response, OAuthToken.class);
+            accessToken = oAuthToken.getAccessToken();
+            return oAuthToken;
         }
         return null;
     }
 
+    /**
+     * Инициализирует Client ID.
+     * @param clientId Client ID.
+     */
     public static void setClientId(String clientId) {
         Shikimori.clientId = clientId;
     }
 
+    /**
+     * Инициализирует Client Secret.
+     * @param clientSecret - Client Secret.
+     */
     public static void setClientSecret(String clientSecret) {
         Shikimori.clientSecret = clientSecret;
     }
 
+    /**
+     * Инициализирует URI для перенаправления.
+     * @param redirectUri URI для перенаправления.
+     */
     public static void setRedirectUri(String redirectUri) {
         Shikimori.redirectUri = redirectUri;
     }
 
+    /**
+     * Возвращает токен доступа.
+     * @return токен доступа.
+     */
     public static String getAccessToken() {
         return accessToken;
     }
 
+    /**
+     * Инициализирует токен доступа.
+     * @param accessToken токен доступа.
+     */
     public static void setAccessToken(String accessToken) {
         Shikimori.accessToken = accessToken;
     }
 
+    /**
+     * Возвращает {@link ObjectMapper}.
+     */
     public static ObjectMapper getObjectMapper() {
         return mapper;
     }
 
+    /**
+     * Указывает, показывать ли ответ в консоли.
+     */
     public static void showResponse(boolean showResponse) {
         Shikimori.showResponse = showResponse;
     }
 
-    public static AccessToken getCurrentToken() {
-        return currentToken;
+    /**
+     * Возвращает OAuthToken.
+     */
+    public static OAuthToken getOAuthToken() {
+        return oAuthToken;
     }
 
+    /**
+     * Проверяет, авторизирован ли пользователь.
+     */
     public static boolean isAuthorized() {
         return accessToken != null;
     }
 
+    /**
+     * Проверяет, истек ли срок действия токена.
+     * <p>
+     * Возвращает <code>true</code>, если пользователь не авторизирован.
+     */
     public static boolean isTokenExpired() {
-        if (currentToken == null) {
+        if (oAuthToken == null) {
             return true;
         } else {
-            long absoluteExpiration = currentToken.getCreatedAt().getTime() + currentToken.getExpiresIn() * 1000;
-            System.out.println(currentToken.getCreatedAt());
+            long absoluteExpiration = oAuthToken.getCreatedAt().getTime() + oAuthToken.getExpiresIn() * 1000;
             return absoluteExpiration < new Date().getTime();
         }
     }
 
+    /**
+     * Возвращает код состояния ответа (HTTP).
+     */
     public static int getResponseCode() {
         return responseCode;
     }
 
+    /**
+     * Возвращает ошибку сайта.
+     * <p>
+     * Обновляется после каждого запроса.
+     */
     public static JsonNode getSiteError() {
         return siteError;
     }
-
+    /**
+     * Возвращает исключение API.
+     * <p>
+     * Обновляется после каждого запроса.
+     */
     public static Exception getException() {
         return exception;
     }
 
+    /**
+     * Проверяет, успешен ли запрос.
+     */
     public static boolean isRequestSuccessful() {
         boolean queryStatus = responseCode < 300;
         return queryStatus && siteError == null && exception == null;
     }
 
+    /**
+     * Инициализирует имя разработчика.
+     * @param developerName имя разработчика
+     */
     public static void setDeveloperName(String developerName) {
         Shikimori.developerName = developerName;
     }
 
+
+    /**
+     * Инициализирует название программы.
+     * <p>
+     * По умолчанию - <code>null</code>.
+     * @param appName название программы
+     */
     public static void setAppName(String appName) {
         Shikimori.appName = appName;
     }

@@ -20,7 +20,7 @@ public class Main {
 
 //        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
-//        System.out.println(Clubs.get(391).getName());
+        System.out.println(Clubs.get(391).getName());
 //        ApiCheck.getAnimeCheck();
 
 //        Shikimori.setAccessToken("343ab124f00a6523452f7b2a0f610eddd594a1bfbd4eb71f9a67af20a97fedfc");
@@ -34,7 +34,7 @@ public class Main {
 //        Animes.getList(filter);
 
 //        System.out.println(Users.whoAmI().getNickname());
-        Users.getMessages(null, 3, 3, 3);
+//        Users.getMessages(null, 3, 3, 3);
 //        Users.getAnimeRates(38073, TitleListStatus.COMPLETED, 10, 1);
 
         checkForError();

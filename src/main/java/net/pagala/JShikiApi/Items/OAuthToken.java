@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-public final class AccessToken {
+public final class OAuthToken {
     @JsonProperty("access_token")
     private String accessToken;
 
@@ -20,7 +20,7 @@ public final class AccessToken {
     @JsonProperty("created_at")
     private Date createdAt;
 
-    private AccessToken() {
+    private OAuthToken() {
 
     }
 

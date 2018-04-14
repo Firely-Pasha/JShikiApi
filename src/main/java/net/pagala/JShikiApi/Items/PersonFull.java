@@ -16,7 +16,7 @@ public class PersonFull extends Person {
 
     private Date birthday;
 
-    private URL website;
+    private String website;
 
     @JsonProperty("groupped_roles")
     private String[][] grouppedRoles;
@@ -68,7 +68,7 @@ public class PersonFull extends Person {
         return birthday;
     }
 
-    public URL getWebsite() {
+    public String getWebsite() {
         return website;
     }
 
