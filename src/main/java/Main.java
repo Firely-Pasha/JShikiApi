@@ -13,6 +13,7 @@ public class Main {
     public static void main(String[] args) throws JsonProcessingException {
         Shikimori.setDeveloperName("Firely-Pasha");
         Shikimori.setAppName("JShikiApi");
+        Shikimori.showResponse(true);
 //        Shikimori.logIn(args[0], args[1]);
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
@@ -20,10 +21,10 @@ public class Main {
 
 //        System.out.println(UserRates.increment(Animes.get(36838).getTitleUserRate().getId()).getEpisodes());
 //
-        System.out.println(Clubs.get(391).getName());
+//        System.out.println(Clubs.get(391).getName());
 //        ApiCheck.getAnimeCheck();
 
-//        Shikimori.setAccessToken("343ab124f00a6523452f7b2a0f610eddd594a1bfbd4eb71f9a67af20a97fedfc");
+//        Shikimori.setAccessToken("sdsad");
 //        System.out.println(Topics.getList(ForumTypes.NEWS, 10, 1).get(0).getHtmlFooter());
 //        Users.whoAmI().getId();
 //        System.out.println(Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(Ignores.unignoreTopic(229069)));
@@ -37,8 +38,13 @@ public class Main {
 //        Users.getMessages(null, 3, 3, 3);
 //        Users.getAnimeRates(38073, TitleListStatus.COMPLETED, 10, 1);
 
+        Shikimori.setClientId(args[0]);
+        Shikimori.setClientSecret(args[1]);
+//        Shikimori.setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
+//        OAuthToken token = Shikimori.requestAccessToken("2");
+        OAuthToken token = Shikimori.refreshToken("2");
         checkForError();
-
+        System.out.println(token.getRefreshToken());
 //        ApiCheck.getAnimeRatesCheck();
 //        Shikimori.showRespons   e(true);
 
@@ -57,7 +63,6 @@ public class Main {
     }
 // Firely-Pasha: 69263
 // Jimmy_Cool: 229069
-// 343ab124f00a6523452f7b2a0f610eddd594a1bfbd4eb71f9a67af20a97fedfc
     private static void checkForError() {
         if (Shikimori.isRequestSuccessful()) {
             System.out.println("Successful!");
