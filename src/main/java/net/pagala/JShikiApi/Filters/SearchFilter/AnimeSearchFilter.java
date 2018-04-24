@@ -1,7 +1,7 @@
 package net.pagala.JShikiApi.Filters.SearchFilter;
 
 import net.pagala.JShikiApi.Items.AnimeKind;
-import net.pagala.JShikiApi.Items.TitleRating;
+import net.pagala.JShikiApi.Items.AnimeRating;
 
 /**
  *
@@ -14,7 +14,7 @@ public class AnimeSearchFilter extends TitleSearchFilter {
     private AnimeOrder order;
     private SearchParameterList<AnimeKind> kind;
     private SearchParameterList<Duration> durations;
-    private SearchParameterList<TitleRating> ratings;
+    private SearchParameterList<AnimeRating> ratings;
     private SearchParameterList<Integer> studioIds;
 
     public AnimeSearchFilter() {
@@ -41,7 +41,7 @@ public class AnimeSearchFilter extends TitleSearchFilter {
         return durations;
     }
 
-    public SearchParameterList<TitleRating> getRatings() {
+    public SearchParameterList<AnimeRating> getRatings() {
         return ratings;
     }
 

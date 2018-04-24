@@ -12,7 +12,7 @@ public final class Studios {
 
     }
 
-    public static List<Studio> getStudios() {
+    public static List<Studio> getList() {
         return getItemList("/studios", Studio[].class);
     }
 }

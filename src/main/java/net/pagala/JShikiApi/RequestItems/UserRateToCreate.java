@@ -1,7 +1,7 @@
 package net.pagala.JShikiApi.RequestItems;
 
 import net.pagala.JShikiApi.Core.Shikimori;
-import net.pagala.JShikiApi.Filters.UserRateFilter.TargetType;
+import net.pagala.JShikiApi.Items.TargetType;
 import net.pagala.JShikiApi.Items.TitleListStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;

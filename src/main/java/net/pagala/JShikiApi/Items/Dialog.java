@@ -6,7 +6,7 @@ public class Dialog {
     @JsonProperty("target_user")
     private User targetUser;
 
-    private ShortMessage message;
+    private Message message;
 
     private Dialog() {
 
@@ -16,7 +16,7 @@ public class Dialog {
         return targetUser;
     }
 
-    public ShortMessage getMessage() {
+    public Message getMessage() {
         return message;
     }
 }

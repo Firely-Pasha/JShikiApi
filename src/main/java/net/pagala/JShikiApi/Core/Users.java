@@ -2,10 +2,8 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static net.pagala.JShikiApi.Core.Shikimori.getAccessToken;
 import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
 
@@ -105,9 +103,9 @@ public final class Users {
         return getItem("/users/" + id + "/favourites", Favourites.class);
     }
 
-    public static List<Message> getMessages(MessageType messageType, int currentUserId, int limit, int page) {
+    public static List<MessageFull> getMessages(MessageType messageType, int currentUserId, int limit, int page) {
         String url = "/users/" + currentUserId + "/messages?type=" + messageType + "&limit=" + limit + "&page=" + page;
-        return getItemList(url, Message[].class);
+        return getItemList(url, MessageFull[].class);
     }
 
     public UnreadMessages getUnreadMessages(int currentUserId) {

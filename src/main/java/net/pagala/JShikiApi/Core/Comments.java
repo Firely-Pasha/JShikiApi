@@ -3,7 +3,7 @@ package net.pagala.JShikiApi.Core;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.pagala.JShikiApi.Filters.CommentFilter.CommentFilter;
-import net.pagala.JShikiApi.Items.Comment;
+import net.pagala.JShikiApi.Items.CommentFull;
 import net.pagala.JShikiApi.RequestItems.CommentToCreate;
 
 import java.io.IOException;
@@ -17,13 +17,13 @@ public final class Comments {
 
     }
 
-    public static Comment get(int commentId) {
-        return Shikimori.getItem("/comments/" + commentId, Comment.class);
+    public static CommentFull get(int commentId) {
+        return Shikimori.getItem("/comments/" + commentId, CommentFull.class);
     }
 
 
-    public static List<Comment> getList(CommentFilter filter) {
-        return Shikimori.getItemList("/comments?" + filter.build(), Comment[].class);
+    public static List<CommentFull> getList(CommentFilter filter) {
+        return Shikimori.getItemList("/comments?" + filter.build(), CommentFull[].class);
     }
 
     //TODO: What's frontend?
@@ -48,7 +48,7 @@ public final class Comments {
         return -1;
     }
 
-    public static Comment update(int commentId, String commentBody) {
+    public static CommentFull update(int commentId, String commentBody) {
         ObjectNode rootNode = mapper.createObjectNode();
         ObjectNode comment = mapper.createObjectNode();
         comment.put("body", commentBody);
@@ -57,7 +57,7 @@ public final class Comments {
         JsonNode node = putRequest("/comments/" + commentId, rootNode.toString(), true);
         if (node != null) {
             try {
-                return mapper.readValue(node.toString(), Comment.class);
+                return mapper.readValue(node.toString(), CommentFull.class);
             } catch (IOException e) {
                 e.printStackTrace();
             }

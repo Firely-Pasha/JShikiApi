@@ -35,6 +35,9 @@ public class CalendarItem {
         return nextEpisodeAt;
     }
 
+    /**
+     * @return string value 'cause some items have duration value like "31/1440".
+     */
     public String getDuration() {
         return duration;
     }

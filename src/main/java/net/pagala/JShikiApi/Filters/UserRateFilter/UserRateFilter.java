@@ -1,5 +1,6 @@
 package net.pagala.JShikiApi.Filters.UserRateFilter;
 
+import net.pagala.JShikiApi.Items.TargetType;
 import net.pagala.JShikiApi.Items.TitleListStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

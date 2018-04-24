@@ -5,6 +5,7 @@ import net.pagala.JShikiApi.Items.AnimeRate;
 import net.pagala.JShikiApi.Items.UserImage;
 
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 //TODO: Catch URL-Level errors!!!
@@ -13,7 +14,7 @@ public class Main {
     public static void main(String[] args) throws JsonProcessingException {
         Shikimori.setDeveloperName("Firely-Pasha");
         Shikimori.setAppName("JShikiApi");
-        Shikimori.showResponse(true);
+//        Shikimori.showResponse(true);
 //        Shikimori.logIn(args[0], args[1]);
 //        Devices.delete(3626);
 //        System.out.println(Animes.get(9919).getDescription().replaceAll("\\[.*?]", ""));
@@ -38,13 +39,13 @@ public class Main {
 //        Users.getMessages(null, 3, 3, 3);
 //        Users.getAnimeRates(38073, TitleListStatus.COMPLETED, 10, 1);
 
-        Shikimori.setClientId(args[0]);
-        Shikimori.setClientSecret(args[1]);
+//        Shikimori.setClientId(args[0]);
+//        Shikimori.setClientSecret(args[1]);
 //        Shikimori.setRedirectUri("urn:ietf:wg:oauth:2.0:oob");
 //        OAuthToken token = Shikimori.requestAccessToken("2");
-        OAuthToken token = Shikimori.refreshToken("2");
-        checkForError();
-        System.out.println(token.getRefreshToken());
+//        OAuthToken token = Shikimori.refreshToken("2");
+//        checkForError();
+//        System.out.println(token.getRefreshToken());
 //        ApiCheck.getAnimeRatesCheck();
 //        Shikimori.showRespons   e(true);
 
@@ -60,6 +61,10 @@ public class Main {
 //        AnimeSearchFilter searchFilter = new AnimeSearchFilter();
 //        searchFilter.getGenres().getNo().add(8);
 //        System.out.println(Animes.getList(searchFilter).get(0).getName());
+        System.out.println(new SimpleDateFormat("dd.MM.YYYY").format(Animes.getExternalLinks(1).get(0).getCreatedAt()));
+        System.out.println(Animes.getExternalLinks(123).get(0).getEntryType());
+        System.out.println(Calendar.get());
+        checkForError();
     }
 // Firely-Pasha: 69263
 // Jimmy_Cool: 229069
@@ -283,7 +288,7 @@ public class Main {
                 System.out.println("\t\t\t\tx48: " + clubLogo.getX48());
                 System.out.println("\t\t\tIs censored: " + club.isCensored());
                 System.out.println("\t\t\tJoin policy: " + club.getJoinPolicy());
-                System.out.println("\t\t\tComment policy: " + club.getCommentPolicy());
+                System.out.println("\t\t\tCommentFull policy: " + club.getCommentPolicy());
             }
         }
     }

@@ -2,9 +2,9 @@ package net.pagala.JShikiApi.Core;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import net.pagala.JShikiApi.Items.Message;
+import net.pagala.JShikiApi.Items.MessageFull;
 import net.pagala.JShikiApi.Items.MessageType;
-import net.pagala.JShikiApi.RequestItems.MessageToSend;
+import net.pagala.JShikiApi.RequestItems.MessageToCreate;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
@@ -14,11 +14,11 @@ public final class Messages {
 
     }
 
-    public static Message get(int messageId) {
-        return getItem("/messages/" + messageId, Message.class);
+    public static MessageFull get(int messageId) {
+        return getItem("/messages/" + messageId, MessageFull.class);
     }
 
-    public static JsonNode send(MessageToSend message) {
+    public static JsonNode create(MessageToCreate message) {
         return postRequest("/messages", message.build(), true);
     }
 

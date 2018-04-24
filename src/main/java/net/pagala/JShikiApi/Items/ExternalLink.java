@@ -3,12 +3,13 @@ package net.pagala.JShikiApi.Items;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Date;
+
 /**
  *
  * Created by firely-pasha on 7/18/17.
  */
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ExternalLink {
     private int id;
 
@@ -22,16 +23,16 @@ public class ExternalLink {
     private int entryId;
 
     @JsonProperty("entry_type")
-    private String entryType;
+    private TargetType entryType;
 
     @JsonProperty("created_at")
-    private String createdAt;
+    private Date createdAt;
 
     @JsonProperty("updated_at")
-    private String updatesAt;
+    private Date updatesAt;
 
     @JsonProperty("imported_at")
-    private String importedAt;
+    private Date importedAt;
 
     private ExternalLink() {
 
@@ -57,19 +58,19 @@ public class ExternalLink {
         return entryId;
     }
 
-    public String getEntryType() {
+    public TargetType getEntryType() {
         return entryType;
     }
 
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public String getUpdatesAt() {
+    public Date getUpdatesAt() {
         return updatesAt;
     }
 
-    public String getImportedAt() {
+    public Date getImportedAt() {
         return importedAt;
     }
 }

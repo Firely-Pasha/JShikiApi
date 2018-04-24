@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import java.io.IOException;
 
-public class MessageToSend {
+public class MessageToCreate {
     private String body;
 
     @JsonProperty("from_id")
@@ -21,7 +21,7 @@ public class MessageToSend {
     @JsonProperty("to_id")
     private int toId;
 
-    public MessageToSend(String body, MessageKind kind, int fromId, int toId) {
+    public MessageToCreate(String body, MessageKind kind, int fromId, int toId) {
         this.body = body;
         this.kind = kind;
         this.fromId = fromId;

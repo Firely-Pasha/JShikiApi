@@ -23,7 +23,7 @@ public final class UserRates {
         return getItem("/user_rates/" + id, UserRate.class);
     }
 
-    public static List<UserRate> list(UserRateFilter userRateFilter) {
+    public static List<UserRate> getList(UserRateFilter userRateFilter) {
         switchApiVersion(RequestVersion.API_V2);
         return getItemList("/user_rates" + userRateFilter.build(), UserRate[].class);
     }
@@ -46,7 +46,7 @@ public final class UserRates {
         return makeUserRateFromJson(response);
     }
 
-    public static void destroy(int userRateId) {
+    public static void delete(int userRateId) {
         switchApiVersion(RequestVersion.API_V2);
         deleteRequest("/user_rates/" + userRateId, false);
     }

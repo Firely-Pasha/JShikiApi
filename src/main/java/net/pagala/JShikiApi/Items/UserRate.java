@@ -1,10 +1,6 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Shikimori;
-import net.pagala.JShikiApi.Filters.UserRateFilter.TargetType;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.Date;
 

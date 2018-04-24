@@ -1,6 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -55,7 +54,7 @@ public class AnimeFull extends Anime implements TitleFull {
     @JsonProperty("user_rate")
     private TitleUserRate titleUserRate;
 
-    private TitleRating rating;
+    private AnimeRating rating;
 
     private int duration;
 
@@ -75,7 +74,7 @@ public class AnimeFull extends Anime implements TitleFull {
     private AnimeFull() {
     }
 
-    public TitleRating getRating() {
+    public AnimeRating getRating() {
         return rating;
     }
 

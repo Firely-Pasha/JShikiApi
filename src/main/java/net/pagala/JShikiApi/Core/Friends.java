@@ -11,11 +11,11 @@ public final class Friends {
 
     }
 
-    public static JsonNode addFriend(int friendId) {
+    public static JsonNode add(int friendId) {
         return postRequest("/friends/" + friendId, null, true);
     }
 
-    public static JsonNode removeFriend(int friendId) {
+    public static JsonNode remove(int friendId) {
         return deleteRequest("/friends/" + friendId, true);
     }
 }

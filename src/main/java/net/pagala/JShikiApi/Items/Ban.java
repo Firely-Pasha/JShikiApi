@@ -11,7 +11,7 @@ public class Ban {
     @JsonProperty("user_id")
     private int userId;
 
-    private CommentShort comment;
+    private Comment comment;
 
     @JsonProperty("moderator_id")
     private int moderatorId;
@@ -41,7 +41,7 @@ public class Ban {
         return userId;
     }
 
-    public CommentShort getComment() {
+    public Comment getComment() {
         return comment;
     }
 

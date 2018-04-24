@@ -1,4 +1,4 @@
-package net.pagala.JShikiApi.Filters.UserRateFilter;
+package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

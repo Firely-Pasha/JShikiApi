@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * Created by firely-pasha on 7/12/17.
  */
-public enum TitleRating {
+public enum AnimeRating {
     @JsonProperty("none")
     NONE,
 

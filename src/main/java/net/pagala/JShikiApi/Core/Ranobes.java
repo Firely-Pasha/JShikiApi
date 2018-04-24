@@ -26,7 +26,7 @@ public final class Ranobes {
         return Shikimori.getItemList("/ranobe/" + id + "/roles", Role[].class);
     }
 
-    public static List<Relation> getRelated(int id) {
+    public static List<Relation> getRelations(int id) {
         return Shikimori.getItemList("/ranobe/" + id + "/related", Relation[].class);
     }
 
