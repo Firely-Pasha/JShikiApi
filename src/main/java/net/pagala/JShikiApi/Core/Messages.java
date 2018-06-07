@@ -1,10 +1,13 @@
 package net.pagala.JShikiApi.Core;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import net.pagala.JShikiApi.Items.Message;
 import net.pagala.JShikiApi.Items.MessageFull;
 import net.pagala.JShikiApi.Items.MessageType;
 import net.pagala.JShikiApi.RequestItems.MessageToCreate;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
@@ -14,56 +17,111 @@ public final class Messages {
 
     }
 
-    public static MessageFull get(int messageId) {
+    public static ApiCall<MessageFull> get(int messageId) {
         return getItem("/messages/" + messageId, MessageFull.class);
     }
 
-    public static JsonNode create(MessageToCreate message) {
-        return postRequest("/messages", message.build(), true);
+    public static ApiCall<Message> create(MessageToCreate message) {
+        return postItem("/messages", message, Message.class);
     }
 
-    public static JsonNode update(int messageId, String body) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        ObjectNode messageNode = mapper.createObjectNode();
-        messageNode.put("body", body);
-        rootNode.put("frontend", true);
-        rootNode.set("message", messageNode);
-        return putRequest("/messages/" + messageId, rootNode.toString(), true);
+    // TODO: Make model for this item.
+    public static ApiCall<Message> update(int messageId, String body) {
+        return putItem("/messages/" + messageId, new MessageToUpdate(body), Message.class);
     }
 
-    public static void delete(int messageId) {
-        deleteRequest("/messages/" + messageId, false);
+    public static ApiCall delete(int messageId) {
+        return deleteItem("/messages/" + messageId, null);
     }
 
-    public static void markRead(boolean read, int... messageIds) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        if (messageIds.length != 0) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(messageIds[0]);
-            for (int i = 1; i < messageIds.length; i++) {
-                sb.append(",").append(messageIds[i]);
+    public static ApiCall markRead(boolean read, Integer... messageIds) {
+        return markRead(read, Arrays.asList(messageIds));
+    }
+    public static ApiCall markRead(boolean read, List<Integer> messageIds) {
+        return postItem("/messages/mark_read", new MarkAsRead(read, messageIds), null);
+    }
+
+    public static ApiCall readAll(MessageType type) {
+        return postItem("/messages/read_all", new AllAction(type), null);
+    }
+
+    public static ApiCall deleteAll(MessageType type) {
+        return postItem("/messages/delete_all", new AllAction(type), null);
+    }
+
+    private static class MessageToUpdate {
+        private boolean frontend;
+        private final Message message;
+
+        private MessageToUpdate(String body) {
+            this.frontend = false;
+            this.message = new Message(body);
+        }
+
+        private class Message {
+            private String body;
+
+            public Message(String body) {
+                this.body = body;
             }
-            rootNode.put("ids", sb.toString());
+
+            public String getBody() {
+                return body;
+            }
         }
-        rootNode.put("is_read", read ? "1" : "0");
-        postRequest("/messages/mark_read", rootNode.toString(), false);
+
+        public boolean isFrontend() {
+            return frontend;
+        }
+
+        public Message getMessage() {
+            return message;
+        }
     }
 
-    public static void readAll(MessageType type) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        rootNode.put("frontend", false);
-        if (type != null) {
-            rootNode.put("type", type.toString());
+    private static class MarkAsRead {
+        @JsonProperty("ids")
+        private final String ids;
+        @JsonProperty("is_read")
+        private final String isRead;
+
+        private MarkAsRead(boolean isRead, List<Integer> ids) {
+            this.isRead = isRead ? "1" : "0";
+            if (ids.isEmpty()) {
+                this.ids = "";
+                return;
+            }
+            StringBuilder sb = new StringBuilder(ids.get(0).toString());
+            for (int i = 1; i < ids.size(); i++) {
+                sb.append(',').append(ids.get(i));
+            }
+            this.ids = sb.toString();
         }
-        postRequest("/messages/read_all", rootNode.toString(), false);
+
+        public String getIds() {
+            return ids;
+        }
+
+        public String isRead() {
+            return isRead;
+        }
     }
 
-    public static void deleteAll(MessageType type) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        rootNode.put("frontend", false);
-        if (type != null) {
-            rootNode.put("type", type.toString());
+    private static class AllAction {
+        private final boolean frontend;
+        private final String type;
+
+        private AllAction(MessageType type) {
+            this.frontend = false;
+            this.type = type.toString();
         }
-        postRequest("/messages/delete_all", rootNode.toString(), false);
+
+        public boolean isFrontend() {
+            return frontend;
+        }
+
+        public String getType() {
+            return type;
+        }
     }
 }

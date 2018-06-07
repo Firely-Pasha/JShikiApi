@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by firely-pasha on 7/13/17.
  */
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class Relation {
     private String relation;
 

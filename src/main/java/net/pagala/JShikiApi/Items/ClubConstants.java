@@ -2,31 +2,29 @@ package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 public class ClubConstants {
     @JsonProperty("join_policy")
-    private List<String> joinPolicy;
+    private String[] joinPolicy;
 
     @JsonProperty("comment_policy")
-    private List<String> commentPolicy;
+    private String[] commentPolicy;
 
     @JsonProperty("image_upload_policy")
-    private List<String> imageUploadPolicy;
+    private String[] imageUploadPolicy;
 
     private ClubConstants() {
 
     }
 
-    public List<String> getJoinPolicy() {
+    public String[] getJoinPolicy() {
         return joinPolicy;
     }
 
-    public List<String> getCommentPolicy() {
+    public String[] getCommentPolicy() {
         return commentPolicy;
     }
 
-    public List<String> getImageUploadPolicy() {
+    public String[] getImageUploadPolicy() {
         return imageUploadPolicy;
     }
 }

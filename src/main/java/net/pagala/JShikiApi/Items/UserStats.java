@@ -14,7 +14,6 @@ import java.util.List;
  * Created by firely-pasha on 7/19/17.
  */
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserStats {
     private UserTitleStatus statuses;
 
@@ -88,17 +87,15 @@ public class UserStats {
         return publishers;
     }
 
-    public List<UserActivity> getActivities() {
+    public UserActivity[] getActivities() {
         if (activities.asText().equals("")) {
             try {
-                UserActivity[] activity = Shikimori.getObjectMapper().treeToValue(activities, UserActivity[].class);
-                return Arrays.asList(activity);
+                return Shikimori.getObjectMapper().treeToValue(activities, UserActivity[].class);
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
                 return null;
             }
         }
-
-        return new ArrayList<>();
+        return new UserActivity[0];
     }
 }

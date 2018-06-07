@@ -1,14 +1,12 @@
 package net.pagala.JShikiApi.Core;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import net.pagala.JShikiApi.Filters.UserRateFilter.UserRateFilter;
+import net.pagala.JShikiApi.Items.Notice;
 import net.pagala.JShikiApi.Items.TitleType;
 import net.pagala.JShikiApi.Items.UserRate;
 import net.pagala.JShikiApi.RequestItems.UserRateToCreate;
 import net.pagala.JShikiApi.RequestItems.UserRateToUpdate;
-
-import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
@@ -18,55 +16,49 @@ public final class UserRates {
 
     }
 
-    public static UserRate get(int id) {
-        switchApiVersion(RequestVersion.API_V2);
-        return getItem("/user_rates/" + id, UserRate.class);
+    public static ApiCall<UserRate> get(int id) {
+        return getItem("/user_rates/" + id, UserRate.class, RequestVersion.API_V2);
     }
 
-    public static List<UserRate> getList(UserRateFilter userRateFilter) {
-        switchApiVersion(RequestVersion.API_V2);
-        return getItemList("/user_rates" + userRateFilter.build(), UserRate[].class);
+    public static ApiCall<UserRate[]> getList(UserRateFilter userRateFilter) {
+        return getItem("/user_rates" + userRateFilter.build(), UserRate[].class, RequestVersion.API_V2);
     }
 
-    public static UserRate create(UserRateToCreate userRate) {
-        switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = postRequest("/user_rates", userRate.build(), true);
-        return makeUserRateFromJson(response);
+    public static ApiCall<UserRate> create(UserRateToCreate userRate) {
+        return postItem("/user_rates", new UserRateAction<>(userRate), UserRate.class, RequestVersion.API_V2);
     }
 
-    public static UserRate update(int userRateId, UserRateToUpdate userRate) {
-        switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = putRequest("/user_rates/" + userRateId, userRate.build(), true);
-        return makeUserRateFromJson(response);
+    public static ApiCall<UserRate> update(int userRateId, UserRateToUpdate userRate) {
+        return putItem("/user_rates/" + userRateId, new UserRateAction<>(userRate), UserRate.class, RequestVersion.API_V2);
     }
 
-    public static UserRate increment(int userRateId) {
-        switchApiVersion(RequestVersion.API_V2);
-        JsonNode response = postRequest("/user_rates/" + userRateId + "/increment", null, true);
-        return makeUserRateFromJson(response);
+    public static ApiCall<UserRate> increment(int userRateId) {
+        return postItem("/user_rates/" + userRateId + "/increment", "", UserRate.class, RequestVersion.API_V2);
     }
 
     public static void delete(int userRateId) {
-        switchApiVersion(RequestVersion.API_V2);
-        deleteRequest("/user_rates/" + userRateId, false);
+        deleteItem("/user_rates/" + userRateId, null, RequestVersion.API_V2);
     }
 
-    public static JsonNode cleanup(TitleType titleType) {
-        return deleteRequest("/user_rates/" + titleType + "/cleanup", true);
+    public static ApiCall<Notice> cleanup(TitleType titleType) {
+        return deleteItem("/user_rates/" + titleType + "/cleanup", Notice.class);
     }
 
 
-    public static JsonNode reset(TitleType titleType) {
-        return deleteRequest("/user_rates/" + titleType + "/reset", true);
+    public static ApiCall<Notice> reset(TitleType titleType) {
+        return deleteItem("/user_rates/" + titleType + "/reset", Notice.class);
     }
 
-    private static UserRate makeUserRateFromJson(JsonNode jsonUserRate) {
-        UserRate userRate = null;
-        try {
-            userRate = mapper.treeToValue(jsonUserRate, UserRate.class);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
+    private static class UserRateAction<T> {
+        @JsonProperty("user_rate")
+        private final T userRate;
+
+        private UserRateAction(T userRateToUpdate) {
+            this.userRate = userRateToUpdate;
         }
-        return userRate;
+
+        public T getUserRate() {
+            return userRate;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package net.pagala.JShikiApi.RequestItems;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import net.pagala.JShikiApi.Core.Shikimori;
 import net.pagala.JShikiApi.Items.TargetType;
 import net.pagala.JShikiApi.Items.TitleListStatus;
@@ -10,20 +11,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 @SuppressWarnings("unused")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserRateToCreate {
-    protected Integer score;
+    private Integer score;
 
     protected TitleListStatus status;
 
-    protected String text;
+    private String text;
 
-    protected Integer episodes;
+    private Integer episodes;
 
-    protected Integer chapters;
+    private Integer chapters;
 
-    protected Integer volumes;
+    private Integer volumes;
 
-    protected Integer rewatches;
+    private Integer rewatches;
 
     @JsonProperty("target_id")
     private int targetId;
@@ -118,49 +120,5 @@ public class UserRateToCreate {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public String build() {
-        ObjectMapper mapper = Shikimori.getObjectMapper();
-        JsonNode rootNode = mapper.createObjectNode();
-
-        JsonNode userRate = mapper.createObjectNode();
-        ((ObjectNode)userRate).put("user_id", userId);
-        ((ObjectNode)userRate).put("target_id", targetId);
-        ((ObjectNode)userRate).put("target_type", targetType.toString());
-
-        if (status != null) {
-            ((ObjectNode)userRate).put("status", status.toString());
-        }
-        if (score != null) {
-            ((ObjectNode)userRate).put("score", score);
-        }
-        if (chapters != null) {
-            ((ObjectNode)userRate).put("chapters", chapters);
-        }
-        if (episodes != null) {
-            ((ObjectNode)userRate).put("episodes", episodes);
-        }
-        if (volumes != null) {
-            ((ObjectNode)userRate).put("volumes", volumes);
-        }
-        if (rewatches != null) {
-            ((ObjectNode)userRate).put("rewatches", rewatches);
-        }
-        if (text != null) {
-            ((ObjectNode)userRate).put("text", text);
-        }
-
-        ((ObjectNode)rootNode).set("user_rate", userRate);
-
-        String jsonString = null;
-        try {
-            jsonString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(rootNode);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-        return jsonString;
-
     }
 }

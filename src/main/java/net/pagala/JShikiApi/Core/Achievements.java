@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.Achievement;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Achievements {
 
@@ -12,7 +10,7 @@ public final class Achievements {
 
     }
 
-    public static List<Achievement> getList(int userId) {
-        return getItemList("/achievements/?user_id=" + userId, Achievement[].class);
+    public static ApiCall<Achievement[]> getList(int userId) {
+        return getItem("/achievements/?user_id=" + userId, Achievement[].class);
     }
 }

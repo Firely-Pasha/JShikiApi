@@ -1,22 +1,18 @@
 package net.pagala.JShikiApi.Items;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
 
 /**
  *
  * Created by firely-pasha on 7/17/17.
  */
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class MangaFull extends Manga implements TitleFull {
-    private List<String> english;
+    private String[] english;
 
-    private List<String> japanese;
+    private String[] japanese;
 
-    private List<String> synonyms;
+    private String[] synonyms;
 
     private String score;
 
@@ -44,17 +40,17 @@ public class MangaFull extends Manga implements TitleFull {
     private int myanimelistId;
 
     @JsonProperty("rates_statuses_stats")
-    private List<RatesStatus> ratesStatusesStats;
+    private RatesStatus[] ratesStatusesStats;
 
     @JsonProperty("rates_scores_stats")
-    private List<RatesScore> ratesScoresStats;
+    private RatesScore[] ratesScoresStats;
 
-    private List<Genre> genres;
+    private Genre[] genres;
 
     @JsonProperty("user_rate")
     private TitleUserRate titleUserRate;
 
-    private List<Publisher> publishers;
+    private Publisher[] publishers;
 
 
     private MangaFull() {
@@ -62,17 +58,17 @@ public class MangaFull extends Manga implements TitleFull {
     }
 
     @Override
-    public List<String> getEnglish() {
+    public String[] getEnglish() {
         return english;
     }
 
     @Override
-    public List<String> getJapanese() {
+    public String[] getJapanese() {
         return japanese;
     }
 
     @Override
-    public List<String> getSynonyms() {
+    public String[] getSynonyms() {
         return synonyms;
     }
 
@@ -127,17 +123,17 @@ public class MangaFull extends Manga implements TitleFull {
     }
 
     @Override
-    public List<RatesStatus> getRatesStatusesStats() {
+    public RatesStatus[] getRatesStatusesStats() {
         return ratesStatusesStats;
     }
 
     @Override
-    public List<RatesScore> getRatesScoresStats() {
+    public RatesScore[] getRatesScoresStats() {
         return ratesScoresStats;
     }
 
     @Override
-    public List<Genre> getGenres() {
+    public Genre[] getGenres() {
         return genres;
     }
 
@@ -146,7 +142,7 @@ public class MangaFull extends Manga implements TitleFull {
         return titleUserRate;
     }
 
-    public List<Publisher> getPublishers() {
+    public Publisher[] getPublishers() {
         return publishers;
     }
 }

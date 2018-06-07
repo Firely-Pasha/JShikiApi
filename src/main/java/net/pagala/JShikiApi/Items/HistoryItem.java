@@ -1,12 +1,12 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Shikimori;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Date;
+
+import static net.pagala.JShikiApi.Core.Shikimori.getObjectMapper;
 
 @SuppressWarnings("unused")
 public class HistoryItem {
@@ -19,13 +19,6 @@ public class HistoryItem {
 
     //TODO: Make something with difference.
     private JsonNode target;
-
-    private static ObjectMapper objectMapper;
-
-    static {
-        objectMapper = Shikimori.getObjectMapper();
-    }
-
 
     private HistoryItem() {
 
@@ -62,7 +55,7 @@ public class HistoryItem {
         try {
             HistoryItemType type = getType();
             if (type == HistoryItemType.ANIMES) {
-                return objectMapper.treeToValue(target, Anime.class);
+                return getObjectMapper().treeToValue(target, Anime.class);
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -75,7 +68,7 @@ public class HistoryItem {
         try {
             HistoryItemType type = getType();
             if (type == HistoryItemType.MANGAS) {
-                return objectMapper.treeToValue(target, Manga.class);
+                return getObjectMapper().treeToValue(target, Manga.class);
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -88,7 +81,7 @@ public class HistoryItem {
         try {
             HistoryItemType type = getType();
             if (type == HistoryItemType.RANOBE) {
-                return objectMapper.treeToValue(target, Manga.class);
+                return getObjectMapper().treeToValue(target, Manga.class);
             }
         } catch (JsonProcessingException e) {
             e.printStackTrace();

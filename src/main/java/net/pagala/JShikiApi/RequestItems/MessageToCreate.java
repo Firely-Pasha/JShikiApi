@@ -1,81 +1,77 @@
 package net.pagala.JShikiApi.RequestItems;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import net.pagala.JShikiApi.Core.Shikimori;
-import net.pagala.JShikiApi.Items.MessageKind;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
-import java.io.IOException;
+import net.pagala.JShikiApi.Items.MessageKind;
 
 public class MessageToCreate {
-    private String body;
-
-    @JsonProperty("from_id")
-    private int fromId;
-
-    private MessageKind kind;
-
-    @JsonProperty("to_id")
-    private int toId;
+    private boolean frontEnd;
+    private final Message message;
 
     public MessageToCreate(String body, MessageKind kind, int fromId, int toId) {
-        this.body = body;
-        this.kind = kind;
-        this.fromId = fromId;
-        this.toId = toId;
+        this.frontEnd = false;
+        this.message = new Message(body, kind, fromId, toId);
     }
 
-    public String build() {
-        ObjectMapper mapper = Shikimori.getObjectMapper();
-        ObjectNode rootNode = mapper.createObjectNode();
+    public final class Message {
+        private String body;
 
-        try {
-            String message = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
-            JsonNode jsonMessage = mapper.readTree(message);
-            rootNode.put("frontend", true);
-            rootNode.set("message", jsonMessage);
-            return rootNode.toString();
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        @JsonProperty("from_id")
+        private int fromId;
+
+        private MessageKind kind;
+
+        @JsonProperty("to_id")
+        private int toId;
+
+        private Message(String body, MessageKind kind, int fromId, int toId) {
+            this.body = body;
+            this.fromId = fromId;
+            this.kind = kind;
+            this.toId = toId;
         }
 
-        return null;
+        public String getBody() {
+            return body;
+        }
+
+        public void setBody(String body) {
+            this.body = body;
+        }
+
+        public int getFromId() {
+            return fromId;
+        }
+
+        public void setFromId(int fromId) {
+            this.fromId = fromId;
+        }
+
+        public MessageKind getKind() {
+            return kind;
+        }
+
+        public void setKind(MessageKind kind) {
+            this.kind = kind;
+        }
+
+        public int getToId() {
+            return toId;
+        }
+
+        public void setToId(int toId) {
+            this.toId = toId;
+        }
     }
 
-    public String getBody() {
-        return body;
+    public boolean isFrontEnd() {
+        return frontEnd;
     }
 
-    public void setBody(String body) {
-        this.body = body;
+    public void setFrontEnd(boolean frontEnd) {
+        this.frontEnd = frontEnd;
     }
 
-    public MessageKind getKind() {
-        return kind;
-    }
-
-    public void setKind(MessageKind kind) {
-        this.kind = kind;
-    }
-
-    public int getFromId() {
-        return fromId;
-    }
-
-    public void setFromId(int fromId) {
-        this.fromId = fromId;
-    }
-
-    public int getToId() {
-        return toId;
-    }
-
-    public void setToId(int toId) {
-        this.toId = toId;
+    public Message getMessage() {
+        return message;
     }
 }

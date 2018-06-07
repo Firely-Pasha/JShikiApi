@@ -1,21 +1,19 @@
 package net.pagala.JShikiApi.Items;
 
-import java.util.List;
-
 public class TitleConstants {
-    private List<String> kind;
+    private String[] kind;
 
-    private List<String> status;
+    private String[] status;
 
     private TitleConstants() {
 
     }
 
-    public List<String> getKind() {
+    public String[] getKind() {
         return kind;
     }
 
-    public List<String> getStatus() {
+    public String[] getStatus() {
         return status;
     }
 }

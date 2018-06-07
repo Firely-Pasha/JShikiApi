@@ -1,9 +1,9 @@
 package net.pagala.JShikiApi.Core;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import net.pagala.JShikiApi.Items.Notice;
 
-import static net.pagala.JShikiApi.Core.Shikimori.deleteRequest;
-import static net.pagala.JShikiApi.Core.Shikimori.postRequest;
+import static net.pagala.JShikiApi.Core.Shikimori.deleteItem;
+import static net.pagala.JShikiApi.Core.Shikimori.postItem;
 
 public final class Friends {
 
@@ -11,11 +11,14 @@ public final class Friends {
 
     }
 
-    public static JsonNode add(int friendId) {
-        return postRequest("/friends/" + friendId, null, true);
+    // {
+    //  "notice": "user_1234567 добавлен в друзья"
+    // }
+    public static ApiCall<Notice> add(int friendId) {
+        return postItem("/friends/" + friendId, "", Notice.class);
     }
 
-    public static JsonNode remove(int friendId) {
-        return deleteRequest("/friends/" + friendId, true);
+    public static ApiCall<Notice> remove(int friendId) {
+        return deleteItem("/friends/" + friendId, Notice.class);
     }
 }

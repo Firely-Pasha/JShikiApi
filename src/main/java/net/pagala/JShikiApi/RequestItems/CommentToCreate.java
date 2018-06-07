@@ -21,7 +21,6 @@ public class CommentToCreate {
     @JsonProperty("is_summary")
     private Boolean isSummary;
 
-    //FIXME: API FIX: NO CLUB CONSTANT IN COMMENTABLE TYPE!!!
     public CommentToCreate(String body, int commentableId, CommentableType commentableType) {
         this.body = body;
         this.commentableId = commentableId;

@@ -2,8 +2,6 @@ package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 @SuppressWarnings("unused")
 public class ClubFull extends Club{
 
@@ -15,9 +13,9 @@ public class ClubFull extends Club{
     @JsonProperty("description_html")
     private String descriptionHtml;
 
-    private List<Manga> mangas;
+    private Manga[] mangas;
 
-    private List<Character> characters;
+    private Character[] characters;
 
     @JsonProperty("thread_id")
     private int threadId;
@@ -32,11 +30,11 @@ public class ClubFull extends Club{
     private int styleId;
 
     //TODO: Mb remove this?
-    private List<User> members;
+    private User[] members;
 
-    private List<Anime> animes;
+    private Anime[] animes;
 
-    private List<ClubsImage> images;
+    private ClubsImage[] images;
 
     private ClubFull() {
 
@@ -54,11 +52,11 @@ public class ClubFull extends Club{
         return descriptionHtml;
     }
 
-    public List<Manga> getMangas() {
+    public Manga[] getMangas() {
         return mangas;
     }
 
-    public List<Character> getCharacters() {
+    public Character[] getCharacters() {
         return characters;
     }
 
@@ -78,15 +76,15 @@ public class ClubFull extends Club{
         return styleId;
     }
 
-    public List<User> getMembers() {
+    public User[] getMembers() {
         return members;
     }
 
-    public List<Anime> getAnimes() {
+    public Anime[] getAnimes() {
         return animes;
     }
 
-    public List<ClubsImage> getImages() {
+    public ClubsImage[] getImages() {
         return images;
     }
 }

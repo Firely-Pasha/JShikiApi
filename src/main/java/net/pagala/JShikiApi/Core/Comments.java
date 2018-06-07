@@ -1,13 +1,9 @@
 package net.pagala.JShikiApi.Core;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.pagala.JShikiApi.Filters.CommentFilter.CommentFilter;
 import net.pagala.JShikiApi.Items.CommentFull;
+import net.pagala.JShikiApi.Items.Notice;
 import net.pagala.JShikiApi.RequestItems.CommentToCreate;
-
-import java.io.IOException;
-import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.*;
 
@@ -17,55 +13,78 @@ public final class Comments {
 
     }
 
-    public static CommentFull get(int commentId) {
-        return Shikimori.getItem("/comments/" + commentId, CommentFull.class);
+    public static ApiCall<CommentFull> get(int commentId) {
+        return getItem("/comments/" + commentId, CommentFull.class);
     }
 
 
-    public static List<CommentFull> getList(CommentFilter filter) {
-        return Shikimori.getItemList("/comments?" + filter.build(), CommentFull[].class);
+    public static ApiCall<CommentFull[]> getList(CommentFilter filter) {
+        return getItem("/comments?" + filter.build(), CommentFull[].class);
     }
 
-    //TODO: What's frontend?
-    //FIXME: Returns something wrong.
-    public static int create(CommentToCreate comment, boolean broadcast) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        rootNode.put("broadcast", broadcast);
-        try {
-            String jsonComment = mapper.writeValueAsString(comment);
-            JsonNode node = mapper.readTree(jsonComment);
-            rootNode.set("comment", node);
-            rootNode.put("frontend", true);
-            String data = mapper.writeValueAsString(rootNode);
-            JsonNode node1 = postRequest("/comments", data, true);
-            if (node1 != null) {
-                return node1.get("id").asInt();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static ApiCall<CommentFull> create(CommentToCreate comment, boolean broadcast) {
+        return postItem("/comments", new CommentToCreateInternal(broadcast, comment), CommentFull.class);
+    }
+
+    public static ApiCall<CommentFull> update(int commentId, String body) {
+        return putItem("/comments/" + commentId, new CommentToUpdateInternal(body), CommentFull.class);
+    }
+
+    public static ApiCall<Notice> delete(int commentId) {
+        return deleteItem("/comments/" + commentId, Notice.class);
+    }
+
+    private static class CommentToCreateInternal {
+        private boolean broadcast;
+        private boolean frontend;
+        private CommentToCreate comment;
+
+        private CommentToCreateInternal(boolean broadcast, CommentToCreate comment) {
+            this.broadcast = broadcast;
+            this.frontend = false;
+            this.comment = comment;
         }
 
-        return -1;
+        public boolean isBroadcast() {
+            return broadcast;
+        }
+
+        public boolean isFrontend() {
+            return frontend;
+        }
+
+        public CommentToCreate getComment() {
+            return comment;
+        }
     }
 
-    public static CommentFull update(int commentId, String commentBody) {
-        ObjectNode rootNode = mapper.createObjectNode();
-        ObjectNode comment = mapper.createObjectNode();
-        comment.put("body", commentBody);
-        rootNode.set("comment", comment);
-        rootNode.put("frontend", false);
-        JsonNode node = putRequest("/comments/" + commentId, rootNode.toString(), true);
-        if (node != null) {
-            try {
-                return mapper.readValue(node.toString(), CommentFull.class);
-            } catch (IOException e) {
-                e.printStackTrace();
+    private static class CommentToUpdateInternal {
+        private final boolean frontend;
+        private final Comment comment;
+
+        private CommentToUpdateInternal(String comment) {
+            this.frontend = false;
+            this.comment = new Comment(comment);
+        }
+
+        public boolean isFrontend() {
+            return frontend;
+        }
+
+        public Comment getComment() {
+            return comment;
+        }
+
+        private class Comment {
+            private final String body;
+
+            private Comment(String body) {
+                this.body = body;
+            }
+
+            public String getBody() {
+                return body;
             }
         }
-        return null;
-    }
-
-    public static String delete(int commentId) {
-        return deleteRequest("/comments/" + commentId, true).get("notice").asText();
     }
 }

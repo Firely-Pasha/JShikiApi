@@ -1,52 +1,50 @@
 package net.pagala.JShikiApi.Items;
 
-import java.util.List;
-
 @SuppressWarnings("unused")
 public class Favourites {
-    private List<FavouriteItem> animes;
+    private FavouriteItem[] animes;
 
-    private List<FavouriteItem> mangas;
+    private FavouriteItem[] mangas;
 
-    private List<FavouriteItem> characters;
+    private FavouriteItem[] characters;
 
-    private List<FavouriteItem> people;
+    private FavouriteItem[] people;
 
-    private List<FavouriteItem> mangakas;
+    private FavouriteItem[] mangakas;
 
-    private List<FavouriteItem> seyu;
+    private FavouriteItem[] seyu;
 
-    private List<FavouriteItem> producers;
+    private FavouriteItem[] producers;
 
     private Favourites() {
 
     }
 
-    public List<FavouriteItem> getAnimes() {
+    public FavouriteItem[] getAnimes() {
         return animes;
     }
 
-    public List<FavouriteItem> getMangas() {
+    public FavouriteItem[] getMangas() {
         return mangas;
     }
 
-    public List<FavouriteItem> getCharacters() {
+    public FavouriteItem[] getCharacters() {
         return characters;
     }
 
-    public List<FavouriteItem> getPeople() {
+    public FavouriteItem[] getPeople() {
         return people;
     }
 
-    public List<FavouriteItem> getMangakas() {
+    public FavouriteItem[] getMangakas() {
         return mangakas;
     }
 
-    public List<FavouriteItem> getSeyu() {
+    public FavouriteItem[] getSeyu() {
         return seyu;
     }
 
-    public List<FavouriteItem> getProducers() {
+    public FavouriteItem[] getProducers() {
         return producers;
     }
 }

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static net.pagala.JShikiApi.Core.Shikimori.getItem;
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
 
 public final class Characters {
 
@@ -16,29 +15,26 @@ public final class Characters {
 
     }
 
-    public static CharacterFull get(int id) {
+    public static ApiCall<CharacterFull> get(int id) {
         return getItem("/characters/" + id, CharacterFull.class);
     }
 
-    public static List<Character> getList(String searchString) {
-        return getItemList("/characters/search?search=" + searchString, Character[].class);
+    public static ApiCall<Character[]> getList(String searchString) {
+        return getItem("/characters/search?search=" + searchString, Character[].class);
     }
 
-    public static List<net.pagala.JShikiApi.Items.Character> getCharacters(List<Role> roles) {
-        List<net.pagala.JShikiApi.Items.Character> characterList = new ArrayList<>();
-
+    public static List<Character> getCharacters(Role[] roles) {
+        List<Character> characterList = new ArrayList<>();
         for (Role role : roles) {
             if (role.getCharacter() != null) {
                 characterList.add(role.getCharacter());
             }
         }
-
         return characterList;
     }
 
-    public static List<net.pagala.JShikiApi.Items.Character> getMainCharacters(List<Role> roleList) {
-        List<net.pagala.JShikiApi.Items.Character> mainCharacters = new ArrayList<>();
-
+    public static List<Character> getMainCharacters(Role[] roleList) {
+        List<Character> mainCharacters = new ArrayList<>();
         for (Role role : roleList) {
             if (role.getCharacter() != null) {
                 if (role.getRoles()[0].equals("Main")) {
@@ -46,13 +42,11 @@ public final class Characters {
                 }
             }
         }
-
         return mainCharacters;
     }
 
-    public static List<net.pagala.JShikiApi.Items.Character> getSupportingCharacters(List<Role> roleList) {
-        List<net.pagala.JShikiApi.Items.Character> mainCharacters = new ArrayList<>();
-
+    public static List<Character> getSupportingCharacters(Role[] roleList) {
+        List<Character> mainCharacters = new ArrayList<>();
         for (Role role : roleList) {
             if (role.getCharacter() != null) {
                 if (role.getRoles()[0].equals("Supporting")) {
@@ -60,7 +54,6 @@ public final class Characters {
                 }
             }
         }
-
         return mainCharacters;
     }
 }

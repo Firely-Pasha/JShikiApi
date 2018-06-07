@@ -1,13 +1,10 @@
 package net.pagala.JShikiApi.Items;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 /**
  *
  * Created by firely-pasha on 7/18/17.
  */
 @SuppressWarnings("unused")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Link {
     //TODO: Replace strings with constants.
     private int source;

@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.Publisher;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Publishers {
 
@@ -12,7 +10,7 @@ public final class Publishers {
 
     }
 
-    public static List<Publisher> getList() {
-        return getItemList("/publishers", Publisher[].class);
+    public static ApiCall<Publisher[]> getList() {
+        return getItem("/publishers", Publisher[].class);
     }
 }

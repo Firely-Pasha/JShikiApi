@@ -16,15 +16,6 @@ public class CalendarItem {
     private Anime anime;
 
     private CalendarItem() {
-        //
-//        Uri uri = new Uri.Builder()
-//                .scheme("http")
-//                .authority("foo.com")
-//                .path("someservlet")
-//                .appendQueryParameter("param1", foo)
-//                .appendQueryParameter("param2", bar)
-//                .build();
-
     }
 
     public int getNextEpisode() {

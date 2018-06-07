@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.Genre;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Genres {
 
@@ -12,7 +10,7 @@ public final class Genres {
 
     }
 
-    public static List<Genre> getList() {
-        return getItemList("/genres", Genre[].class);
+    public static ApiCall<Genre[]> getList() {
+        return getItem("/genres", Genre[].class);
     }
 }

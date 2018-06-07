@@ -11,23 +11,19 @@ public final class Ignores {
 
     }
 
-    public static UserIgnore ignoreUser(int userId) {
-        switchApiVersion(RequestVersion.API_V2);
-        return postItem("/users/" + userId + "/ignore", null, UserIgnore.class, true);
+    public static ApiCall<UserIgnore> ignoreUser(int userId) {
+        return postItem("/users/" + userId + "/ignore", "", UserIgnore.class);
     }
 
-    public static UserIgnore unignoreUser(int userId) {
-        switchApiVersion(RequestVersion.API_V2);
-        return deleteItem("/users/" + userId + "/ignore", UserIgnore.class, true);
+    public static ApiCall<UserIgnore> unignoreUser(int userId) {
+        return deleteItem("/users/" + userId + "/ignore", UserIgnore.class);
     }
 
-    public static TopicIgnore ignoreTopic(int topicId) {
-        switchApiVersion(RequestVersion.API_V2);
-        return postItem("/topics/" + topicId + "/ignore", null, TopicIgnore.class, true);
+    public static ApiCall<TopicIgnore> ignoreTopic(int topicId) {
+        return postItem("/topics/" + topicId + "/ignore", "", TopicIgnore.class);
     }
 
-    public static TopicIgnore unignoreTopic(int topicId) {
-        switchApiVersion(RequestVersion.API_V2);
-        return deleteItem("/topics/" + topicId + "/ignore", TopicIgnore.class, true);
+    public static ApiCall<TopicIgnore> unignoreTopic(int topicId) {
+        return deleteItem("/topics/" + topicId + "/ignore", TopicIgnore.class);
     }
 }

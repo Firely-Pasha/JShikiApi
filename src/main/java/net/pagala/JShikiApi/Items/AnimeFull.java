@@ -2,8 +2,6 @@ package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.List;
-
 /**
  *
  * Created by firely-pasha on 7/12/17.
@@ -12,11 +10,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 public class AnimeFull extends Anime implements TitleFull {
 
-    private List<String> english;
+    private String[] english;
 
-    private List<String> japanese;
+    private String[] japanese;
 
-    private List<String> synonyms;
+    private String[] synonyms;
 
     private String score;
 
@@ -44,12 +42,12 @@ public class AnimeFull extends Anime implements TitleFull {
     private int myanimelistId;
 
     @JsonProperty("rates_statuses_stats")
-    private List<RatesStatus> ratesStatusesStats;
+    private RatesStatus[] ratesStatusesStats;
 
     @JsonProperty("rates_scores_stats")
-    private List<RatesScore> ratesScoresStats;
+    private RatesScore[] ratesScoresStats;
 
-    private List<Genre> genres;
+    private Genre[] genres;
 
     @JsonProperty("user_rate")
     private TitleUserRate titleUserRate;
@@ -64,11 +62,11 @@ public class AnimeFull extends Anime implements TitleFull {
     @JsonProperty("next_episode_at")
     private String nextEpisodeAt;
 
-    private List<Studio> studios;
+    private Studio[] studios;
 
-    private List<Video> videos;
+    private Video[] videos;
 
-    private List<Screenshot> screenshots;
+    private Screenshot[] screenshots;
 
 
     private AnimeFull() {
@@ -90,30 +88,30 @@ public class AnimeFull extends Anime implements TitleFull {
         return nextEpisodeAt;
     }
 
-    public List<Studio> getStudios() {
+    public Studio[] getStudios() {
         return studios;
     }
 
-    public List<Video> getVideos() {
+    public Video[] getVideos() {
         return videos;
     }
 
-    public List<Screenshot> getScreenshots() {
+    public Screenshot[] getScreenshots() {
         return screenshots;
     }
 
     @Override
-    public List<String> getEnglish() {
+    public String[] getEnglish() {
         return english;
     }
 
     @Override
-    public List<String> getJapanese() {
+    public String[] getJapanese() {
         return japanese;
     }
 
     @Override
-    public List<String> getSynonyms() {
+    public String[] getSynonyms() {
         return synonyms;
     }
 
@@ -168,17 +166,17 @@ public class AnimeFull extends Anime implements TitleFull {
     }
 
     @Override
-    public List<RatesStatus> getRatesStatusesStats() {
+    public RatesStatus[] getRatesStatusesStats() {
         return ratesStatusesStats;
     }
 
     @Override
-    public List<RatesScore> getRatesScoresStats() {
+    public RatesScore[] getRatesScoresStats() {
         return ratesScoresStats;
     }
 
     @Override
-    public List<Genre> getGenres() {
+    public Genre[] getGenres() {
         return genres;
     }
 

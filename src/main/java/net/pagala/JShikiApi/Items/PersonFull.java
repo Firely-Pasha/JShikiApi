@@ -2,10 +2,7 @@ package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.net.URI;
-import java.net.URL;
 import java.util.Date;
-import java.util.List;
 
 public class PersonFull extends Person {
 
@@ -21,9 +18,9 @@ public class PersonFull extends Person {
     @JsonProperty("groupped_roles")
     private String[][] grouppedRoles;
 
-    private List<PersonRole> roles;
+    private PersonRole[] roles;
 
-    private List<PersonWork> works;
+    private PersonWork[] works;
 
     @JsonProperty("thread_id")
     private int threadId;
@@ -76,11 +73,11 @@ public class PersonFull extends Person {
         return grouppedRoles;
     }
 
-    public List<PersonRole> getRoles() {
+    public PersonRole[] getRoles() {
         return roles;
     }
 
-    public List<PersonWork> getWorks() {
+    public PersonWork[] getWorks() {
         return works;
     }
 

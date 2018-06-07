@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.Ban;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Bans {
 
@@ -12,7 +10,7 @@ public final class Bans {
 
     }
 
-    public static List<Ban> getList(int limit, int page) {
-        return getItemList("/bans?&limit=" + limit + "&page=" + page, Ban[].class);
+    public static ApiCall<Ban[]> getList(int limit, int page) {
+        return getItem("/bans?&limit=" + limit + "&page=" + page, Ban[].class);
     }
 }

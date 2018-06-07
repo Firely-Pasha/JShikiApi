@@ -1,7 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import java.util.List;
-
 /**
  *
  * Created by firely-pasha on 7/14/17.
@@ -9,11 +7,11 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface TitleFull extends Title {
 
-    List<String> getEnglish();
+    String[] getEnglish();
 
-    List<String> getJapanese();
+    String[] getJapanese();
 
-    List<String> getSynonyms();
+    String[] getSynonyms();
 
     String getScore();
 
@@ -35,11 +33,11 @@ public interface TitleFull extends Title {
 
     int getMyanimelistId();
 
-    List<RatesStatus> getRatesStatusesStats();
+    RatesStatus[] getRatesStatusesStats();
 
-    List<RatesScore> getRatesScoresStats();
+    RatesScore[] getRatesScoresStats();
 
-    List<Genre> getGenres();
+    Genre[] getGenres();
 
     TitleUserRate getTitleUserRate();
 }

@@ -43,16 +43,4 @@ public class UserRate extends TitleUserRate {
     public Date getUpdatedAt() {
         return updatedAt;
     }
-
-//    @JsonIgnore
-//    @Override
-//    public String toString() {
-//        try {
-//            return Shikimori.getObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(this);
-//        } catch (JsonProcessingException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return null;
-//    }
 }

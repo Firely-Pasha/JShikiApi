@@ -1,6 +1,5 @@
 package net.pagala.JShikiApi.Items;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
@@ -12,12 +11,7 @@ import java.util.Date;
 
 //Type in messages is required!
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
-    private int id;
-
-    private String nickname;
-
+public class User extends UserShort {
     private String avatar;
 
     private UserImage image;
@@ -28,14 +22,6 @@ public class User {
 
     protected User() {
 
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNickname() {
-        return nickname;
     }
 
     public String getAvatar() {

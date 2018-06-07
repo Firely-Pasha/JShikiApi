@@ -1,7 +1,6 @@
 package net.pagala.JShikiApi.Items;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -37,12 +36,12 @@ public class CharacterFull extends Character{
     @JsonProperty("updated_at")
     private Date updatedAt;
 
-    private List<Character> seyu;
+    private Character[] seyu;
 
-    private List<AnimeWithRole> animes;
+    private AnimeWithRole[] animes;
 
     @JsonProperty("mangas")
-    private List<MangaWithRole> mangasAndRanobes;
+    private MangaWithRole[] mangasAndRanobes;
 
     @JsonIgnore
     private List<MangaWithRole> mangas;
@@ -91,11 +90,11 @@ public class CharacterFull extends Character{
         return updatedAt;
     }
 
-    public List<Character> getSeyu() {
+    public Character[] getSeyu() {
         return seyu;
     }
 
-    public List<AnimeWithRole> getAnimes() {
+    public AnimeWithRole[] getAnimes() {
         return animes;
     }
 

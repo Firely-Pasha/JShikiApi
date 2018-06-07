@@ -1,8 +1,6 @@
 package net.pagala.JShikiApi.Core;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Stats {
 
@@ -10,7 +8,7 @@ public final class Stats {
 
     }
 
-    public static List<Integer> getActiveUsers() {
-        return getItemList("/stats/active_users", Integer[].class);
+    public static ApiCall<Integer[]> getActiveUsers() {
+        return getItem("/stats/active_users", Integer[].class);
     }
 }

@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.Studio;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Studios {
 
@@ -12,7 +10,7 @@ public final class Studios {
 
     }
 
-    public static List<Studio> getList() {
-        return getItemList("/studios", Studio[].class);
+    public static ApiCall<Studio[]> getList() {
+        return getItem("/studios", Studio[].class);
     }
 }

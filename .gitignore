@@ -1,3 +1,10 @@
+.gradle/
+bin/
+build/
+gradle/
+out/
+gradlew
+gradlew.bat
 target
 src/test
 .idea

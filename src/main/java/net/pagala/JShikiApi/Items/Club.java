@@ -1,9 +1,6 @@
 package net.pagala.JShikiApi.Items;
 
-import net.pagala.JShikiApi.Core.Shikimori;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.List;
 
 @SuppressWarnings("unused")
 public class Club {

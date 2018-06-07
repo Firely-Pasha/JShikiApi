@@ -1,33 +1,28 @@
 package net.pagala.JShikiApi.Items;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  *
  * Created by firely-pasha on 7/19/17.
  */
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserScores {
     @JsonProperty("anime")
-    private List<UserTitleScores> animes;
+    private UserTitleScores[] animes;
 
     @JsonProperty("manga")
-    private List<UserTitleScores> mangas;
+    private UserTitleScores[] mangas;
 
     private UserScores() {
 
     }
 
-    public List<UserTitleScores> getAnimes() {
+    public UserTitleScores[] getAnimes() {
         return animes;
     }
 
-    public List<UserTitleScores> getMangas() {
+    public UserTitleScores[] getMangas() {
         return mangas;
     }
 

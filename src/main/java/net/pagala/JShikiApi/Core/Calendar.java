@@ -2,9 +2,7 @@ package net.pagala.JShikiApi.Core;
 
 import net.pagala.JShikiApi.Items.CalendarItem;
 
-import java.util.List;
-
-import static net.pagala.JShikiApi.Core.Shikimori.getItemList;
+import static net.pagala.JShikiApi.Core.Shikimori.getItem;
 
 public final class Calendar {
 
@@ -12,7 +10,7 @@ public final class Calendar {
 
     }
 
-    public static List<CalendarItem> get() {
-        return getItemList("/calendar/", CalendarItem[].class);
+    public static ApiCall<CalendarItem[]> get() {
+        return getItem("/calendar/", CalendarItem[].class);
     }
 }

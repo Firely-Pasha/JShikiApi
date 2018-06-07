@@ -10,7 +10,6 @@ import java.util.Date;
  */
 
 @SuppressWarnings("unused")
-//@JsonIgnoreProperties(ignoreUnknown = true)
 public class UserFull extends User {
     private String name;
 
